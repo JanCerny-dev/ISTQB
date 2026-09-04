@@ -1,0 +1,8 @@
+# Zdrojove dokumenty a podklady ISTQB jsou chranene autorskym pravem
+# a do repozitare nesmi ani omylem pri `git add -A`.
+*.docx
+*.pdf
+*.pptx
+~$*
+__pycache__/
+*.pyc
