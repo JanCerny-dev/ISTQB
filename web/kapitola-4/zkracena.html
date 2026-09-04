@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="cs" data-tema="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4. Testovací analýza a návrh testů — Zkrácená verze | ISTQB CTFL v4.0</title>
+<meta name="description" content="Zkrácená verze kapitoly 4 sylabu ISTQB CTFL v4.0: Testovací analýza a návrh testů. Jen to, co je nutné znát ke zkoušce. Bez odboček, k rychlému opakování.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../assets/styl.css">
+<script>
+/* Nastaví uložený režim ještě před vykreslením, aby stránka neproblikla. */
+(function(){try{var t=localStorage.getItem('istqb-tema');if(t){document.documentElement.setAttribute('data-tema',t);}}catch(e){}})();
+</script>
+</head>
+<body data-kapitola="4">
+<a class="preskocit" href="#text">Přeskočit na text</a>
+<div class="postup" aria-hidden="true"></div>
+<header class="hlavicka">
+  <div class="hlavicka-vnitrek">
+    <a class="znacka" href="../index.html">ISTQB CTFL v4.0 <span>česká studijní příručka</span></a>
+    <nav class="navigace" aria-label="Hlavní navigace">
+      <a href="../index.html">Úvod</a>
+      <span class="skupina" data-skupina>
+        <a href="../kapitoly.html" class="zvyraznit" aria-current="page">Kapitoly</a>
+        <ul class="podmenu" id="podmenu-kapitoly" aria-label="Seznam kapitol"><li><a href="../kapitola-1/zkracena.html"><b>1</b> Základy testování</a></li><li><a href="../kapitola-2/zkracena.html"><b>2</b> Testování v průběhu životního cyklu</a></li><li><a href="../kapitola-3/zkracena.html"><b>3</b> Statické testování</a></li><li><a href="../kapitola-4/zkracena.html" aria-current="page"><b>4</b> Testovací analýza a návrh testů</a></li><li><a href="../kapitola-5/zkracena.html"><b>5</b> Management testování</a></li><li><a href="../kapitola-6/zkracena.html"><b>6</b> Testovací nástroje</a></li></ul>
+      </span>
+      <a href="../zdroje.html">Zdroje</a>
+      <a href="../zkouska.html" class="brzy">Zkouška <em>brzy</em></a>
+      <button type="button" class="prepinac-tema" data-prepinac-tema>Tmavý režim</button>
+    </nav>
+  </div>
+</header>
+<div class="stranka">
+<div class="layout">
+<main>
+<div class="zahlavi">
+  <p class="drobky">Kapitola 4 · Zkrácená verze</p>
+  <h1>Kapitola čtvrtá: Testovací analýza a návrh testů</h1>
+  <p class="podtitul">Zkrácená verze pro opakování – ISTQB CTFL, verze čtyři nula jedna</p>
+  <ul class="meta"><li>2 664 slov</li><li>≈ 16 min čtení</li><li>≈ 18 min poslechu</li><li>15 oddílů</li><li>390 min výuky podle sylabu</li></ul>
+</div>
+<nav class="varianty" aria-label="Varianta zpracování kapitoly 4"><a href="vyklad.html">Plný výklad</a><a href="zkracena.html" aria-current="page">Zkrácená verze</a><a href="otazky.html">Otázky a odpovědi</a></nav>
+
+<article class="text" id="text">
+<p>Toto je zkrácená verze čtvrté kapitoly učebních osnov. Obsahuje jen to, co je nutné znát ke zkoušce, bez příkladů a bez doplňujících informací. Je určena k opakovanému poslechu. Plný výklad včetně rozpracovaných zadání najdete v samostatném dokumentu.</p>
+<h2 id="prehled-technik-testovani">Přehled technik testování<a class="kotva" href="#prehled-technik-testovani" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Techniky testování podporují testery při testovací analýze, tedy co testovat, a při návrhu testů, tedy jak testovat. Pomáhají systematicky definovat relativně malou, ale dostatečnou sadu testovacích případů, definovat testovací podmínky, identifikovat položky pokrytí a identifikovat testovací data.</p>
+<p>Techniky testování černé skříňky, známé také jako techniky založené na specifikacích, jsou založeny na analýze specifikovaného chování testovaného objektu bez informací o jeho vnitřní struktuře. Testovací případy jsou nezávislé na tom, jak je software napsán, takže pokud se implementace změní a chování zůstane stejné, lze je stále používat.</p>
+<p>Techniky testování bílé skříňky, známé také jako techniky založené na struktuře, jsou založeny na analýze vnitřní struktury a způsobu zpracování uvnitř testovaného objektu. Testovací případy jsou závislé na návrhu softwaru, takže mohou být vytvořeny až po ukončení návrhu nebo implementaci, pokud není použita technika, která to umožňuje, například T D D.</p>
+<p>Techniky testování založené na zkušenostech využívají znalosti a zkušenosti testerů. Jejich efektivita silně závisí na dovednostech testerů. Mohou odhalit defekty, které techniky černé a bílé skříňky neodhalí, a jsou proto doplňkem těchto technik.</p>
+<h2 id="rozdeleni-trid-ekvivalence">Rozdělení tříd ekvivalence<a class="kotva" href="#rozdeleni-trid-ekvivalence" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Rozdělení tříd ekvivalence rozděluje data do tříd, u kterých lze očekávat stejný způsob zpracování testovaným objektem. Teorie spočívá v tom, že pokud testovací případ detekuje defekt pro některou hodnotu z určité třídy, měl by odhalit defekt i pro jakoukoli jinou hodnotu téže třídy.</p>
+<p>Třídu lze identifikovat pro libovolný datový element, tedy pro vstupy, výstupy, konfigurační položky, interní hodnoty, hodnoty související s časem nebo parametry rozhraní. Třídy mohou být spojité nebo diskrétní, uspořádané nebo neuspořádané, konečné nebo nekonečné. Třídy se nesmí překrývat a musí se jednat o neprázdné množiny.</p>
+<p>Třída obsahující platné hodnoty se nazývá platná třída ekvivalence, třída obsahující neplatné hodnoty se nazývá neplatná třída ekvivalence.</p>
+<p>Položkami pokrytí jsou samotné třídy ekvivalence. Pro dosažení sta procent pokrytí musí testovací případy pokrývat všechny identifikované třídy včetně neplatných, a to použitím minimálně jedné hodnoty z každé třídy. Pokrytí se měří jako poměr počtu tříd otestovaných alespoň jedním testovacím případem k celkovému počtu identifikovaných tříd.</p>
+<p>Pokud má položka testování více množin tříd, může jeden testovací případ pokrývat třídy z různých množin. Nejjednodušším kritériem je pokrytí každé volby, které vyžaduje, aby testovací případy pokryly každou třídu z každé množiny alespoň jednou, přičemž nebere v úvahu kombinace tříd.</p>
+<h2 id="analyza-hranicnich-hodnot">Analýza hraničních hodnot<a class="kotva" href="#analyza-hranicnich-hodnot" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Analýza hraničních hodnot je technika založená na pokrytí okrajových hodnot tříd ekvivalence. Lze ji použít pouze pro uspořádané třídy, kdy minimální a maximální hodnoty každé třídy jsou její hraniční hodnoty. Platí, že pokud dva prvky patří do stejné třídy, musí do ní patřit i všechny prvky ležící mezi nimi.</p>
+<p>Zaměřuje se na hraniční hodnoty, protože pravděpodobnost, že vývojáři udělají chybu právě na hranicích, je vyšší. Typické defekty se nacházejí tam, kde jsou implementované hranice přesunuty nad nebo pod své specifikované hodnoty, případně kde jsou zcela vynechány.</p>
+<p>U dvouhodnotové analýzy hraničních hodnot existují pro každou hranici dvě položky pokrytí, a to hraniční hodnota a její nejbližší soused patřící do sousední třídy.</p>
+<p>U tříhodnotové analýzy hraničních hodnot existují pro každou hranici tři položky pokrytí, a to hraniční hodnota a oba její sousedé. Některé položky pokrytí přitom nemusí být hraničními hodnotami žádné třídy.</p>
+<p>Tříhodnotová varianta je přísnější než dvouhodnotová a lze s ní odhalit defekty, které by dvouhodnotová přehlédla. Pokud je například podmínka x menší nebo rovno deseti nesprávně implementována jako x rovno deseti, testovací případy dvouhodnotové varianty, tedy deset a jedenáct, defekt neodhalí. Hodnota devět z tříhodnotové varianty jej odhalí.</p>
+<h2 id="testovani-dle-rozhodovaci-tabulky">Testování dle rozhodovací tabulky<a class="kotva" href="#testovani-dle-rozhodovaci-tabulky" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Rozhodovací tabulky jsou vhodné pro testování implementace požadavků definujících, jak různé kombinace podmínek vedou k různým výsledkům. Představují efektivní způsob zaznamenávání složité logiky, například byznysových pravidel.</p>
+<p>Podmínky a výsledné akce tvoří dvě skupiny řádků tabulky. Každý sloupec odpovídá jednomu pravidlu rozhodování, které definuje jedinečnou kombinaci podmínek vedoucí k provedení akcí.</p>
+<p>V rozhodovacích tabulkách s omezeným počtem vstupů jsou všechny hodnoty podmínek a akcí zobrazeny jako logické hodnoty. V rozhodovacích tabulkách s rozšířeným počtem vstupů mohou některé nebo všechny podmínky a akce zpracovávat více hodnot, například rozsahy, třídy ekvivalence nebo diskrétní hodnoty.</p>
+<p>Symboly pro podmínky jsou tyto. Písmeno T znamená, že podmínka je splněna. Písmeno F znamená, že podmínka není splněna. Pomlčka znamená, že hodnota podmínky je pro výsledek akce irelevantní. A zkratka N lomítko A znamená, že podmínka je pro dané pravidlo neproveditelná. U akcí znamená písmeno X, že akce by měla nastat, a prázdná hodnota, že nastat neměla.</p>
+<p>Úplná rozhodovací tabulka obsahuje takový počet sloupců, aby došlo k pokrytí každé kombinace podmínek. Tabulku lze zjednodušit odstraněním sloupců obsahujících neproveditelnou kombinaci podmínek nebo sloučením sloupců, jejichž hodnoty nemají vliv na výsledek.</p>
+<p>Položkami pokrytí jsou sloupce obsahující proveditelnou kombinaci podmínek. Pro dosažení sta procent pokrytí musí testovací případy pokrýt všechny takové sloupce. Pokrytí se měří jako poměr počtu pokrytých sloupců k celkovému počtu proveditelných sloupců.</p>
+<p>Význam techniky spočívá v tom, že poskytuje systematický přístup k identifikaci všech kombinací podmínek, z nichž některé by jinak mohly být přehlédnuty, a pomáhá odhalovat nedostatky v požadavcích. Při mnoha podmínkách roste počet pravidel exponenciálně, proto lze použít zjednodušenou tabulku nebo přístup založený na rizicích.</p>
+<h2 id="testovani-prechodu-stavu">Testování přechodů stavů<a class="kotva" href="#testovani-prechodu-stavu" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Stavový diagram modeluje chování systému zobrazením jeho možných stavů a platných přechodů mezi nimi. Přechod je iniciován výskytem události a může být doplněn o podmínku přechodu, jejíž splnění přechod podmiňuje. Přechody se provádějí okamžitě a někdy mohou vést k tomu, že software provede určitou akci. Běžná syntaxe je událost, podmínka přechodu, lomítko, akce.</p>
+<p>Ke stavovému diagramu je ekvivalentní stavová tabulka. Její řádky představují stavy a sloupce události doplněné o podmínky přechodů. Buňky představují přechody a obsahují cílový stav i výsledné akce. Na rozdíl od stavového diagramu zobrazuje stavová tabulka i neplatné přechody, které jsou reprezentovány prázdnými buňkami.</p>
+<p>Testovací případ je obvykle znázorněn jako série událostí vedoucí k posloupnosti změn stavů a akcí. Jeden testovací případ může a obvykle bude pokrývat několik přechodů.</p>
+<p>Při pokrytí všech stavů jsou položkami pokrytí stavy. Pokrytí se měří jako poměr počtu pokrytých stavů k celkovému počtu stavů.</p>
+<p>Při pokrytí platných přechodů, nazývaném také pokrytí nula switch, jsou položkami pokrytí jednotlivé platné přechody. Pokrytí se měří jako poměr počtu pokrytých platných přechodů k celkovému počtu platných přechodů.</p>
+<p>Při pokrytí všech přechodů jsou položkami pokrytí všechny přechody v tabulce přechodů stavů. Testovací případy musí prověřit všechny platné přechody a pokusit se prověřit přechody neplatné. Je vhodné testovat jeden neplatný přechod v jednom testovacím případu, protože se tak snižuje riziko maskování defektu, tedy situace, kdy není možné identifikovat defekt v důsledku výskytu jiného.</p>
+<p>Pokrytí všech stavů je slabší než pokrytí platných přechodů, protože ho lze obvykle dosáhnout bez prověření všech přechodů. Nejpoužívanějším kritériem je pokrytí platných přechodů. Plné pokrytí platných přechodů garantuje plné pokrytí všech stavů. Plné pokrytí všech přechodů zaručuje jak plné pokrytí všech stavů, tak plné pokrytí platných přechodů, a mělo by být minimálním požadavkem pro bezpečnostně kritický software.</p>
+<h2 id="techniky-testovani-bile-skrinky">Techniky testování bílé skříňky<a class="kotva" href="#techniky-testovani-bile-skrinky" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Sylabus popisuje testování příkazů a testování větví. Techniky bílé skříňky nesouvisí výhradně s úrovní testování komponent, existují i techniky používané ve vyšších úrovních, například při testování rozhraní A P I, nebo techniky měření pokrytí nesouvisející s kódem.</p>
+<p>Při testování příkazů jsou položkami pokrytí spustitelné příkazy. Pokrytí se měří jako počet spustitelných příkazů pokrytých testy k celkovému počtu spustitelných příkazů v kódu. Sto procent pokrytí příkazů zajišťuje, že všechny spustitelné příkazy byly otestovány alespoň jednou. Otestování příkazu ale nemusí vždy odhalit defekt, například defekty související s daty, jako je dělení nulou. Sto procent pokrytí příkazů také nezaručuje otestování veškeré rozhodovací logiky.</p>
+<p>Větev je přenos řízení mezi dvěma uzly v grafu řídicího toku. Každý přenos řízení může být nepodmíněný, tedy lineární kód, nebo podmíněný, tedy výsledek rozhodnutí.</p>
+<p>Při testování větví jsou položkami pokrytí větve. Sto procent pokrytí větví znamená, že jsou pokryty všechny nepodmíněné i podmíněné větve. Podmíněné větve odpovídají pravdivému nebo nepravdivému výsledku podmínky, výsledku z vícecestné podmínky nebo rozhodnutí, zda ukončit či pokračovat ve smyčce. Otestování větve nemusí vždy odhalit defekt, například defekt vyžadující provedení určité cesty v kódu.</p>
+<p>Pokrytí větví automaticky zaručuje pokrytí příkazů. Jakákoli sada testovacích případů, která dosáhne sta procent pokrytí větví, dosáhne také sta procent pokrytí příkazů, ale ne naopak.</p>
+<h2 id="vyznam-testovani-bile-skrinky">Význam testování bílé skříňky<a class="kotva" href="#vyznam-testovani-bile-skrinky" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Silnou stránkou je, že při testování je zohledněna samotná implementace softwaru, což usnadňuje detekci defektů v případech, kdy je specifikace vágní, zastaralá nebo neúplná.</p>
+<p>Slabinou je, že nemusí odhalit defekty při opomenutí implementace jednoho nebo více požadavků.</p>
+<p>Techniky bílé skříňky mohou být použity při statickém testování, například během běhů kódu nanečisto. Jsou vhodné i při revizi kódu, který ještě není připraven ke spuštění, při revizi pseudokódu nebo jiného zápisu logiky, které mohou být modelovány pomocí grafu řídicího toku.</p>
+<p>Pouhé testování technikami černé skříňky neposkytuje informace o míře skutečného pokrytí kódu. Výsledky testování bílé skříňky poskytují objektivní měření pokrytí a informace umožňující vytváření dalších testů s cílem zvyšovat pokrytí a tím i důvěru v kód.</p>
+<h2 id="odhadovani-chyb">Odhadování chyb<a class="kotva" href="#odhadovani-chyb" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Odhadování chyb je technika používaná k předvídání výskytu chyb, defektů a selhání, založená na znalostech testerů. Jsou to znalosti o tom, jak fungovala aplikace v minulosti, o typických vývojářských chybách a defektech, které z nich plynou, a o typických selháních, která nastala v jiných podobných aplikacích.</p>
+<p>Chyby, defekty a selhání mohou souviset se vstupem, s výstupem, s logikou, s výpočtem, s rozhraními nebo s daty.</p>
+<p>Útok na vady je příkladem implementace odhadování chyb. Testeři vytvoří nebo získají seznam možných chyb, defektů a selhání a navrhnou takové testy, které je identifikují, odhalí nebo způsobí. Seznamy lze sestavit na základě zkušeností, údajů o defektech a selháních nebo z obecných znalostí o důvodech selhávání softwaru.</p>
+<h2 id="pruzkumne-testovani">Průzkumné testování<a class="kotva" href="#pruzkumne-testovani" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Při průzkumném testování jsou testy současně navrhovány, prováděny a vyhodnocovány, zatímco testeři získávají znalosti o testovaném objektu. Používá se k získání dalších informací o testovaném objektu, k jeho hlubšímu prozkoumání pomocí cílených testů a k vytvoření testů pro dosud neotestované oblasti.</p>
+<p>Někdy se provádí pomocí testování v relacích, kdy se definuje časový rámec pro test. Jako vstup pro řízení testu používají testeři testovací listinu s definicí cílů testování. Po testovací relaci obvykle následuje debriefing s diskusí testerů a zástupců zainteresovaných stran.</p>
+<p>Obecnými testovacími podmínkami mohou být cíle testování. Položky pokrytí jsou identifikovány a prověřovány během testovacích relací a testeři mohou používat dokumenty testovací relace pro záznam prováděných kroků a objevených zjištění.</p>
+<p>Průzkumné testování je nejužitečnější tam, kde je specifikace nedostatečná nebo chybí, při výrazném časovém tlaku a jako doplněk formálnějších technik. Je účinnější, pokud jsou testeři zkušení, mají znalosti z domény a vysokou úroveň analytických schopností, zvídavosti a kreativity. Může využívat i jiné testovací techniky, například rozdělení tříd ekvivalence.</p>
+<h2 id="testovani-zalozene-na-kontrolnich-seznamech">Testování založené na kontrolních seznamech<a class="kotva" href="#testovani-zalozene-na-kontrolnich-seznamech" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Testeři navrhují, implementují a provádějí testy za účelem pokrytí testovacích podmínek uvedených v kontrolním seznamu. Seznamy lze vytvářet na základě zkušeností, znalostí o tom, co je pro uživatele důležité, nebo pochopení, proč a jak software selhává.</p>
+<p>Kontrolní seznamy by neměly obsahovat položky, které lze zkontrolovat automaticky, položky, které jsou vhodnější jako vstupní či výstupní kritéria, a položky, které jsou příliš obecné.</p>
+<p>Položky jsou často formulovány ve formě otázky a každou by mělo být možné přímo ověřit odděleně, nezávisle na ostatních. Mohou se týkat požadavků, vlastností grafického rozhraní, kvalitativních charakteristik nebo jiných forem testovacích podmínek. Seznamy mohou podporovat funkcionální i nefunkcionální testování.</p>
+<p>Některé položky mohou být časem méně efektivní, protože vývojáři se učí a neopakují určitý typ chyb. Seznamy by proto měly být pravidelně aktualizovány na základě analýzy defektů, typicky přidáváním nových položek reflektujících nově zjištěné defekty s vysokou závažností. Je třeba dbát, aby se seznam nestal příliš dlouhým.</p>
+<p>V případě absence testovacích případů může tato technika poskytnout návod pro testování a zajistit určitý stupeň konzistence. Protože jde o obecné seznamy, může se objevit určitá variabilita, což přispívá k většímu pokrytí, ale i k menší míře opakovatelnosti testování.</p>
+<h2 id="pristupy-k-testovani-zalozene-na-spolupraci">Přístupy k testování založené na spolupráci<a class="kotva" href="#pristupy-k-testovani-zalozene-na-spolupraci" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Na rozdíl od předchozích technik, které mají specifický cíl ve vztahu k identifikaci defektů, využívají přístupy založené na spolupráci odlišné principy a jsou zaměřeny spíše na prevenci výskytu defektů využitím spolupráce a komunikace.</p>
+<h2 id="spolecne-psani-uzivatelskych-scenaru">Společné psaní uživatelských scénářů<a class="kotva" href="#spolecne-psani-uzivatelskych-scenaru" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Uživatelský scénář představuje užitnou vlastnost, která má pro uživatele nebo budoucího majitele softwaru určitou hodnotu. Obsahuje tři důležité části nazývané tři C. Karta je médium popisující uživatelský scénář. Konverzace je vysvětlení, jak bude software používán, a může být dokumentovaná nebo pouze verbální. Potvrzení má formu akceptačního kritéria.</p>
+<p>Nejběžnějším formátem je formule Jako role chci cíl, protože výsledná byznysová hodnota pro roli, doplněná akceptačními kritérii.</p>
+<p>Společné autorství může využívat techniky jako brainstorming nebo tvorbu myšlenkových map. Spolupráce umožňuje týmu získat společnou vizi s přihlédnutím ke třem aspektům, kterými jsou byznys, vývoj a testování.</p>
+<p>Správné uživatelské scénáře by měly být I N V E S T, tedy nezávislé, schůdné, hodnotné, odhadnutelné, malé a testovatelné. Pokud zástupce zainteresovaných stran neví, jak scénář otestovat, může to znamenat, že scénář není dostatečně jasný, že neodráží něco cenného, nebo že jen potřebují pomoc při testování.</p>
+<h2 id="akceptacni-kriteria">Akceptační kritéria<a class="kotva" href="#akceptacni-kriteria" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Akceptační kritéria jsou podmínky, které musí implementace uživatelského scénáře splňovat, aby byla přijata zainteresovanými stranami. Lze na ně pohlížet jako na testovací podmínky, které by měly testy prověřit, a jsou obvykle výsledkem konverzace.</p>
+<p>Používají se k definování rozsahu uživatelského scénáře, k dosažení shody mezi zainteresovanými stranami, k popisu pozitivních i negativních scénářů, k základní definici akceptačního testování uživatelského scénáře a k přesnějšímu plánování a odhadování testování.</p>
+<p>Dva nejběžnější formáty jsou formát orientovaný na scénáře, například Given, When, Then používaný v B D D, a formát orientovaný na pravidla, například verifikační seznam s odrážkami nebo tabulka s mapováním vstupů a výstupů. Tým může použít i jiný formát, pokud jsou kritéria dobře definovaná a jednoznačná.</p>
+<h2 id="vyvoj-rizeny-akceptacnimi-testy">Vývoj řízený akceptačními testy<a class="kotva" href="#vyvoj-rizeny-akceptacnimi-testy" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>A T D D je jedním z přístupů iniciovaných testy, kdy jsou testovací případy vytvořeny před vlastní implementací uživatelského scénáře členy týmu s různými perspektivami, například zákazníky, vývojáři a testery. Testovací případy mohou být prováděny manuálně nebo automatizovaně.</p>
+<p>Prvním krokem je obvykle schůzka nad specifikacemi, kde členové týmu analyzují, diskutují a dokumentují uživatelské scénáře a jejich akceptační kritéria. Během tohoto procesu jsou obvykle vyřešeny neúplnosti, nejednoznačnosti nebo defekty v uživatelském scénáři.</p>
+<p>Dalším krokem je vytvoření testovacích případů, což může provést celý tým společně nebo pouze testeři. Testovací případy jsou založeny na akceptačních kritériích a lze je považovat za příklady toho, jak by měl software pracovat. Protože příklady a testy jsou vlastně totožné, používají se oba termíny zaměnitelně.</p>
+<p>Obvykle jsou první testovací případy pozitivní a potvrzují správné chování bez výjimečných situací nebo chybových stavů. Po jejich dokončení by měl tým provést negativní testování a nakonec pokrýt nefunkcionální kvalitativní charakteristiky. Při návrhu testů lze použít techniky testování z předchozích částí kapitoly.</p>
+<p>Testovací případy by měly být vyjádřeny způsobem srozumitelným pro zainteresované strany a obvykle obsahují věty v přirozeném jazyce zahrnující vstupní podmínky, vstupy a výstupní podmínky. Musí pokrývat všechny charakteristiky uživatelského scénáře, neměly by přesahovat jeho rámec a žádné dva testovací případy by neměly popisovat stejné charakteristiky.</p>
+<p>Při zápisu ve formátu podporovaném frameworkem automatizace testování mohou vývojáři testovací případy automatizovat vytvořením podpůrného kódu už při implementaci užitné vlastnosti. V takovém případě se akceptační testy stanou spustitelnými požadavky.</p>
+<h2 id="nejdulezitejsi-body-k-zapamatovani">Nejdůležitější body k zapamatování<a class="kotva" href="#nejdulezitejsi-body-k-zapamatovani" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Položky pokrytí podle techniky. U rozdělení tříd ekvivalence jsou to třídy. U analýzy hraničních hodnot hraniční hodnoty, u tříhodnotové varianty i jejich sousedé. U rozhodovací tabulky proveditelné sloupce. U testování přechodů stavů stavy, platné přechody nebo všechny přechody. U testování příkazů spustitelné příkazy. U testování větví větve.</p>
+<p>Analýzu hraničních hodnot lze použít pouze na uspořádané třídy. Tříhodnotová varianta je přísnější než dvouhodnotová.</p>
+<p>Do pokrytí tříd ekvivalence se počítají i neplatné třídy. Do pokrytí rozhodovací tabulky se počítají jen proveditelné sloupce.</p>
+<p>Neplatné přechody se odvozují ze stavové tabulky, protože ve stavovém diagramu nejsou.</p>
+<p>Pokrytí všech přechodů garantuje pokrytí platných přechodů, které garantuje pokrytí všech stavů. Opačně to neplatí.</p>
+<p>Pokrytí větví zaručuje pokrytí příkazů, ale ne naopak.</p>
+<p>Techniky bílé skříňky lze použít i staticky a nejen na úrovni komponent.</p>
+<p>Tři prvky strukturovaného průzkumného testování jsou časový rámec, testovací listina a debriefing.</p>
+<p>Tři C uživatelského scénáře jsou karta, konverzace a potvrzení.</p>
+<p>V A T D D se testovací případy tvoří v pořadí pozitivní, negativní, nefunkcionální.</p>
+<p>Tím končí zkrácená verze čtvrté kapitoly.</p>
+</article>
+<nav class="naradi" style="margin-top:3.5rem" aria-label="Sousední kapitoly"><a href="../kapitola-3/zkracena.html">← 3. Statické testování</a><a href="../kapitola-5/zkracena.html">5. Management testování →</a></nav>
+</main>
+<aside class="strom" aria-label="Obsah kapitoly"><h2>V této kapitole</h2><ol><li><a href="#prehled-technik-testovani">Přehled technik testování</a></li><li><a href="#rozdeleni-trid-ekvivalence">Rozdělení tříd ekvivalence</a></li><li><a href="#analyza-hranicnich-hodnot">Analýza hraničních hodnot</a></li><li><a href="#testovani-dle-rozhodovaci-tabulky">Testování dle rozhodovací tabulky</a></li><li><a href="#testovani-prechodu-stavu">Testování přechodů stavů</a></li><li><a href="#techniky-testovani-bile-skrinky">Techniky testování bílé skříňky</a></li><li><a href="#vyznam-testovani-bile-skrinky">Význam testování bílé skříňky</a></li><li><a href="#odhadovani-chyb">Odhadování chyb</a></li><li><a href="#pruzkumne-testovani">Průzkumné testování</a></li><li><a href="#testovani-zalozene-na-kontrolnich-seznamech">Testování založené na kontrolních seznamech</a></li><li><a href="#pristupy-k-testovani-zalozene-na-spolupraci">Přístupy k testování založené na spolupráci</a></li><li><a href="#spolecne-psani-uzivatelskych-scenaru">Společné psaní uživatelských scénářů</a></li><li><a href="#akceptacni-kriteria">Akceptační kritéria</a></li><li><a href="#vyvoj-rizeny-akceptacnimi-testy">Vývoj řízený akceptačními testy</a></li><li><a href="#nejdulezitejsi-body-k-zapamatovani">Nejdůležitější body k zapamatování</a></li></ol></aside>
+</div>
+</div>
+<footer class="paticka">
+  <div class="paticka-vnitrek">
+    <p><strong>Neoficiální studijní materiál.</strong> Tento web není produktem ani publikací ISTQB® ani CaSQB.
+    ISTQB® je registrovaná ochranná známka International Software Testing Qualifications Board.
+    Texty jsou vlastním zpracováním autora vytvořeným při přípravě na zkoušku; oficiální sylabus,
+    slovník a vzorové zkoušky si stáhněte přímo u certifikační autority.</p>
+    <p>Ke zkoušce vždy platí znění oficiálního sylabu CTFL v4.0. Doplněné informace na tomto webu
+    slouží k porozumění a k praxi, nikoli jako zdroj správných odpovědí u zkoušky.</p>
+    <ul>
+      <li><a href="https://casqb.org/ke-stazeni" target="_blank" rel="noopener noreferrer">CaSQB — dokumenty ke stažení</a></li>
+      <li><a href="https://casqb.org/certifikace/zkousky" target="_blank" rel="noopener noreferrer">CaSQB — registrace ke zkoušce</a></li>
+      <li><a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/" target="_blank" rel="noopener noreferrer">ISTQB — CTFL v4.0</a></li>
+      <li><a href="https://glossary.istqb.org" target="_blank" rel="noopener noreferrer">Slovník ISTQB</a></li>
+      <li><a href="../zdroje.html">Zdroje a citace</a></li>
+    </ul>
+  </div>
+</footer>
+<script src="../assets/skript.js"></script>
+</body>
+</html>

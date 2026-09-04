@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="cs" data-tema="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2. Testování v průběhu životního cyklu — Zkrácená verze | ISTQB CTFL v4.0</title>
+<meta name="description" content="Zkrácená verze kapitoly 2 sylabu ISTQB CTFL v4.0: Testování v průběhu životního cyklu vývoje softwaru. Jen to, co je nutné znát ke zkoušce. Bez odboček, k rychlému opakování.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../assets/styl.css">
+<script>
+/* Nastaví uložený režim ještě před vykreslením, aby stránka neproblikla. */
+(function(){try{var t=localStorage.getItem('istqb-tema');if(t){document.documentElement.setAttribute('data-tema',t);}}catch(e){}})();
+</script>
+</head>
+<body data-kapitola="2">
+<a class="preskocit" href="#text">Přeskočit na text</a>
+<div class="postup" aria-hidden="true"></div>
+<header class="hlavicka">
+  <div class="hlavicka-vnitrek">
+    <a class="znacka" href="../index.html">ISTQB CTFL v4.0 <span>česká studijní příručka</span></a>
+    <nav class="navigace" aria-label="Hlavní navigace">
+      <a href="../index.html">Úvod</a>
+      <span class="skupina" data-skupina>
+        <a href="../kapitoly.html" class="zvyraznit" aria-current="page">Kapitoly</a>
+        <ul class="podmenu" id="podmenu-kapitoly" aria-label="Seznam kapitol"><li><a href="../kapitola-1/zkracena.html"><b>1</b> Základy testování</a></li><li><a href="../kapitola-2/zkracena.html" aria-current="page"><b>2</b> Testování v průběhu životního cyklu</a></li><li><a href="../kapitola-3/zkracena.html"><b>3</b> Statické testování</a></li><li><a href="../kapitola-4/zkracena.html"><b>4</b> Testovací analýza a návrh testů</a></li><li><a href="../kapitola-5/zkracena.html"><b>5</b> Management testování</a></li><li><a href="../kapitola-6/zkracena.html"><b>6</b> Testovací nástroje</a></li></ul>
+      </span>
+      <a href="../zdroje.html">Zdroje</a>
+      <a href="../zkouska.html" class="brzy">Zkouška <em>brzy</em></a>
+      <button type="button" class="prepinac-tema" data-prepinac-tema>Tmavý režim</button>
+    </nav>
+  </div>
+</header>
+<div class="stranka">
+<div class="layout">
+<main>
+<div class="zahlavi">
+  <p class="drobky">Kapitola 2 · Zkrácená verze</p>
+  <h1>Kapitola druhá: Testování v průběhu životního cyklu vývoje softwaru</h1>
+  <p class="podtitul">Zkrácená verze pro opakování – ISTQB CTFL, verze čtyři nula jedna</p>
+  <ul class="meta"><li>2 124 slov</li><li>≈ 12 min čtení</li><li>≈ 15 min poslechu</li><li>13 oddílů</li><li>130 min výuky podle sylabu</li></ul>
+</div>
+<nav class="varianty" aria-label="Varianta zpracování kapitoly 2"><a href="vyklad.html">Plný výklad</a><a href="zkracena.html" aria-current="page">Zkrácená verze</a><a href="otazky.html">Otázky a odpovědi</a></nav>
+
+<article class="text" id="text">
+<p>Toto je zkrácená verze druhé kapitoly učebních osnov. Obsahuje jen to, co je nutné znát ke zkoušce, bez příkladů a bez doplňujících informací. Je určena k opakovanému poslechu. Plný výklad najdete v samostatném dokumentu.</p>
+<h2 id="modely-zivotniho-cyklu-vyvoje-softwaru">Modely životního cyklu vývoje softwaru<a class="kotva" href="#modely-zivotniho-cyklu-vyvoje-softwaru" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Model životního cyklu vývoje softwaru, zkráceně S D L C, je zobecněný proces vývoje softwaru. Určuje, jak spolu logicky i chronologicky souvisí různé fáze vývoje a typy činností.</p>
+<p>Kategorie modelů jsou tři. Sekvenční modely, kam patří vodopádový model a V model. Iterativní modely, kam patří spirálový model a prototypování. A inkrementální modely, jejichž příkladem je Rational Unified Process.</p>
+<p>Podrobnější metody a agilní postupy jsou vývoj řízený akceptačními testy A T D D, vývoj řízený chováním B D D, návrh řízený doménou D D D, extrémní programování X P, vývoj řízený užitnými vlastnostmi F D D, Kanban, Lean I T, Scrum a vývoj řízený testováním T D D.</p>
+<h2 id="vliv-zivotniho-cyklu-na-testovani">Vliv životního cyklu na testování<a class="kotva" href="#vliv-zivotniho-cyklu-na-testovani" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Aby bylo testování úspěšné, musí být přizpůsobeno modelu S D L C. Volba modelu má dopad na pět věcí. Na rozsah a načasování testovacích činností, tedy na úrovně testování a typy testů. Na úroveň detailu testovací dokumentace. Na volbu technik testování a přístupu k testování. Na rozsah automatizace testů. A na role a zodpovědnosti testerů.</p>
+<p>V sekvenčních modelech se testeři v počátečních fázích účastní revizí požadavků, testovací analýzy a návrhu testů. Protože spustitelný kód vzniká až později, nelze v počátečních fázích používat techniky dynamického testování.</p>
+<p>V iterativních a inkrementálních modelech je výsledkem každé iterace funkční prototyp nebo přírůstek produktu, takže v každé iteraci lze provést statické i dynamické testování ve všech úrovních. Časté dodávání vyžaduje rychlou zpětnou vazbu a rozsáhlé regresní testování.</p>
+<p>Agilní vývoj předpokládá změnu v průběhu projektu. Proto se upřednostňuje stručnější dokumentace a naopak rozsáhlá automatizace testů. Většina manuálních testů se provádí technikami založenými na zkušenostech, které nevyžadují rozsáhlou testovací analýzu a návrh testů.</p>
+<h2 id="osvedcene-testovaci-postupy-nezavisle-na-modelu">Osvědčené testovací postupy nezávislé na modelu<a class="kotva" href="#osvedcene-testovaci-postupy-nezavisle-na-modelu" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Ke každé vývojové činnosti existuje odpovídající testovací činnost, takže všechny vývojové činnosti podléhají řízení kvality.</p>
+<p>Existují různé úrovně testování a každá má své specifické, někdy odlišné cíle. Tím je testování přiměřeně detailní a zároveň bez nadbytečností.</p>
+<p>Testovací analýza a návrh testů pro danou úroveň začíná během odpovídající vývojové fáze, čímž je splněn princip včasného testování.</p>
+<p>Jakmile je k dispozici pracovní verze libovolného pracovního produktu, jsou do jeho revize zapojeni testeři, což podporuje princip shift left.</p>
+<h2 id="vyvoj-rizeny-testovanim">Vývoj řízený testováním<a class="kotva" href="#vyvoj-rizeny-testovanim" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>T D D, A T D D a B D D jsou podobné přístupy, kdy jsou testy definovány jako prostředek pro řízení vývoje. Všechny jsou aplikací principu včasného testování a principu shift left, protože testy jsou definovány před tvorbou kódu, a všechny podporují iterativní model vývoje.</p>
+<p>Vývoj řízený testy, tedy T D D. Psaní kódu je řízeno pomocí testovacích případů místo rozsáhlého návrhu softwaru. Nejprve jsou sepsány testy a až následně kód tak, aby testům vyhovoval. Testy a kód mohou, ale nemusí být refaktorovány.</p>
+<p>Vývoj řízený akceptačními testy, tedy A T D D. Odvozuje testy z akceptačních kritérií jako součást procesu návrhu systému. Část aplikace je vytvořena tak, aby vyhovovala testům napsaným před vývojem.</p>
+<p>Vývoj řízený chováním, tedy B D D. Požadované chování je popsáno testovacími případy v jednoduché formě přirozeného jazyka srozumitelného pro zainteresované strany, obvykle ve formátu Given, When, Then. Testovací případy by měly být následně automaticky převedeny do spustitelných testů.</p>
+<p>U všech tří přístupů mohou být testy automatizovány, ale nemusí.</p>
+<h2 id="devops-a-testovani">DevOps a testování<a class="kotva" href="#devops-a-testovani" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>DevOps je přístup postavený na synergii mezi vývojem, kam patří i testování, a provozem, s cílem dosahovat společných cílů. Vyžaduje změnu kultury v organizaci tak, aby se mezery mezi těmito jednotkami překlenuly a přistupovalo se k nim se stejnou důležitostí.</p>
+<p>DevOps podporuje autonomii týmu, rychlou zpětnou vazbu, integrované sady nástrojů a technické přístupy jako průběžná integrace C I a průběžné dodávání C D. To umožňuje vytvářet, testovat a vydávat kvalitní kód rychleji prostřednictvím definované DevOps pipeline.</p>
+<p>Výhod z pohledu testování je šest. Rychlá zpětná vazba o kvalitě nového kódu a o nepříznivém vlivu na dosavadní funkčnost. Podpora principu shift left díky průběžné integraci, protože motivuje vývojáře k psaní kvalitního kódu podporovaného testováním komponent a statickou analýzou. Automatizované zpracování usnadňující vytváření stabilních testovacích prostředí. Vyšší důraz na nefunkcionální charakteristiky kvality. Snížení potřeby opakovaného manuálního testování. A minimalizace rizika regrese díky rozsahu automatizovaných regresních testů.</p>
+<p>Rizika jsou tři. Musí být definovány a zavedeny DevOps pipeline. Musí být zavedeny a udržovány nástroje C I a C D. A automatizované testy vyžadují dodatečné investice a mohou být obtížné na vytvoření i udržování.</p>
+<p>Přestože DevOps předpokládá vyšší rozsah automatizace, nelze opomíjet manuální testování, zejména z pohledu koncového uživatele.</p>
+<h2 id="princip-shift-left">Princip shift left<a class="kotva" href="#princip-shift-left" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Princip včasného testování je někdy označován jako shift left, tedy posun doleva na časové ose, kdy je testování prováděno v dřívějších fázích životního cyklu. Shift left doporučuje začít s testováním dříve, ale neznamená, že by testování v pozdějších fázích mělo být zanedbáváno.</p>
+<p>Osvědčených postupů demonstrujících shift left je pět. Revidování specifikací z pohledu testerů, které nachází nejednoznačnosti, neúplnosti a nesrovnalosti. Psaní testovacích případů před napsáním kódu a spuštění kódu v sadě testovacího vybavení během vývoje. Používání průběžné integrace, anebo lépe průběžného dodávání, kvůli rychlé zpětné vazbě a automatizovaným testům komponent uloženým v repozitáři společně s kódem. Spouštění statické analýzy zdrojového kódu před dynamickým testováním nebo jako součást automatizovaného procesu. A provádění nefunkcionálních testů už v úrovni testování komponent, pokud je to možné.</p>
+<p>Zavedení shift left může v počátečních fázích znamenat riziko navýšení nákladů ve formě víceprací nebo proškolení týmu, v pozdějších fázích naopak šetří pracnost a náklady. Je důležité, aby o užitečnosti konceptu byli přesvědčeni všichni zástupci zainteresovaných stran a podporovali jej.</p>
+<h2 id="retrospektivy-a-zlepsovani-procesu">Retrospektivy a zlepšování procesů<a class="kotva" href="#retrospektivy-a-zlepsovani-procesu" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Retrospektivy se konají na konci projektu nebo iterace, při dosažení milníku, nebo ad hoc. Načasování a organizace závisí na konkrétním modelu S D L C. Účastní se jich nejen testeři, ale také vývojáři, architekti, vlastníci produktů a byznysoví analytici.</p>
+<p>Probírají se tři otázky. Co bylo úspěšné a mělo by být zachováno. Co se nepovedlo a dalo by se zlepšit. A jak implementovat návrhy na zlepšení a zajistit v budoucnu trvalou úspěšnost.</p>
+<p>Výstupy mají být zaznamenány a obvykle jsou součástí souhrnného reportu z testování. Retrospektivy jsou pro kontinuální zlepšování kritické a je důležité, aby byla všechna doporučená opatření sledována a dodržována.</p>
+<p>Výhod z pohledu testování je pět. Zvyšování efektivity a účinnosti testů. Zvyšování kvality testwaru. Stmelování týmu a vzájemné učení. Zlepšování kvality testovací báze. A zlepšování spolupráce mezi vývojem a testováním.</p>
+<h2 id="urovne-testovani-a-typy-testu">Úrovně testování a typy testů<a class="kotva" href="#urovne-testovani-a-typy-testu" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Úrovně testování jsou skupiny testovacích činností organizovaných a řízených společně. Každá úroveň je instancí procesu testování tvořenou činnostmi ve vztahu k softwaru v dané fázi vývoje, od komponent po celé systémy či systémy systémů.</p>
+<p>V sekvenčních modelech jsou úrovně často definovány tak, že výstupní kritéria jedné úrovně jsou součástí vstupních kritérií další. V iterativních modelech se úrovně mohou v čase překrývat a vývojové činnosti mohou překlenout více úrovní.</p>
+<p>Typy testů jsou skupiny testovacích činností souvisejících se specifickými kvalitativními charakteristikami, přičemž většinu těchto činností lze provádět v libovolné úrovni testování.</p>
+<h2 id="pet-urovni-testovani">Pět úrovní testování<a class="kotva" href="#pet-urovni-testovani" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Testování komponent, označované také jako jednotkové testování, se zaměřuje na testování izolovaných komponent. Často je potřebný speciální software, například sady testovacího vybavení nebo frameworky pro jednotkové testování. Obvykle je provádějí vývojáři ve svých vývojových prostředích.</p>
+<p>Integrační testování komponent se zaměřuje na testování rozhraní a interakcí mezi komponentami. Je silně závislé na zvolené integrační strategii, například zdola nahoru, shora dolů nebo velký třesk.</p>
+<p>Systémové testování se zaměřuje na celkové chování a schopnosti celého systému nebo produktu, často včetně funkcionálního testování komplexních úkolů a nefunkcionálního testování kvalitativních charakteristik. Vychází ze specifikací systému a může být prováděno nezávislým testovacím týmem. Lze využívat simulace subsystémů.</p>
+<p>Systémové integrační testování se zaměřuje na testování rozhraní mezi testovaným systémem a dalšími systémy nebo externími službami. Vyžaduje vhodné testovací prostředí, pokud možno podobné provoznímu.</p>
+<p>Akceptační testování se zaměřuje na prokázání připravenosti systému k nasazení do produkčního prostředí a validuje, že systém splňuje byznysové potřeby uživatele. V ideálním případě by je měli provádět koncoví uživatelé. Nejčastější formy jsou uživatelské akceptační testování U A T, provozní akceptační testování, smluvní a regulatorní akceptační testování, alfa testování a beta testování.</p>
+<p>Aby nedocházelo k překrývání činností mezi úrovněmi, odlišují se úrovně definicí atributů. Nejdůležitější atributy jsou testovaný objekt, cíle testování, testovací báze, defekty a selhání, a přístup a zodpovědnosti.</p>
+<h2 id="ctyri-typy-testu">Čtyři typy testů<a class="kotva" href="#ctyri-typy-testu" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Funkcionální testování ověřuje funkcionality, které by komponenta nebo systém měl vykonávat, tedy to, co má systém dělat. Hlavním cílem je kontrola funkcionální úplnosti, funkcionální správnosti a funkcionální vhodnosti.</p>
+<p>Nefunkcionální testování vyhodnocuje nefunkcionální charakteristiky a odpovídá na otázku, jak dobře se systém chová. Seznam charakteristik je v normě I S O lomítko I E C dvacet pět tisíc deset. Jsou to výkonnostní efektivita, kompatibilita, schopnost interakce, dříve použitelnost, bezporuchovost, bezpečnost ve smyslu security, udržovatelnost, flexibilita, dříve přenositelnost, a bezpečí ve smyslu safety.</p>
+<p>Mnoho nefunkcionálních testů je odvozeno z funkcionálních. Oba typy používají stejné testovací případy, ale nefunkcionální kontrolují, zda je při dané funkcionalitě splněno také nefunkcionální omezení. Pozdní odhalení nefunkcionálního defektu může představovat vážnou hrozbu pro úspěch projektu. Někdy je vhodné začít s nefunkcionálním testováním už v rané fázi, například v revizích nebo při testování komponent, a někdy je nutné velmi specifické testovací prostředí, například laboratoř pro testování použitelnosti.</p>
+<p>Testování černé skříňky je založeno na specifikaci a odvozuje testy z dokumentace testovaného objektu, která nesouvisí s jeho interní strukturou. Hlavním cílem je kontrola chování systému podle jeho specifikace.</p>
+<p>Testování bílé skříňky je založeno na struktuře a odvozuje testy z implementace systému nebo jeho vnitřní struktury, tedy z kódu, architektury, pracovních toků nebo datových toků. Hlavním cílem je dosahovat dostatečného pokrytí testované struktury.</p>
+<p>Všechny čtyři typy testů lze aplikovat ve všech úrovních testování, i když konkrétní implementace bude v každé úrovni odlišná.</p>
+<h2 id="konfirmacni-a-regresni-testovani">Konfirmační a regresní testování<a class="kotva" href="#konfirmacni-a-regresni-testovani" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Změny v komponentě nebo systému mají obvykle za cíl rozšíření přidáním nové funkcionality nebo opravu odstraněním defektu. Následné testování má zahrnovat jak konfirmační, tak regresní testování.</p>
+<p>Konfirmační testování ověřuje, zda byl původní defekt úspěšně opraven. Podle rizika lze provést všechny testy, které dříve kvůli defektu selhaly, nebo přidat nové testy pokrývající změny potřebné k opravě. Při nedostatku času či prostředků může být omezeno na provedení kroků reprodukujících původní selhání a kontrolu, zda k selhání nedochází.</p>
+<p>Regresní testování ověřuje, zda nedošlo k nežádoucím dopadům po realizovaných změnách, včetně již potvrzených oprav. Nežádoucí dopady mohou ovlivnit změněnou komponentu, jiné komponenty téhož systému i jiné propojené systémy, a mohou souviset i s prostředím. Doporučuje se nejprve provést analýzu dopadu, která ukáže, které části softwaru by mohly být ovlivněny, a určit tak rozsah regresního testování.</p>
+<p>Sady regresních testů se spouštějí mnohokrát a jejich počet roste s každou iterací nebo vydáním, proto jsou vhodným kandidátem na automatizaci. Automatizace by měla začít už v raných fázích projektu a automatizované regresní testy je vhodné zařadit do C I pipeline. Regresní testy mohou být vykonávány v různých úrovních testování.</p>
+<p>Konfirmační nebo regresní testování je nutno použít v těch úrovních testování, kde došlo k opravám defektů nebo změnám.</p>
+<h2 id="testovani-udrzby">Testování údržby<a class="kotva" href="#testovani-udrzby" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Druhy údržby mají různé cíle, například opravu, adaptaci na změnu prostředí, zlepšení výkonu nebo zlepšení udržovatelnosti. Údržba může být plánovaná i neplánovaná, tedy hotfix.</p>
+<p>Před provedením změny lze provést analýzu dopadu, která pomůže rozhodnout, zda by změna měla být provedena, a to na základě potenciálních důsledků v jiných oblastech systému.</p>
+<p>Testování změn systému, který je již v provozu, zahrnuje vyhodnocení úspěšnosti implementace změny i kontrolu možné regrese v nezměněných částech systému, což je obvykle většina systému.</p>
+<p>Rozsah testování údržby závisí na třech faktorech. Na míře rizika změny, na velikosti stávajícího systému a na rozsahu změny.</p>
+<p>Spouštěče údržby a testování údržby jsou tři. První jsou úpravy, tedy plánovaná vylepšení, opravné změny a hotfixy. Druhé jsou aktualizace nebo migrace provozního prostředí, kdy je nutné provést testy spojené s novým prostředím a změněným softwarem, případně testy konverze dat při migraci dat z jiné aplikace. Třetí je vyřazení aplikace z provozu na konci životnosti, kdy může být vhodné otestovat archivaci dat, zejména u dat s dlouhými lhůtami archivace, a také procesy obnovení a načtení po archivaci.</p>
+<h2 id="nejdulezitejsi-body-k-zapamatovani">Nejdůležitější body k zapamatování<a class="kotva" href="#nejdulezitejsi-body-k-zapamatovani" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Testování se přizpůsobuje životnímu cyklu, nikoli naopak.</p>
+<p>T D D vychází z testovacích případů, A T D D z akceptačních kritérií, B D D z přirozeného jazyka ve formátu Given, When, Then. Automatizace je u všech možná, ale není podmínkou.</p>
+<p>DevOps je především kulturní změna a nezbavuje projekt manuálního testování.</p>
+<p>Shift left znamená začít testovat dřív, nikoli přestat testovat později.</p>
+<p>Pět úrovní v pořadí: testování komponent, integrační testování komponent, systémové testování, systémové integrační testování, akceptační testování.</p>
+<p>Čtyři typy testů: funkcionální, nefunkcionální, černá skříňka, bílá skříňka. Libovolný typ lze použít v libovolné úrovni.</p>
+<p>Integrační testování komponent řeší rozhraní uvnitř systému, systémové integrační testování rozhraní mezi systémy.</p>
+<p>Konfirmační testování ověřuje opravu, regresní testování ověřuje nežádoucí dopady. Rozsah regresního testování určuje analýza dopadu.</p>
+<p>Spouštěče testování údržby jsou úpravy, migrace prostředí a vyřazení aplikace z provozu.</p>
+<p>Tím končí zkrácená verze druhé kapitoly.</p>
+</article>
+<nav class="naradi" style="margin-top:3.5rem" aria-label="Sousední kapitoly"><a href="../kapitola-1/zkracena.html">← 1. Základy testování</a><a href="../kapitola-3/zkracena.html">3. Statické testování →</a></nav>
+</main>
+<aside class="strom" aria-label="Obsah kapitoly"><h2>V této kapitole</h2><ol><li><a href="#modely-zivotniho-cyklu-vyvoje-softwaru">Modely životního cyklu vývoje softwaru</a></li><li><a href="#vliv-zivotniho-cyklu-na-testovani">Vliv životního cyklu na testování</a></li><li><a href="#osvedcene-testovaci-postupy-nezavisle-na-modelu">Osvědčené testovací postupy nezávislé na modelu</a></li><li><a href="#vyvoj-rizeny-testovanim">Vývoj řízený testováním</a></li><li><a href="#devops-a-testovani">DevOps a testování</a></li><li><a href="#princip-shift-left">Princip shift left</a></li><li><a href="#retrospektivy-a-zlepsovani-procesu">Retrospektivy a zlepšování procesů</a></li><li><a href="#urovne-testovani-a-typy-testu">Úrovně testování a typy testů</a></li><li><a href="#pet-urovni-testovani">Pět úrovní testování</a></li><li><a href="#ctyri-typy-testu">Čtyři typy testů</a></li><li><a href="#konfirmacni-a-regresni-testovani">Konfirmační a regresní testování</a></li><li><a href="#testovani-udrzby">Testování údržby</a></li><li><a href="#nejdulezitejsi-body-k-zapamatovani">Nejdůležitější body k zapamatování</a></li></ol></aside>
+</div>
+</div>
+<footer class="paticka">
+  <div class="paticka-vnitrek">
+    <p><strong>Neoficiální studijní materiál.</strong> Tento web není produktem ani publikací ISTQB® ani CaSQB.
+    ISTQB® je registrovaná ochranná známka International Software Testing Qualifications Board.
+    Texty jsou vlastním zpracováním autora vytvořeným při přípravě na zkoušku; oficiální sylabus,
+    slovník a vzorové zkoušky si stáhněte přímo u certifikační autority.</p>
+    <p>Ke zkoušce vždy platí znění oficiálního sylabu CTFL v4.0. Doplněné informace na tomto webu
+    slouží k porozumění a k praxi, nikoli jako zdroj správných odpovědí u zkoušky.</p>
+    <ul>
+      <li><a href="https://casqb.org/ke-stazeni" target="_blank" rel="noopener noreferrer">CaSQB — dokumenty ke stažení</a></li>
+      <li><a href="https://casqb.org/certifikace/zkousky" target="_blank" rel="noopener noreferrer">CaSQB — registrace ke zkoušce</a></li>
+      <li><a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/" target="_blank" rel="noopener noreferrer">ISTQB — CTFL v4.0</a></li>
+      <li><a href="https://glossary.istqb.org" target="_blank" rel="noopener noreferrer">Slovník ISTQB</a></li>
+      <li><a href="../zdroje.html">Zdroje a citace</a></li>
+    </ul>
+  </div>
+</footer>
+<script src="../assets/skript.js"></script>
+</body>
+</html>

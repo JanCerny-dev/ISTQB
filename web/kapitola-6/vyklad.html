@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="cs" data-tema="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6. Testovací nástroje — Plný výklad | ISTQB CTFL v4.0</title>
+<meta name="description" content="Plný výklad kapitoly 6 sylabu ISTQB CTFL v4.0: Testovací nástroje. Souvislý výklad celé kapitoly s doplňky nad rámec sylabu a příklady z praxe.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../assets/styl.css">
+<script>
+/* Nastaví uložený režim ještě před vykreslením, aby stránka neproblikla. */
+(function(){try{var t=localStorage.getItem('istqb-tema');if(t){document.documentElement.setAttribute('data-tema',t);}}catch(e){}})();
+</script>
+</head>
+<body data-kapitola="6">
+<a class="preskocit" href="#text">Přeskočit na text</a>
+<div class="postup" aria-hidden="true"></div>
+<header class="hlavicka">
+  <div class="hlavicka-vnitrek">
+    <a class="znacka" href="../index.html">ISTQB CTFL v4.0 <span>česká studijní příručka</span></a>
+    <nav class="navigace" aria-label="Hlavní navigace">
+      <a href="../index.html">Úvod</a>
+      <span class="skupina" data-skupina>
+        <a href="../kapitoly.html" class="zvyraznit" aria-current="page">Kapitoly</a>
+        <ul class="podmenu" id="podmenu-kapitoly" aria-label="Seznam kapitol"><li><a href="../kapitola-1/vyklad.html"><b>1</b> Základy testování</a></li><li><a href="../kapitola-2/vyklad.html"><b>2</b> Testování v průběhu životního cyklu</a></li><li><a href="../kapitola-3/vyklad.html"><b>3</b> Statické testování</a></li><li><a href="../kapitola-4/vyklad.html"><b>4</b> Testovací analýza a návrh testů</a></li><li><a href="../kapitola-5/vyklad.html"><b>5</b> Management testování</a></li><li><a href="../kapitola-6/vyklad.html" aria-current="page"><b>6</b> Testovací nástroje</a></li></ul>
+      </span>
+      <a href="../zdroje.html">Zdroje</a>
+      <a href="../zkouska.html" class="brzy">Zkouška <em>brzy</em></a>
+      <button type="button" class="prepinac-tema" data-prepinac-tema>Tmavý režim</button>
+    </nav>
+  </div>
+</header>
+<div class="stranka">
+<div class="layout">
+<main>
+<div class="zahlavi">
+  <p class="drobky">Kapitola 6 · Plný výklad</p>
+  <h1>Kapitola šestá: Testovací nástroje</h1>
+  <p class="podtitul">Plný výklad podle učebních osnov ISTQB Certified Tester Foundation Level, verze čtyři nula jedna</p>
+  <ul class="meta"><li>2 742 slov</li><li>≈ 16 min čtení</li><li>≈ 19 min poslechu</li><li>6 oddílů</li><li>20 min výuky podle sylabu</li></ul>
+</div>
+<nav class="varianty" aria-label="Varianta zpracování kapitoly 6"><a href="vyklad.html" aria-current="page">Plný výklad</a><a href="zkracena.html">Zkrácená verze</a><a href="otazky.html">Otázky a odpovědi</a></nav>
+
+<article class="text" id="text">
+<h2 id="jak-tento-text-pouzivat">Jak tento text používat<a class="kotva" href="#jak-tento-text-pouzivat" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Toto je plný výklad šesté a poslední kapitoly učebních osnov ISTQB Certified Tester Foundation Level. Kapitola se jmenuje Testovací nástroje a učební osnovy pro ni vyhrazují pouhých dvacet minut výuky. Je to zdaleka nejkratší kapitola celého sylabu.</p>
+<p>Krátkost je tady sama o sobě informací. ISTQB záměrně nechce, aby se ze základní úrovně stalo školení na konkrétní nástroje. Nástroje se mění každé dva roky, principy testování ne. Proto celá kapitola obsahuje jen dva studijní cíle a žádný z nich není na úrovni K tři.</p>
+<p>Protože je samotný text sylabu k této kapitole velmi stručný, je v tomto výkladu poměr doplněných informací vyšší než u předchozích kapitol. Bez nich by ta látka zůstala jen suchým seznamem. Vše nad rámec sylabu je jako vždy jasně odlišeno.</p>
+<p>Rozlišuji tři druhy obsahu. Běžný výklad odpovídá obsahu učebních osnov a je psán černě. Pasáže psané modře jsou doplněné informace, které jsem dohledal nad rámec sylabu z aktuálních zdrojů, a vždy je uvádí věta Doplněná informace nad rámec sylabu. Pasáže psané zeleně jsou praktické příklady, které v sylabu nejsou, a uvádí je věta Příklad z praxe. Konec každé takové pasáže je vždy vysloven.</p>
+<p>Na konci textu navíc najdete shrnutí celého sylabu a doporučení k přípravě na zkoušku, protože touto kapitolou učební osnovy končí.</p>
+<h2 id="co-se-v-teto-kapitole-naucite">Co se v této kapitole naučíte<a class="kotva" href="#co-se-v-teto-kapitole-naucite" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Šestá kapitola má pouze dva studijní cíle. Vysvětlit, jak různé typy testovacích nástrojů podporují testování, což je na úrovni K dvě. A vybavit si výhody a rizika automatizace testů, což je na úrovni K jedna.</p>
+<p>Klíčové slovo je jediné, a to automatizace testů.</p>
+<p>Přestože je kapitola nejkratší, na zkoušce se z ní otázky objevují. Nepodceňte ji, protože obě části obsahují konkrétní výčty, které se dobře zkoušejí, zejména seznam výhod a rizik automatizace.</p>
+<h2 id="cast-sest-tecka-jedna-nastroje-pro-podporu-testovani">Část šest tečka jedna: Nástroje pro podporu testování<a class="kotva" href="#cast-sest-tecka-jedna-nastroje-pro-podporu-testovani" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Toto je studijní cíl F L šest tečka jedna tečka jedna na úrovni K dvě. Máte umět vysvětlit, jak různé typy testovacích nástrojů podporují testování. Zdůrazňuji slovo jak. Nestačí typy nástrojů vyjmenovat, musíte umět říct, k čemu slouží.</p>
+<p>Úvodní věta zní, že testovací nástroje podporují a usnadňují mnoho testovacích aktivit. Sylabus poté vyjmenovává devět kategorií nástrojů a u každé uvádí, čím pomáhá. Projdeme si je jednu po druhé.</p>
+<p>První kategorií jsou nástroje pro management testování. Ty zvyšují efektivitu testování usnadněním správy životního cyklu vývoje softwaru, požadavků, testů, defektů a konfigurací. Všimněte si té pětice věcí, které spravují. Právě do této kategorie patří nástroje, ve kterých se v praxi eviduje testovací případ, propojuje se s požadavkem a zakládá se defekt. Je to tedy ta kategorie, která technicky umožňuje trasovatelnost z části jedna tečka čtyři tečka čtyři.</p>
+<p>Druhou kategorií jsou nástroje pro statické testování. Ty podporují provádění revizí a statické analýzy, tedy obou větví statického testování ze třetí kapitoly.</p>
+<p>Třetí kategorií jsou nástroje pro návrh a implementaci testů. Ty usnadňují vytváření testovacích případů, testovacích dat a testovacích procedur. Tato kategorie odpovídá činnostem návrh testů a implementace testování z první kapitoly.</p>
+<p>Čtvrtou kategorií jsou nástroje pro provádění testů a měření jejich pokrytí. Ty usnadňují automatizované provádění testů a měření pokrytí. Právě sem patří nástroje pro pokrytí příkazů a větví ze čtvrté kapitoly.</p>
+<p>Pátou kategorií jsou nástroje pro nefunkcionální testování. A tady sylabus přidává velmi důležité zdůvodnění, které si zapamatujte. Umožňují provádět nefunkcionální testování, které je obtížné nebo nemožné provést manuálně. Tohle je jediná kategorie, u které sylabus říká, že bez nástroje to prostě nejde. Nemůžete ručně simulovat pět tisíc souběžných uživatelů.</p>
+<p>Šestou kategorií jsou nástroje DevOps. Ty podporují pipeline v DevOps, sledování pracovních toků, procesy automatizovaného sestavování a průběžnou integraci a dodávání.</p>
+<p>Sedmou kategorií jsou nástroje pro spolupráci. Ty usnadňují komunikaci.</p>
+<p>Osmou kategorií jsou nástroje podporující škálovatelnost a standardizaci nasazení. Sylabus uvádí jako příklady virtuální počítače a nástroje pro práci s kontejnery. Kontejner je technologie, která umožňuje zabalit aplikaci i s jejím prostředím tak, aby běžela všude stejně. To je pro testování zásadní, protože právě rozdíly mezi prostředími jsou nejčastější příčinou toho, že něco funguje u mě, ale ne u vás.</p>
+<p>A devátou kategorií je podle sylabu jakýkoli jiný nástroj, který pomáhá při testování. Sylabus dává konkrétní a záměrně banální příklad, totiž že tabulkový procesor může být v kontextu testování považován za testovací nástroj.</p>
+<p>Tuhle devátou kategorii nepřehlédněte, protože je to typická zkoušková chytačka. Testovací nástroj není jen specializovaný software s licencí za statisíce. Je to cokoli, co při testování pomáhá, tedy i tabulka, sdílený dokument nebo poznámkový blok.</p>
+<p>Pro zapamatování si všech devíti kategorií si všimněte, že jich šest odpovídá činnostem, které už znáte z předchozích kapitol. Management testování, statické testování, návrh a implementace, provádění a pokrytí, nefunkcionální testování a DevOps. Zbylé tři jsou podpůrné, tedy spolupráce, škálovatelnost nasazení a cokoli dalšího.</p>
+<aside class="vsuvka vsuvka--praxe" data-stitek="Příklad z praxe" aria-label="Příklad z praxe"><p>Příklad z praxe. Podívejme se, jak vypadá sada nástrojů jednoho běžného týmu a do kterých kategorií patří. Tým eviduje požadavky, testovací případy a defekty v jednom systému, což je nástroj pro management testování. Při odeslání kódu se automaticky spustí kontrola kvality kódu, což je nástroj pro statické testování. Automatizované testy jsou psány ve frameworku pro testování rozhraní a měří se u nich pokrytí, což jsou nástroje pro provádění testů a měření pokrytí. Jednou týdně běží zátěžový test, který simuluje dva tisíce uživatelů, což je nástroj pro nefunkcionální testování. Všechno spouští pipeline, což je nástroj DevOps. Testovací prostředí se staví z kontejnerů, což je nástroj pro škálovatelnost a standardizaci nasazení. Tým se domlouvá v chatu a na sdílené tabuli, což jsou nástroje pro spolupráci. A tester si vede tabulku průzkumných relací v tabulkovém procesoru, což je podle sylabu také testovací nástroj. Osm kategorií u jednoho týmu, přičemž většinu z nich by nikdo spontánně nenazval testovacím nástrojem. Konec příkladu.</p></aside>
+<h2 id="cast-sest-tecka-dva-vyhody-a-rizika-automatizace-testu">Část šest tečka dva: Výhody a rizika automatizace testů<a class="kotva" href="#cast-sest-tecka-dva-vyhody-a-rizika-automatizace-testu" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Toto je studijní cíl F L šest tečka dva tečka jedna na úrovni K jedna. Máte si vybavit výhody a rizika automatizace testů. Protože jde o K jedna, jde o memorování dvou seznamů, ale je dobré rozumět i tomu, proč jsou tam jednotlivé položky.</p>
+<p>Sylabus začíná varováním, které nastavuje tón celé části. Prosté pořízení nástroje není zárukou úspěchu. Každý nový nástroj vyžaduje určitou pracnost pro dosažení reálných a trvalých přínosů, například na zavedení nástroje, jeho údržbu a školení. Existují také určitá rizika, u kterých je vhodné provést analýzu a zmírnění jejich dopadu.</p>
+<p>Zapamatujte si tu trojici nákladů, tedy zavedení, údržba a školení. A všimněte si, že sylabus doporučuje na rizika automatizace použít stejný postup jako na jakákoli jiná rizika z páté kapitoly, tedy analýzu a zmírnění.</p>
+<p>Nyní k výhodám. Sylabus jich uvádí šest a u každé dává konkrétní příklady.</p>
+<p>První výhodou je úspora času snížením množství opakované manuální práce. Sylabus dává čtyři příklady, a to provádění regresních testů, opětovné zadávání stejných testovacích dat, porovnávání očekávaných výsledků se skutečnými a kontroly kódu podle daného standardu programování.</p>
+<p>Druhou výhodou je předcházení lidských chyb díky vyšší konzistenci a opakovatelnosti. Příklady jsou, že testy jsou důsledně odvozovány z požadavků, testovací data jsou vytvářena systematicky a testy jsou prováděny nástrojem ve stále stejném pořadí se stejnou frekvencí.</p>
+<p>Třetí výhodou je objektivnější posouzení, například pokrytí, a provádění opatření, která jsou pro člověka příliš komplikovaná. Tady se vracíme ke čtvrté kapitole, kde se říká, že bílá skříňka poskytuje objektivní měření pokrytí. Bez nástroje ho ovšem nezískáte.</p>
+<p>Čtvrtou výhodou je snazší přístup k informacím o testování pro podporu managementu testování a reportování testů. Příklady jsou statistiky, grafy a souhrnná data o průběhu testů, míře selhání a délce provádění testů. Tato výhoda přímo napojuje šestou kapitolu na metriky a reporty z části pět tečka tři.</p>
+<p>Pátou výhodou je zkrácení doby provádění testů vedoucí k dřívější detekci defektů, rychlejší zpětné vazbě a rychlejšímu uvedení na trh.</p>
+<p>A šestou výhodou je úspora času testerů, který je možno využít na návrh nových, důkladnějších a efektivnějších testů.</p>
+<p>Zastavím se u té šesté, protože je nejdůležitější pro pochopení, čemu automatizace vlastně slouží. Automatizace nenahrazuje testera. Uvolňuje mu ruce od opakované práce, aby mohl dělat to, co stroj neumí, tedy vymýšlet nové testy. Tohle je přímé pokračování myšlenky z první kapitoly, že testování je hlavně intelektuální činnost.</p>
+<p>Nyní k rizikům. Sylabus jich uvádí osm a je to nejlépe zkoušitelný výčet celé kapitoly.</p>
+<p>Prvním rizikem jsou nerealistická očekávání od daného nástroje, včetně jeho funkcionality a snadnosti použití.</p>
+<p>Druhým rizikem jsou nepřesné odhady času, nákladů a úsilí potřebného k zavedení nástroje, udržování testovacích skriptů a změně stávajícího procesu manuálního testování.</p>
+<p>Třetím rizikem je používání nástroje v situacích, kdy je manuální testování vhodnější.</p>
+<p>Čtvrtým rizikem je přílišné spoléhání se na nástroj, například ve smyslu ignorování potřeby kritického myšlení člověka.</p>
+<p>Pátým rizikem je závislost na dodavateli nástroje, který může ukončit činnost, přestat vyvíjet nástroj, prodat nástroj jinému dodavateli nebo poskytovat nedostatečnou podporu, tedy reakce na dotazy, aktualizace a opravy defektů.</p>
+<p>Šestým rizikem je používání nástroje s otevřeným zdrojovým kódem, jehož vývoj může být zastaven nebo jehož vnitřní komponenty mohou vyžadovat poměrně časté aktualizace a další vývoj.</p>
+<p>Sedmým rizikem je nekompatibilita technologie automatizace testování s technologiemi pro vývoj.</p>
+<p>A osmým rizikem je výběr nevhodného nástroje, který nesplňuje regulatorní požadavky nebo bezpečnostní normy.</p>
+<p>Všimněte si, že páté a šesté riziko tvoří dvojici a jsou to dvě strany téže mince. U komerčního nástroje riskujete, že dodavatel zkrachuje, nástroj prodá nebo přestane podporovat. U nástroje s otevřeným zdrojovým kódem riskujete, že jeho vývoj skončí nebo že si ho budete muset udržovat sami. Neexistuje tedy varianta bez rizika, jen dvě různá rizika.</p>
+<p>A všimněte si také, že tři z osmi rizik nejsou technická. Nerealistická očekávání, nepřesné odhady a přílišné spoléhání se na nástroj jsou rizika lidská a organizační. To odpovídá tomu, co sylabus říká hned v úvodní větě, tedy že prosté pořízení nástroje není zárukou úspěchu.</p>
+<aside class="vsuvka vsuvka--nad-ramec" data-stitek="Nad rámec sylabu" aria-label="Nad rámec sylabu"><p>Doplněná informace nad rámec sylabu. Sylabus říká, že prosté pořízení nástroje není zárukou úspěchu, ale neuvádí, jak často automatizace skutečně selhává. Průmyslové přehledy jsou v tom velmi jednotné a čísla stojí za znalost. Uvádí se, že sedmdesát až sedmdesát tři procent projektů automatizace testů nedosáhne slibované návratnosti a že významná část je do osmnácti měsíců opuštěna. Poradenská společnost McKinsey uvádí u automatizačních iniciativ obecně, že třicet až padesát procent z nich nepřinese očekávané výsledky. Zásadní je ale příčina. Nejčastěji uváděným důvodem selhání není špatný nástroj, ale podceněná údržba. Zpráva World Quality Report od společnosti Capgemini uvádí, že až padesát procent rozpočtu na automatizaci pohltí údržba skriptů, nikoli tvorba nového pokrytí. Automatizace navíc neselhává rychle, ale pomalu, typicky během šesti až osmnácti měsíců, jak náklady na údržbu postupně přerostou hodnotu, kterou sada přináší. Přesně tohle sylabus popisuje ve druhém riziku, když mluví o nepřesných odhadech úsilí potřebného k udržování testovacích skriptů. Konec doplněné informace.</p><p>Doplněná informace nad rámec sylabu. Existuje jeden konkrétní problém automatizace, který sylabus nezmiňuje vůbec, přestože je v praxi tím nejhorším nepřítelem automatizovaných sad. Jsou to takzvané nespolehlivé testy, anglicky flaky tests, čti flejky tests. Je to test, který při opakovaném spuštění nad nezměněným kódem někdy projde a jindy neprojde. Data od velkých firem ukazují, jak rozsáhlý ten problém je. Google zveřejnil, že přibližně šestnáct procent všech jeho testů vykazuje určitou míru nespolehlivosti a že drtivá většina selhání v jeho průběžné integraci nepochází ze skutečných defektů, ale právě z nespolehlivých testů. Ve studiích na projektu Chromium a v prostředí Microsoftu se nespolehlivá selhání objevovala ve čtvrtině až třetině zkoumaných sestavení. Škoda není jen v promarněném čase na vyšetřování. Nespolehlivé testy ničí důvěru, protože jakmile tým začne červené výsledky automaticky považovat za planý poplach a spouštět je znovu, přestane si všímat i skutečných defektů. Z pohledu sylabu jde vlastně o konkrétní projev čtvrtého rizika, tedy přílišného spoléhání se na nástroj a ignorování potřeby kritického myšlení. Konec doplněné informace.</p></aside>
+<aside class="vsuvka vsuvka--praxe" data-stitek="Příklad z praxe" aria-label="Příklad z praxe"><p>Příklad z praxe. Modelová situace, na které je vidět většina rizik ze sylabu najednou. Firma koupí nástroj s tím, že si podle prodejní ukázky nahraje testy klikáním a bude hotová za měsíc. To je nerealistické očekávání, tedy první riziko. Odhad počítal s tvorbou testů, ale nikoli s jejich údržbou při každé změně rozhraní, což je druhé riziko. Nástroj se použije i na testování použitelnosti nového formuláře, kde by byl mnohem vhodnější člověk, což je třetí riziko. Po půl roce má tým čtyři sta testů, z nichž třicet každý den svítí červeně bez zjevné příčiny, takže je všichni ignorují a jednoho dne přehlédnou skutečný defekt, což je čtvrté riziko. A na konci roku dodavatel oznámí, že nástroj přestává podporovat starší verzi prohlížeče, kterou zákazník používá, což je páté riziko. Ani jedno z těch selhání nezpůsobila technologie. Všechna vznikla z toho, jak byl nástroj zaveden. Konec příkladu.</p></aside>
+<aside class="vsuvka vsuvka--nad-ramec" data-stitek="Nad rámec sylabu" aria-label="Nad rámec sylabu"><p>Doplněná informace nad rámec sylabu. Verze sylabu čtyři nula vznikla v roce dva tisíce dvacet tři a k nástrojům s prvky umělé inteligence se proto nevyjadřuje. Vzhledem k tomu, jak rychle se tato oblast vyvíjí, uvedu alespoň stručný a střízlivý přehled toho, co je v roce dva tisíce dvacet šest doložené. Nejrozšířenější uplatnění je generování testů, kdy model analyzuje zdrojový kód, popis rozhraní, uživatelské scénáře nebo existující testy a navrhuje nové testovací případy. Druhým rozšířeným uplatněním jsou takzvané samoopravné testy, anglicky self healing, čti self hílyng, kde nástroj sám aktualizuje identifikátory prvků rozhraní, když se stránka změní. To míří přímo na problém s údržbou popsaný výše. Co se týče střízlivosti, dodavatelé, kteří jsou upřímní, přiznávají, že řeší dílčí problémy, nikoli celý testovací proces. Uváděná úspěšnost automaticky vygenerovaných testů na první pokus se u běžných formulářových a databázových operací pohybuje kolem sedmdesáti až osmdesáti procent, což znamená, že každý pátý test potřebuje lidský zásah. Plně autonomní testování bez lidského dohledu zůstává zatím spíš konferenční ukázkou. Pro zkoušku to nepotřebujete, ale je dobré vědět, že ani tyto nástroje neruší platnost rizik, která sylabus popisuje. Naopak čtvrté riziko, tedy přílišné spoléhání se na nástroj a ignorování kritického myšlení, je u nich aktuálnější než kdy dřív. Konec doplněné informace.</p></aside>
+<h2 id="shrnuti-kapitoly">Shrnutí kapitoly<a class="kotva" href="#shrnuti-kapitoly" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Ze šesté kapitoly si odneste tři věci.</p>
+<p>Za prvé, devět kategorií testovacích nástrojů a hlavně to, čím každá pomáhá. Nejdůležitější detail je, že nástroje pro nefunkcionální testování umožňují testování, které je obtížné nebo nemožné provést manuálně, a že testovacím nástrojem může být cokoli, co při testování pomáhá, včetně tabulkového procesoru.</p>
+<p>Za druhé, šest výhod automatizace, přičemž nejpodstatnější je ta poslední, tedy že uvolňuje čas testerů na návrh nových, důkladnějších a efektivnějších testů.</p>
+<p>Za třetí, osm rizik automatizace, přičemž si všimněte, že tři z nich jsou lidská a organizační, nikoli technická, a že komerční nástroj i nástroj s otevřeným zdrojovým kódem mají každý své vlastní riziko.</p>
+<p>A nad tím vším stojí úvodní věta celé části, kterou si zapamatujte doslova. Prosté pořízení nástroje není zárukou úspěchu.</p>
+<h2 id="zaverem-cely-sylabus-je-za-vami">Závěrem: celý sylabus je za vámi<a class="kotva" href="#zaverem-cely-sylabus-je-za-vami" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Touto kapitolou končí učební osnovy ISTQB Certified Tester Foundation Level. Dovolte mi na závěr krátké ohlédnutí a několik doporučení k přípravě.</p>
+<p>Prošli jste šest kapitol v celkovém rozsahu tisíc sto třicet pět minut výuky. První kapitola vysvětlila, co testování je, proč je nezbytné a jaká jsou jeho pravidla. Druhá kapitola ukázala, kdy a kde v životním cyklu se testování odehrává. Třetí kapitola se věnovala testování bez spuštění softwaru. Čtvrtá kapitola, zdaleka největší, učila, jak testy systematicky navrhovat. Pátá kapitola byla o řízení celého testování. A tato šestá o nástrojích, které to všechno podporují.</p>
+<p>Zkouška má čtyřicet otázek a šedesát minut. K úspěchu potřebujete šedesát pět procent, tedy dvacet šest správných odpovědí. Pokud skládáte zkoušku v jiném než rodném jazyce, máte nárok na dvacet pět procent času navíc.</p>
+<p>Několik doporučení, která vyplývají z toho, jak je sylabus postaven.</p>
+<p>Za prvé, věnujte nejvíc času čtvrté a páté kapitole. Dohromady tvoří téměř dvě třetiny rozsahu výuky a obsahují všech osm studijních cílů na úrovni K tři.</p>
+<p>Za druhé, cíle na úrovni K tři si natrénujte na papíře. Rozdělení tříd ekvivalence, analýza hraničních hodnot, rozhodovací tabulky, přechody stavů, tříbodový odhad a report o defektu. Tyhle věci nestačí přečíst.</p>
+<p>Za třetí, naučte se rozdíly, nikoli jen definice. Většina otázek na úrovni K dvě míří na dvojice, které se pletou. Verifikace a validace. Testování a ladění. Zajištění kvality a řízení kvality. Chyba, defekt a selhání. Konfirmační a regresní testování. Pokrytí příkazů a pokrytí větví. Projektové a produktové riziko. Závažnost a priorita.</p>
+<p>Za čtvrté, u každé techniky ze čtvrté kapitoly si pamatujte její položku pokrytí. Je to nejčastěji zkoušený detail celého sylabu.</p>
+<p>A za páté, odpovídejte podle sylabu, nikoli podle své praxe. To je rada, kterou jsem opakoval u každé kapitoly, a platí i teď. Doplněné informace v těchto textech slouží k tomu, abyste látce rozuměli do hloubky a uměli s ní pracovat v zaměstnání. U zkoušky se ale hodnotí znalost učebních osnov.</p>
+<p>Tím končí plný výklad šesté kapitoly a zároveň celého sylabu. V dalších materiálech najdete zkrácenou verzi této kapitoly pro rychlé opakování a samostatný soubor otázek a odpovědí pro procvičení. Hodně štěstí u zkoušky.</p>
+</article>
+<nav class="naradi" style="margin-top:3.5rem" aria-label="Sousední kapitoly"><a href="../kapitola-5/vyklad.html">← 5. Management testování</a></nav>
+</main>
+<aside class="strom" aria-label="Obsah kapitoly"><h2>V této kapitole</h2><ol><li><a href="#jak-tento-text-pouzivat">Jak tento text používat</a></li><li><a href="#co-se-v-teto-kapitole-naucite">Co se v této kapitole naučíte</a></li><li><a href="#cast-sest-tecka-jedna-nastroje-pro-podporu-testovani">Část šest tečka jedna: Nástroje pro podporu testování</a></li><li><a href="#cast-sest-tecka-dva-vyhody-a-rizika-automatizace-testu">Část šest tečka dva: Výhody a rizika automatizace testů</a></li><li><a href="#shrnuti-kapitoly">Shrnutí kapitoly</a></li><li><a href="#zaverem-cely-sylabus-je-za-vami">Závěrem: celý sylabus je za vámi</a></li></ol></aside>
+</div>
+</div>
+<footer class="paticka">
+  <div class="paticka-vnitrek">
+    <p><strong>Neoficiální studijní materiál.</strong> Tento web není produktem ani publikací ISTQB® ani CaSQB.
+    ISTQB® je registrovaná ochranná známka International Software Testing Qualifications Board.
+    Texty jsou vlastním zpracováním autora vytvořeným při přípravě na zkoušku; oficiální sylabus,
+    slovník a vzorové zkoušky si stáhněte přímo u certifikační autority.</p>
+    <p>Ke zkoušce vždy platí znění oficiálního sylabu CTFL v4.0. Doplněné informace na tomto webu
+    slouží k porozumění a k praxi, nikoli jako zdroj správných odpovědí u zkoušky.</p>
+    <ul>
+      <li><a href="https://casqb.org/ke-stazeni" target="_blank" rel="noopener noreferrer">CaSQB — dokumenty ke stažení</a></li>
+      <li><a href="https://casqb.org/certifikace/zkousky" target="_blank" rel="noopener noreferrer">CaSQB — registrace ke zkoušce</a></li>
+      <li><a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/" target="_blank" rel="noopener noreferrer">ISTQB — CTFL v4.0</a></li>
+      <li><a href="https://glossary.istqb.org" target="_blank" rel="noopener noreferrer">Slovník ISTQB</a></li>
+      <li><a href="../zdroje.html">Zdroje a citace</a></li>
+    </ul>
+  </div>
+</footer>
+<script src="../assets/skript.js"></script>
+</body>
+</html>

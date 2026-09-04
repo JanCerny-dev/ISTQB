@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="cs" data-tema="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1. Základy testování — Zkrácená verze | ISTQB CTFL v4.0</title>
+<meta name="description" content="Zkrácená verze kapitoly 1 sylabu ISTQB CTFL v4.0: Základy testování. Jen to, co je nutné znát ke zkoušce. Bez odboček, k rychlému opakování.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../assets/styl.css">
+<script>
+/* Nastaví uložený režim ještě před vykreslením, aby stránka neproblikla. */
+(function(){try{var t=localStorage.getItem('istqb-tema');if(t){document.documentElement.setAttribute('data-tema',t);}}catch(e){}})();
+</script>
+</head>
+<body data-kapitola="1">
+<a class="preskocit" href="#text">Přeskočit na text</a>
+<div class="postup" aria-hidden="true"></div>
+<header class="hlavicka">
+  <div class="hlavicka-vnitrek">
+    <a class="znacka" href="../index.html">ISTQB CTFL v4.0 <span>česká studijní příručka</span></a>
+    <nav class="navigace" aria-label="Hlavní navigace">
+      <a href="../index.html">Úvod</a>
+      <span class="skupina" data-skupina>
+        <a href="../kapitoly.html" class="zvyraznit" aria-current="page">Kapitoly</a>
+        <ul class="podmenu" id="podmenu-kapitoly" aria-label="Seznam kapitol"><li><a href="../kapitola-1/zkracena.html" aria-current="page"><b>1</b> Základy testování</a></li><li><a href="../kapitola-2/zkracena.html"><b>2</b> Testování v průběhu životního cyklu</a></li><li><a href="../kapitola-3/zkracena.html"><b>3</b> Statické testování</a></li><li><a href="../kapitola-4/zkracena.html"><b>4</b> Testovací analýza a návrh testů</a></li><li><a href="../kapitola-5/zkracena.html"><b>5</b> Management testování</a></li><li><a href="../kapitola-6/zkracena.html"><b>6</b> Testovací nástroje</a></li></ul>
+      </span>
+      <a href="../zdroje.html">Zdroje</a>
+      <a href="../zkouska.html" class="brzy">Zkouška <em>brzy</em></a>
+      <button type="button" class="prepinac-tema" data-prepinac-tema>Tmavý režim</button>
+    </nav>
+  </div>
+</header>
+<div class="stranka">
+<div class="layout">
+<main>
+<div class="zahlavi">
+  <p class="drobky">Kapitola 1 · Zkrácená verze</p>
+  <h1>Kapitola první: Základy testování</h1>
+  <p class="podtitul">Zkrácená verze pro opakování – ISTQB CTFL, verze čtyři nula jedna</p>
+  <ul class="meta"><li>2 376 slov</li><li>≈ 14 min čtení</li><li>≈ 16 min poslechu</li><li>16 oddílů</li><li>180 min výuky podle sylabu</li></ul>
+</div>
+<nav class="varianty" aria-label="Varianta zpracování kapitoly 1"><a href="vyklad.html">Plný výklad</a><a href="zkracena.html" aria-current="page">Zkrácená verze</a><a href="otazky.html">Otázky a odpovědi</a></nav>
+
+<article class="text" id="text">
+<p>Toto je zkrácená verze první kapitoly učebních osnov. Obsahuje jen to, co je nutné znát ke zkoušce, bez hlubšího kontextu, bez příkladů a bez doplňujících informací. Je určena k opakování, ideálně opakovanému poslechu. Plný výklad najdete v samostatném dokumentu.</p>
+<h2 id="co-je-to-testovani">Co je to testování<a class="kotva" href="#co-je-to-testovani" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Testování softwaru hodnotí kvalitu softwaru a pomáhá snižovat riziko selhání softwaru v provozu. Je to sada činností, jejichž cílem je odhalování defektů a vyhodnocování kvality softwarových pracovních produktů. Tyto pracovní produkty se při testování označují jako testované objekty, anglicky test objects, čti test objekts.</p>
+<p>Testování není jen provádění testů. Provedení testů je pouze jedna ze sedmi hlavních skupin činností. Testování musí být v souladu s životním cyklem vývoje softwaru, anglicky software development lifecycle, zkratkou S D L C.</p>
+<p>Testování zahrnuje ověřování i validaci. Ověřování, odborně verifikace, anglicky verification, je kontrola, zda systém splňuje specifikované požadavky. Validace, anglicky validation, je kontrola, zda systém splňuje potřeby uživatelů a dalších zainteresovaných stran v jejich provozním prostředí. Pomůcka zní: verifikace se ptá, zda jsme produkt postavili správně, validace se ptá, zda jsme postavili správný produkt.</p>
+<p>Testování může být dynamické nebo statické. Dynamické testování vyžaduje spuštění softwaru, statické testování spuštění nevyžaduje. Statické testování zahrnuje revize a statickou analýzu.</p>
+<p>Testování není jen technická činnost. Je nutné jej plánovat, řídit, odhadovat, monitorovat a kontrolovat. Testeři používají nástroje, ale testování je především intelektuální činnost vyžadující specializované znalosti, analytické dovednosti, kritické myšlení a systémové myšlení.</p>
+<h2 id="typicke-cile-testovani">Typické cíle testování<a class="kotva" href="#typicke-cile-testovani" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Typických cílů testování je devět. Ohodnocení pracovních produktů, jako jsou požadavky, uživatelské scénáře, návrhy a kód. Vyvolání selhání a nalezení defektů. Zajištění požadovaného pokrytí testovaného objektu. Snížení úrovně rizika plynoucího z nedostatečné kvality softwaru. Ověření, zda byly splněny stanovené požadavky. Ověření, že testovaný objekt vyhovuje smluvním, právním a regulatorním požadavkům. Poskytnutí informací zainteresovaným stranám, aby mohly přijmout kvalifikovaná rozhodnutí. Vytvoření důvěry v danou úroveň kvality testovaného objektu. A kontrola, zda je testovaný objekt kompletní a funguje podle očekávání zainteresovaných stran.</p>
+<p>Cíle testování se liší podle kontextu. Ten zahrnuje testovaný pracovní produkt, úroveň testování, rizika, zvolený životní cyklus vývoje a byznysový kontext, kam patří struktura společnosti, konkurenční hlediska a doba uvedení na trh.</p>
+<h2 id="testovani-a-ladeni">Testování a ladění<a class="kotva" href="#testovani-a-ladeni" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Testování a ladění jsou samostatné činnosti a ladění není testovací činnost. Ladění, anglicky debugging, čti dybaging, je proces hledání, analyzování a odstraňování příčin selhání.</p>
+<p>Když dynamické testování vyvolá selhání, typický proces ladění má tři kroky: reprodukování selhání, diagnostika, tedy nalezení defektu, a oprava defektu.</p>
+<p>Po opravě následuje konfirmační testování, které ověřuje, zda oprava problém vyřešila. Provádí ho ideálně stejná osoba, která provedla prvotní test. Dále lze provést regresní testování, které ověřuje, zda opravy nezpůsobily selhání v jiných částech testovaného objektu. Konfirmační testování se ptá, zda jsme to opravili. Regresní testování se ptá, zda jsme přitom nerozbili něco jiného.</p>
+<p>Když defekt najde statické testování, ladění se zabývá jen jeho odstraněním. Reprodukování ani diagnostika nejsou nutné, protože statické testování nachází defekty přímo a nemůže způsobit selhání.</p>
+<h2 id="proc-je-testovani-nezbytne">Proč je testování nezbytné<a class="kotva" href="#proc-je-testovani-nezbytne" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Testování je jednou z forem řízení kvality. K úspěchu projektu nepřispívají pouze činnosti testovacího týmu, testovací dovednosti může využít kdokoli ze zainteresovaných stran.</p>
+<p>Testování přispívá k úspěchu čtyřmi způsoby. Poskytuje nákladově efektivní způsob detekce defektů, přičemž ke kvalitě přispívá pouze nepřímo, protože samotné odstranění defektu je ladění. Poskytuje prostředky pro přímé hodnocení kvality v různých fázích životního cyklu, což slouží jako podklad pro rozhodnutí o přechodu do další fáze, například o vydání. Testeři zaručují, že jejich pochopení potřeb uživatelů je zohledněno v průběhu celého vývoje, protože zapojit skutečné uživatele obvykle není možné kvůli nákladům a dostupnosti. A testování může být vyžadováno smluvně, zákonem nebo regulatorní normou.</p>
+<h2 id="testovani-a-zajisteni-kvality">Testování a zajištění kvality<a class="kotva" href="#testovani-a-zajisteni-kvality" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Testování a zajištění kvality nejsou totéž. Zajištění kvality, anglicky quality assurance, zkratkou Q A, je preventivní přístup orientovaný na procesy, zaměřený na jejich zavádění a zlepšování. Je založen na předpokladu, že dodržování správného procesu vede ke správnému produktu. Q A se vztahuje na procesy vývoje i testování a je odpovědností všech osob v projektu.</p>
+<p>Testování je naopak nápravný přístup zaměřený na produkt. Je hlavní, ale nikoli jedinou formou řízení kvality, anglicky quality control, zkratkou Q C. Dalšími formami jsou například ověření modelu, důkazy správnosti, simulace nebo prototypování.</p>
+<p>Výsledky testů se používají v obou oblastech, ale jinak. V testování slouží k opravě defektů, v zajištění kvality poskytují zpětnou vazbu o tom, jak dobře fungují procesy vývoje a testování.</p>
+<h2 id="chyby-defekty-selhani-a-korenove-priciny">Chyby, defekty, selhání a kořenové příčiny<a class="kotva" href="#chyby-defekty-selhani-a-korenove-priciny" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Lidé dělají chyby, v jejichž důsledku vznikají defekty, které mohou vést k selhání.</p>
+<p>Chyba, anglicky error, je lidská činnost, jejíž důsledkem je defekt. Defekt, anglicky defect, je nedokonalost nebo nedostatek pracovního produktu, který tak nesplňuje požadavky či specifikace, nebo zhoršuje jeho zamýšlené použití. Selhání, anglicky failure, je událost, při které komponenta nebo systém nesplňuje během svého spuštění své požadavky. Kořenová příčina, anglicky root cause, je zdroj defektu, při jehož odstranění je snížen nebo eliminován výskyt daného typu defektu.</p>
+<p>Chyby vznikají z časové tísně, ze složitosti pracovních produktů, procesů, infrastruktury a interakcí, z únavy nebo z chybějícího školení.</p>
+<p>Defekty lze nalézt v dokumentaci, ve zdrojovém kódu i v jakémkoli podpůrném pracovním produktu, například v souboru sestavení. Neodhalené defekty z dřívějších fází životního cyklu často vedou ke vzniku vadných pracovních produktů v navazujících fázích.</p>
+<p>Ne každý defekt vede k selhání. Některé defekty vedou k selhání vždy, jiné pouze za určitých okolností a některé nikdy. Selhání navíc nemusí být způsobeno chybou ani defektem, může vzniknout i podmínkami prostředí, například zářením nebo elektromagnetickým polem.</p>
+<p>Kořenové příčiny se identifikují analýzou kořenové příčiny, která se provádí po výskytu selhání nebo po identifikaci defektu. Vyřešením kořenové příčiny lze zabránit podobným selháním nebo defektům, případně snížit jejich četnost.</p>
+<h2 id="sedm-principu-testovani">Sedm principů testování<a class="kotva" href="#sedm-principu-testovani" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Princip první. Testování prokazuje přítomnost defektů, nikoli jejich nepřítomnost. Nenalezení defektů neprokazuje správnost.</p>
+<p>Princip druhý. Kompletní testování není možné, s výjimkou triviálních případů. Místo toho je třeba se zaměřit na vhodné techniky testování, na stanovení priorit testovacích případů a na testování založené na rizicích.</p>
+<p>Princip třetí. Včasné testování šetří čas a peníze. Co nejdříve má být zahájeno statické i dynamické testování. Defekty odstraněné brzy nezpůsobí další defekty v odvozených pracovních produktech a sníží se náklady na kvalitu.</p>
+<p>Princip čtvrtý. Shlukování defektů. Většinu zjištěných defektů obsahuje obvykle malé množství komponent, případně je malé množství komponent zodpovědných za většinu provozních selhání. Jde o ilustraci Paretova pravidla a je to významný vstup pro testování založené na rizicích.</p>
+<p>Princip pátý. Testy se opotřebovávají. Stále opakované stejné testy přestávají odhalovat nové defekty. Je nutné testy a testovací data měnit nebo vytvářet nové. Výjimkou, kdy opakování stejných testů dává smysl, je automatizované regresní testování. Ve starších materiálech se tento princip jmenoval paradox pesticidů.</p>
+<p>Princip šestý. Testování je závislé na kontextu. Neexistuje jediný univerzálně použitelný přístup k testování.</p>
+<p>Princip sedmý. Nepřítomnost defektů je klam. I systém bez jediného nalezeného defektu může nesplňovat potřeby uživatelů a byznysové cíle. Kromě ověřování musí být proto provedena i validace.</p>
+<h2 id="testovaci-cinnosti-a-ukoly">Testovací činnosti a úkoly<a class="kotva" href="#testovaci-cinnosti-a-ukoly" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Skupinám testovacích činností se říká proces testování. Činností je sedm. Ačkoli se jeví jako seřazené za sebou, jsou často prováděny iterativně nebo paralelně.</p>
+<p>Plánování testování je definování cílů testování a výběr přístupu, který těchto cílů nejlépe dosáhne v rámci daných omezení.</p>
+<p>Monitoring a řízení testování. Monitoring je průběžná kontrola testovacích činností a porovnávání skutečného stavu proti plánu. Řízení je přijetí opatření nezbytných pro dosažení cílů testování.</p>
+<p>Testovací analýza je analýza testovací báze za účelem identifikace testovatelných užitných vlastností. Definují se testovací podmínky včetně priorit a rizik, hodnotí se testovatelnost a identifikují se defekty v testovací bázi. Testovací analýza odpovídá na otázku, co se má testovat.</p>
+<p>Návrh testů je rozpracování testovacích podmínek do testovacích případů a dalšího testwaru. Zahrnuje identifikaci položek pokrytí, stanovení požadavků na testovací data, návrh testovacího prostředí a identifikaci potřebné infrastruktury a nástrojů. Návrh testů odpovídá na otázku, jak testovat.</p>
+<p>Implementace testování je vytvoření nebo získání testwaru nezbytného pro provedení testů. Testovací případy se uspořádají do testovacích procedur a seskupí do testovacích sad, vznikají manuální i automatizované testovací skripty, procedury se prioritizují a řadí do harmonogramu provedení testů, sestaví se testovací prostředí a ověří se jeho nastavení.</p>
+<p>Provedení testů je spuštění testů podle harmonogramu. Může být manuální nebo automatizované. Porovnávají se skutečné výsledky s očekávanými, zaznamenávají se výsledky a analyzují se anomálie s cílem zjistit jejich pravděpodobnou příčinu.</p>
+<p>Dokončení testování probíhá při dosažení milníků projektu, například při vydání, na konci iterace nebo po dokončení úrovně testování. Pro nevyřešené defekty se vytvoří změnové požadavky nebo položky produktového backlogu, archivuje se použitelný testware, testovací prostředí se uvede do dohodnutého stavu, identifikují se ponaučení a vytvoří se souhrnný report z testování.</p>
+<h2 id="proces-testovani-v-souvislostech">Proces testování v souvislostech<a class="kotva" href="#proces-testovani-v-souvislostech" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Testování neprobíhá izolovaně a je nedílnou součástí procesů vývoje v organizaci. Způsob provádění testování ovlivňuje osm skupin faktorů. Zainteresované strany. Členové týmu. Obor podnikání. Technické faktory. Omezení projektu. Organizační faktory. Životní cyklus vývoje softwaru. A nástroje.</p>
+<p>Tyto faktory ovlivní strategii testování, použité techniky, stupeň automatizace, požadovanou úroveň pokrytí, úroveň podrobnosti testwaru i reportování.</p>
+<h2 id="testware">Testware<a class="kotva" href="#testware" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Testware jsou výstupní pracovní produkty z testovacích činností. Pro jejich konzistenci a integritu je nutný dobrý konfigurační management.</p>
+<p>Z plánování testování vzniká plán testování, harmonogram testování, registr rizik a vstupní a výstupní kritéria. Z monitoringu a řízení vznikají reporty o postupu prací, pokyny, nápravná opatření a informace o rizicích. Z testovací analýzy vznikají prioritizované testovací podmínky a reporty o defektech v testovací bázi. Z návrhu testů vznikají prioritizované testovací případy, testovací listiny, položky pokrytí, požadavky na testovací data a požadavky na testovací prostředí. Z implementace testování vznikají testovací procedury, manuální a automatizované skripty, testovací sady, testovací data, harmonogram provedení testů a položky testovacího prostředí, například stuby, ovladače, simulátory a virtualizace služeb. Z provedení testů vznikají protokoly z testování a reporty o defektech. Z dokončení testování vzniká souhrnný report z testování, akční body pro zlepšení, zdokumentované ponaučení a změnové požadavky.</p>
+<p>Nejčastější záměny: testovací podmínka pochází z analýzy, testovací případ z návrhu. Požadavky na testovací data pocházejí z návrhu, samotná testovací data z implementace. Report o postupu prací pochází z monitoringu, souhrnný report z dokončení.</p>
+<h2 id="trasovatelnost">Trasovatelnost<a class="kotva" href="#trasovatelnost" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Trasovatelnost je schopnost vytvořit mezi souvisejícími pracovními produkty jasně definované vztahy. Je třeba ji vytvořit a udržovat mezi položkami testovací báze, souvisejícím testwarem, výsledky testů a defekty.</p>
+<p>Přesná trasovatelnost umožňuje vyhodnocovat pokrytí, proto je užitečné mít v testovací bázi definována měřitelná kritéria pokrytí. Kritéria pokrytí mohou sloužit jako klíčové ukazatele výkonnosti pro řízení testování.</p>
+<p>Dobrá trasovatelnost dále umožňuje určit dopad změn, usnadňuje audity, pomáhá plnit kritéria zásad správného řízení v I T, zlepšuje srozumitelnost reportů o postupu prací i souhrnných reportů, přispívá ke srozumitelné komunikaci se zainteresovanými stranami a poskytuje informace pro posouzení kvality produktu, způsobilosti procesů a postupu prací vzhledem k byznysovým cílům.</p>
+<h2 id="role-v-testovani">Role v testování<a class="kotva" href="#role-v-testovani" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Učební osnovy definují dvě role. Manažer testování má celkovou odpovědnost za proces testování, testovací tým a úspěšné řízení testovacích činností. Zaměřuje se na plánování testování, na monitoring a řízení testování a na dokončení testování.</p>
+<p>Tester přebírá celkovou odpovědnost za inženýrský aspekt testování. Zaměřuje se na testovací analýzu, návrh testů, implementaci testování a provedení testů.</p>
+<p>Role není totéž co pracovní pozice. Obě role mohou v různých obdobích vykonávat různí lidé a jedna osoba může vykonávat obě role současně. V agilním vývoji vykonává některé úkoly manažera testování celý tým.</p>
+<h2 id="obecne-dovednosti-potrebne-pro-testovani">Obecné dovednosti potřebné pro testování<a class="kotva" href="#obecne-dovednosti-potrebne-pro-testovani" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Pro testery jsou obzvláště důležité tyto dovednosti. Znalost testování. Důkladnost, pečlivost, zvídavost, důraz na detail a schopnost pracovat metodicky. Dobré komunikační dovednosti, aktivní naslouchání a schopnost být týmovým hráčem. Analytické myšlení, kritické myšlení a kreativita. Technické znalosti. A znalost domény.</p>
+<p>Běžnou lidskou vlastností je obviňování nositelů špatných zpráv a testeři jsou často nositeli takových zpráv. Proto jsou pro ně komunikační dovednosti klíčové, protože sdělování výsledků testů může být vnímáno jako kritika produktu a jeho autora.</p>
+<p>Konfirmační zkreslení, anglicky confirmation bias, je tendence člověka obtížně přijímat informace, které jsou v rozporu s jeho stávajícími názory. Kvůli němu mohou někteří lidé vnímat testování jako destruktivní aktivitu. Informace o defektech a selháních by proto měly být komunikovány konstruktivně a bez emocí.</p>
+<h2 id="tymovy-pristup">Týmový přístup<a class="kotva" href="#tymovy-pristup" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Týmový přístup, anglicky whole team approach, vychází z extrémního programování. Každý člen týmu s potřebnými znalostmi a dovednostmi může vykonávat jakýkoli úkol a každý člen týmu je zodpovědný za kvalitu. Členové týmu sdílejí stejný pracovní prostor, fyzický nebo virtuální, což usnadňuje komunikaci a interakci.</p>
+<p>Výhody týmového přístupu jsou tři. Zvyšuje týmovou dynamiku. Zlepšuje komunikaci a spolupráci v týmu. A vytváří synergii tím, že umožňuje využití různých dovedností ve prospěch projektu.</p>
+<p>Testeři musí úzce spolupracovat s ostatními členy týmu, se zástupci byznysu i s vývojáři, a mohou předávat znalost testování ostatním.</p>
+<p>Týmový přístup není vhodný vždy. Typickým příkladem je testování bezpečnostně kritických scénářů, kde je nutné zachovat vysokou úroveň nezávislosti testování.</p>
+<h2 id="nezavislost-testovani">Nezávislost testování<a class="kotva" href="#nezavislost-testovani" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Určitá míra nezávislosti činí testery efektivnějšími při hledání defektů, protože se liší kognitivní zkreslení autorů a testerů. Nezávislost však není náhradou za dobrou znalost systému, protože i vývojáři mohou efektivně najít mnoho defektů ve svém kódu.</p>
+<p>Existují čtyři úrovně nezávislosti. Testování autorem je nulová nezávislost. Testování kolegy ze stejného týmu je malá nezávislost. Testování testery mimo tým autora, ale v rámci organizace, je vysoká nezávislost. A testování testery mimo organizaci je velmi vysoká nezávislost.</p>
+<p>U většiny projektů je nejlepší kombinovat více úrovní nezávislosti současně. Například vývojáři provádějí testování komponent a integrační testování komponent, testovací tým provádí systémové a systémové integrační testování a obchodní zástupci provádějí akceptační testování.</p>
+<p>Přínosy nezávislosti jsou dva. Nezávislí testeři pravděpodobněji rozpoznají různé druhy selhání a defektů než vývojáři, a to díky odlišnému zázemí, technickému nadhledu a předsudkům. A mohou ověřit, napadnout či vyvrátit předpoklady, které byly přijaty při přípravě specifikace nebo implementaci.</p>
+<p>Nevýhody nezávislosti jsou čtyři. Nezávislí testeři mohou být izolováni od vývojového týmu, což vede k nedostatečné spolupráci, problémům v komunikaci nebo nepřátelskému vztahu. Vývojáři mohou ztratit pocit zodpovědnosti za kvalitu. Nezávislí testeři mohou být úzkým místem ve vývojovém procesu. A mohou být viněni za zpoždění při vydávání produktu.</p>
+<h2 id="nejdulezitejsi-body-k-zapamatovani">Nejdůležitější body k zapamatování<a class="kotva" href="#nejdulezitejsi-body-k-zapamatovani" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Řetězec pojmů: chyba je lidská činnost, defekt je vada v pracovním produktu, selhání je událost při spuštění, kořenová příčina je zdroj defektu.</p>
+<p>Verifikace ověřuje splnění specifikovaných požadavků, validace ověřuje splnění potřeb uživatelů.</p>
+<p>Zajištění kvality je prevence zaměřená na procesy, testování je náprava zaměřená na produkt a je hlavní formou řízení kvality.</p>
+<p>Testovací analýza odpovídá na otázku co, návrh testů na otázku jak.</p>
+<p>Manažer testování má plánování, monitoring a řízení, a dokončení. Tester má analýzu, návrh, implementaci a provedení.</p>
+<p>Čtyři úrovně nezávislosti v pořadí: autor, kolega ze stejného týmu, tester mimo tým v rámci organizace, tester mimo organizaci.</p>
+<p>Testy se opotřebovávají, ale automatizované regresní testy se opakují záměrně a je to správně.</p>
+<p>Tím končí zkrácená verze první kapitoly.</p>
+</article>
+<nav class="naradi" style="margin-top:3.5rem" aria-label="Sousední kapitoly"><a href="../kapitola-2/zkracena.html">2. Testování v průběhu životního cyklu →</a></nav>
+</main>
+<aside class="strom" aria-label="Obsah kapitoly"><h2>V této kapitole</h2><ol><li><a href="#co-je-to-testovani">Co je to testování</a></li><li><a href="#typicke-cile-testovani">Typické cíle testování</a></li><li><a href="#testovani-a-ladeni">Testování a ladění</a></li><li><a href="#proc-je-testovani-nezbytne">Proč je testování nezbytné</a></li><li><a href="#testovani-a-zajisteni-kvality">Testování a zajištění kvality</a></li><li><a href="#chyby-defekty-selhani-a-korenove-priciny">Chyby, defekty, selhání a kořenové příčiny</a></li><li><a href="#sedm-principu-testovani">Sedm principů testování</a></li><li><a href="#testovaci-cinnosti-a-ukoly">Testovací činnosti a úkoly</a></li><li><a href="#proces-testovani-v-souvislostech">Proces testování v souvislostech</a></li><li><a href="#testware">Testware</a></li><li><a href="#trasovatelnost">Trasovatelnost</a></li><li><a href="#role-v-testovani">Role v testování</a></li><li><a href="#obecne-dovednosti-potrebne-pro-testovani">Obecné dovednosti potřebné pro testování</a></li><li><a href="#tymovy-pristup">Týmový přístup</a></li><li><a href="#nezavislost-testovani">Nezávislost testování</a></li><li><a href="#nejdulezitejsi-body-k-zapamatovani">Nejdůležitější body k zapamatování</a></li></ol></aside>
+</div>
+</div>
+<footer class="paticka">
+  <div class="paticka-vnitrek">
+    <p><strong>Neoficiální studijní materiál.</strong> Tento web není produktem ani publikací ISTQB® ani CaSQB.
+    ISTQB® je registrovaná ochranná známka International Software Testing Qualifications Board.
+    Texty jsou vlastním zpracováním autora vytvořeným při přípravě na zkoušku; oficiální sylabus,
+    slovník a vzorové zkoušky si stáhněte přímo u certifikační autority.</p>
+    <p>Ke zkoušce vždy platí znění oficiálního sylabu CTFL v4.0. Doplněné informace na tomto webu
+    slouží k porozumění a k praxi, nikoli jako zdroj správných odpovědí u zkoušky.</p>
+    <ul>
+      <li><a href="https://casqb.org/ke-stazeni" target="_blank" rel="noopener noreferrer">CaSQB — dokumenty ke stažení</a></li>
+      <li><a href="https://casqb.org/certifikace/zkousky" target="_blank" rel="noopener noreferrer">CaSQB — registrace ke zkoušce</a></li>
+      <li><a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/" target="_blank" rel="noopener noreferrer">ISTQB — CTFL v4.0</a></li>
+      <li><a href="https://glossary.istqb.org" target="_blank" rel="noopener noreferrer">Slovník ISTQB</a></li>
+      <li><a href="../zdroje.html">Zdroje a citace</a></li>
+    </ul>
+  </div>
+</footer>
+<script src="../assets/skript.js"></script>
+</body>
+</html>

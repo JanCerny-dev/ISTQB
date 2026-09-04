@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="cs" data-tema="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3. Statické testování — Zkrácená verze | ISTQB CTFL v4.0</title>
+<meta name="description" content="Zkrácená verze kapitoly 3 sylabu ISTQB CTFL v4.0: Statické testování. Jen to, co je nutné znát ke zkoušce. Bez odboček, k rychlému opakování.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../assets/styl.css">
+<script>
+/* Nastaví uložený režim ještě před vykreslením, aby stránka neproblikla. */
+(function(){try{var t=localStorage.getItem('istqb-tema');if(t){document.documentElement.setAttribute('data-tema',t);}}catch(e){}})();
+</script>
+</head>
+<body data-kapitola="3">
+<a class="preskocit" href="#text">Přeskočit na text</a>
+<div class="postup" aria-hidden="true"></div>
+<header class="hlavicka">
+  <div class="hlavicka-vnitrek">
+    <a class="znacka" href="../index.html">ISTQB CTFL v4.0 <span>česká studijní příručka</span></a>
+    <nav class="navigace" aria-label="Hlavní navigace">
+      <a href="../index.html">Úvod</a>
+      <span class="skupina" data-skupina>
+        <a href="../kapitoly.html" class="zvyraznit" aria-current="page">Kapitoly</a>
+        <ul class="podmenu" id="podmenu-kapitoly" aria-label="Seznam kapitol"><li><a href="../kapitola-1/zkracena.html"><b>1</b> Základy testování</a></li><li><a href="../kapitola-2/zkracena.html"><b>2</b> Testování v průběhu životního cyklu</a></li><li><a href="../kapitola-3/zkracena.html" aria-current="page"><b>3</b> Statické testování</a></li><li><a href="../kapitola-4/zkracena.html"><b>4</b> Testovací analýza a návrh testů</a></li><li><a href="../kapitola-5/zkracena.html"><b>5</b> Management testování</a></li><li><a href="../kapitola-6/zkracena.html"><b>6</b> Testovací nástroje</a></li></ul>
+      </span>
+      <a href="../zdroje.html">Zdroje</a>
+      <a href="../zkouska.html" class="brzy">Zkouška <em>brzy</em></a>
+      <button type="button" class="prepinac-tema" data-prepinac-tema>Tmavý režim</button>
+    </nav>
+  </div>
+</header>
+<div class="stranka">
+<div class="layout">
+<main>
+<div class="zahlavi">
+  <p class="drobky">Kapitola 3 · Zkrácená verze</p>
+  <h1>Kapitola třetí: Statické testování</h1>
+  <p class="podtitul">Zkrácená verze pro opakování – ISTQB CTFL, verze čtyři nula jedna</p>
+  <ul class="meta"><li>1 623 slov</li><li>≈ 10 min čtení</li><li>≈ 11 min poslechu</li><li>11 oddílů</li><li>80 min výuky podle sylabu</li></ul>
+</div>
+<nav class="varianty" aria-label="Varianta zpracování kapitoly 3"><a href="vyklad.html">Plný výklad</a><a href="zkracena.html" aria-current="page">Zkrácená verze</a><a href="otazky.html">Otázky a odpovědi</a></nav>
+
+<article class="text" id="text">
+<p>Toto je zkrácená verze třetí kapitoly učebních osnov. Obsahuje jen to, co je nutné znát ke zkoušce, bez příkladů a bez doplňujících informací. Je určena k opakovanému poslechu. Plný výklad najdete v samostatném dokumentu.</p>
+<h2 id="zaklady-statickeho-testovani">Základy statického testování<a class="kotva" href="#zaklady-statickeho-testovani" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Na rozdíl od dynamického testování není při statickém testování nutné testovaný software spouštět. Kód, specifikace procesu, specifikace architektury systému nebo jiné pracovní produkty jsou hodnoceny a prověřovány buďto manuálně, tedy revizemi, nebo pomocí nástroje, tedy statickou analýzou.</p>
+<p>Mezi cíle statického testování patří zlepšování kvality, odhalování defektů a posuzování vlastností, jako je čitelnost, úplnost, správnost, testovatelnost a konzistence. Statické testování lze používat jak pro ověřování, tedy verifikaci, tak pro validaci.</p>
+<p>Testeři, zástupci byznysu a vývojáři spolupracují během popisu příkladů, psaní uživatelských scénářů a zpřesňování backlogu tak, aby uživatelské scénáře a související pracovní produkty splňovaly definovaná kritéria, například definici připravenosti. Techniky revizí lze použít k zajištění toho, aby uživatelské scénáře byly úplné a srozumitelné a obsahovaly testovatelná akceptační kritéria.</p>
+<p>Statická analýza může upozornit na problémy ještě před provedením dynamického testování a často vyžaduje menší pracnost, protože nevyžaduje tvorbu testovacích případů. Bývá začleněna do nástrojů průběžné integrace. Používá se hlavně k odhalování specifických defektů kódu, ale lze ji použít i k vyhodnocení udržovatelnosti a bezpečnosti. Dalšími příklady nástrojů statické analýzy jsou nástroje pro kontrolu pravopisu a čitelnosti.</p>
+<h2 id="pracovni-produkty-vhodne-pro-staticke-testovani">Pracovní produkty vhodné pro statické testování<a class="kotva" href="#pracovni-produkty-vhodne-pro-staticke-testovani" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Téměř každý pracovní produkt může být prozkoumán pomocí statického testování. Patří sem specifikace požadavků, zdrojový kód, plány testování, testovací případy, položky produktového backlogu, testovací listiny, projektová dokumentace, smlouvy a modely.</p>
+<p>Revizi lze použít na jakýkoli pracovní produkt, který lze přečíst a porozumět mu.</p>
+<p>Pro statickou analýzu je nutné, aby měly zkoumané pracovní produkty formální strukturu, vůči které mohou být kontrolovány, například modely, kód nebo text s formální syntaxí.</p>
+<p>Pracovní produkty nevhodné pro statické testování jsou obvykle ty, které jsou obtížně interpretovatelné lidmi a současně by neměly být analyzovány nástroji, například spustitelný kód třetí strany, který z právních důvodů nelze analyzovat nástroji.</p>
+<h2 id="prinosy-statickeho-testovani">Přínosy statického testování<a class="kotva" href="#prinosy-statickeho-testovani" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Statické testování může odhalit defekty v nejranějších fázích životního cyklu, čímž naplňuje princip včasného testování.</p>
+<p>Může odhalit defekty, které nelze zjistit dynamickým testováním, například nedosažitelný kód, chybně implementované návrhové vzory nebo defekty v nespustitelných pracovních produktech.</p>
+<p>Vytváří důvěru v pracovní produkty a umožňuje vyhodnotit jejich kvalitu. Ověřením zdokumentovaných požadavků mohou zainteresované strany zajistit, aby požadavky odrážely jejich skutečné potřeby.</p>
+<p>Protože může být prováděno v raných fázích, umožňuje nastavit pravidla jednotného chápání, čímž zlepší komunikaci mezi zainteresovanými stranami. Proto se doporučuje zapojit do statického testování různé typy účastníků.</p>
+<p>I když může být provedení revizí nákladné, celkové náklady na projekt jsou obvykle mnohem nižší, než když se revize neprovádí, protože později v projektu není potřeba vynaložit tolik času a pracnosti na opravu defektů.</p>
+<p>Některé defekty v kódu lze odhalit statickou analýzou mnohem efektivněji než dynamickým testováním, což vede k jejich menšímu počtu a nižší celkové pracnosti při vývoji.</p>
+<h2 id="rozdily-mezi-statickym-a-dynamickym-testovanim">Rozdíly mezi statickým a dynamickým testováním<a class="kotva" href="#rozdily-mezi-statickym-a-dynamickym-testovanim" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Statické a dynamické testovací postupy se vzájemně doplňují a mají podobné cíle. Rozdílů je pět.</p>
+<p>Obojí může vést k odhalení defektu, ale existují typy defektů, které lze nalézt buď jenom statickým, nebo jenom dynamickým testováním.</p>
+<p>Statické testování najde defekty přímo, zatímco dynamické testování hledá selhání, ze kterých jsou defekty určeny následnou analýzou.</p>
+<p>Statické testování může snadněji odhalovat defekty obtížně dosažitelné dynamickým testováním nebo takové, které jsou v částech kódu spouštěných jen zřídka.</p>
+<p>Dynamické testování lze použít pouze na spustitelné pracovní produkty, statické testování i na nespustitelné.</p>
+<p>Statické testování lze použít k měření kvalitativních charakteristik nezávislých na spuštění kódu, například udržovatelnosti. Dynamické testování pouze k těm, které jsou na spuštění závislé, například k výkonnostní efektivitě.</p>
+<h2 id="typicke-defekty-odhalitelne-statickym-testovanim">Typické defekty odhalitelné statickým testováním<a class="kotva" href="#typicke-defekty-odhalitelne-statickym-testovanim" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Defekty v požadavcích, tedy nesrovnalosti, nejednoznačnosti, rozpory, opomenutí, nepřesnosti a duplicity.</p>
+<p>Defekty v návrhu, například neefektivní databázové struktury nebo špatná modularita.</p>
+<p>Některé typy defektů při programování, tedy proměnné s nedefinovanými hodnotami, nedeklarované proměnné, nedosažitelný nebo duplicitní kód a nadměrná složitost kódu.</p>
+<p>Odchylky od norem, například nedostatečné dodržování konvencí pro programování.</p>
+<p>Nesprávné specifikace rozhraní, tedy rozdílný počet, typ nebo pořadí parametrů.</p>
+<p>Některé bezpečnostní zranitelnosti, například přetečení vyrovnávací paměti.</p>
+<p>Chybějící části nebo nepřesnosti v pokrytí testovací báze, například chybějící testy pro některé akceptační kritérium.</p>
+<h2 id="vyhody-vcasne-a-caste-zpetne-vazby">Výhody včasné a časté zpětné vazby<a class="kotva" href="#vyhody-vcasne-a-caste-zpetne-vazby" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Včasná a častá zpětná vazba pomáhá s odhalením potenciálních problémů s kvalitou. Pokud se zainteresované strany zapojují nedostatečně, produkt nemusí splňovat jejich původní ani současné představy.</p>
+<p>Pokud tým nedodá to, co zainteresované strany chtějí, hrozí vícenáklady na přepracování, zmeškané termíny, vzájemné obviňování a dokonce úplné selhání projektu.</p>
+<p>Častá zpětná vazba může zabránit nedorozuměním při definici požadavků a zajistit, aby změny požadavků byly správně a včas pochopeny a implementovány. Pomáhá týmu lépe porozumět tomu, co vyvíjí, a umožňuje zaměřit se na užitné vlastnosti s nejvyšší přidanou hodnotou a s nejpozitivnějším dopadem na zjištěná rizika.</p>
+<h2 id="cinnosti-procesu-revize">Činnosti procesu revize<a class="kotva" href="#cinnosti-procesu-revize" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Obecný proces revize definuje norma I S O lomítko I E C dvacet tisíc dvě stě čtyřicet šest. Čím vyšší je požadovaný stupeň formálnosti revize, tím vyšší je počet úkolů během různých činností. Mnohé pracovní produkty jsou tak rozsáhlé, že je nelze pokrýt jedinou revizí, a proces revize může být proveden opakovaně.</p>
+<p>Plánování. Stanoví se rozsah revize obsahující definici účelu a revidovaného pracovního produktu, kvalitativní charakteristiky pro vyhodnocení, oblasti zájmu, výstupní kritéria, doplňující informace a pracnost a časový rámec celé revize.</p>
+<p>Zahájení revize. Cílem je zajistit, aby bylo všechno včetně všech zainteresovaných stran připraveno k revizi. Každý účastník musí mít přístup k revidovanému pracovnímu produktu, rozumět své roli a odpovědnostem a obdržet vše potřebné k provedení revize.</p>
+<p>Individuální revize. Každý revidující reviduje pracovní produkt individuálně s cílem posoudit jeho kvalitu a identifikovat anomálie, doporučení a otázky pomocí jedné nebo více technik revize, například revize založené na kontrolním seznamu nebo na scénáři. Revidující zaznamenává všechny zjištěné anomálie, doporučení a otázky.</p>
+<p>Komunikace a analýza. Ne každá anomálie identifikovaná během revize musí být nutně defekt. Všechny anomálie je nutné analyzovat a prodiskutovat a u každé rozhodnout o jejím stavu, vlastnictví a požadovaných opatřeních. Obvykle se to provádí na revizní schůzce, kde se také diskutuje o úrovni kvality a o následných opatřeních. K uzavření opatření může být vyžadována další revize.</p>
+<p>Opravy a reportování. Pro každý defekt by měl být vytvořen report o defektu. Při splnění výstupních kritérií může být pracovní produkt akceptován a výsledky revize jsou reportovány.</p>
+<h2 id="role-a-odpovednosti-pri-revizich">Role a odpovědnosti při revizích<a class="kotva" href="#role-a-odpovednosti-pri-revizich" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Manažer rozhoduje o tom, co má být revidováno a jaké zdroje budou využity, včetně lidí a času.</p>
+<p>Autor vytváří a opravuje revidovaný pracovní produkt.</p>
+<p>Moderátor, někdy nazývaný facilitátor, zajišťuje efektivní průběh revizních schůzek včetně využití mediace. Dohlíží na dodržení časového rámce a na zajištění komfortního prostředí, ve kterém může každý svobodně vyjádřit svůj názor.</p>
+<p>Zapisovatel shromažďuje anomálie od revidujících a zaznamenává další informace z revize, jako jsou rozhodnutí nebo nové anomálie zjištěné během revizní schůzky.</p>
+<p>Revidující provádí revizi. Může jím být někdo, kdo pracuje na projektu, odborník na danou problematiku nebo kterákoli jiná zainteresovaná strana.</p>
+<p>Vedoucí revize přebírá celkovou odpovědnost za revizi, například rozhoduje o tom, kdo do ní bude zapojen, a organizuje, kdy a kde se bude revize konat.</p>
+<h2 id="typy-revizi">Typy revizí<a class="kotva" href="#typy-revizi" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Existuje mnoho typů revizí, od neformálních až po velmi formální. Požadovaná úroveň formálnosti závisí na použitém životním cyklu vývoje, na vyspělosti procesu vývoje, na kritičnosti a složitosti revidovaného pracovního produktu, na právních nebo regulatorních požadavcích a na potřebě doložení záznamů pro případný audit.</p>
+<p>Stejný pracovní produkt může být revidován různými typy revizí, například nejprve neformální a později formálnější. Výběr typu je založen i na potřebách projektu, dostupných zdrojích, typu pracovního produktu, typu rizika, byznysové doméně a firemní kultuře.</p>
+<p>Neformální revize se neřídí definovaným procesem a nevyžaduje formální dokumentovaný výstup. Hlavním cílem je odhalování anomálií.</p>
+<p>Předvedení vede autor. Může sloužit mnoha cílům, jako je hodnocení kvality a budování důvěry v pracovní produkt, vzdělávání revidujících, dosažení dohody, generování nových nápadů, motivace a podpora autora s cílem zlepšovat pracovní produkt a odhalování anomálií. Revidující mohou, ale nemusí před předvedením provést individuální revizi.</p>
+<p>Technickou revizi provádějí odborně kvalifikovaní revidující a vede ji moderátor. Cílem je primárně dosáhnout shody a učinit rozhodnutí týkající se nějakého technického problému, ale také odhalit anomálie, vyhodnotit kvalitu, vybudovat důvěru v pracovní produkt, generovat nové nápady a motivovat autory.</p>
+<p>Inspekce je nejformálnějším typem revize a řídí se komplexním obecným procesem. Hlavním cílem je nacházet maximální počet anomálií. Dalšími cíli jsou hodnocení kvality, budování důvěry v pracovní produkt a motivace a podpora autorů. Shromažďují se metriky používané ke zlepšování celého životního cyklu vývoje včetně samotného procesu inspekce. Při inspekcích nemůže autor vystupovat jako vedoucí revize nebo zapisovatel.</p>
+<h2 id="faktory-uspechu-pri-revizi">Faktory úspěchu při revizi<a class="kotva" href="#faktory-uspechu-pri-revizi" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Jsou definovány jasné cíle a měřitelná výstupní kritéria. Nejsou hodnoceni účastníci revize, ale revidovaný pracovní produkt.</p>
+<p>Je vybrán takový typ revize, který je vhodný pro dosažení daných cílů, pro typ pracovního produktu, pro účastníky revize a pro potřeby a kontext projektu.</p>
+<p>Revize jsou prováděny po malých částech, takže revidující neztrácejí koncentraci.</p>
+<p>Zainteresovaným stranám a autorům je poskytována zpětná vazba z revizí, aby mohli zlepšovat produkt a své činnosti.</p>
+<p>Účastníci mají dostatek času na přípravu.</p>
+<p>Management podporuje proces revize.</p>
+<p>Revize jsou součástí firemní kultury s cílem podporovat učení a zlepšování procesů.</p>
+<p>Je poskytnuto vhodné odborné školení pro všechny účastníky tak, aby věděli, jak plnit svou roli v procesu.</p>
+<p>Schůzky jsou správně řízené.</p>
+<h2 id="nejdulezitejsi-body-k-zapamatovani">Nejdůležitější body k zapamatování<a class="kotva" href="#nejdulezitejsi-body-k-zapamatovani" aria-label="Odkaz na tento oddíl"></a></h2>
+<p>Statické testování má dvě větve. Revize dělá člověk, statickou analýzu dělá nástroj.</p>
+<p>Revizi lze použít na cokoli, co lze přečíst a porozumět tomu. Statická analýza vyžaduje formální strukturu.</p>
+<p>Statické testování najde defekty přímo, dynamické hledá selhání a defekty se určují až následnou analýzou.</p>
+<p>Pět činností procesu revize v pořadí: plánování, zahájení revize, individuální revize, komunikace a analýza, opravy a reportování.</p>
+<p>Předvedení vede autor. Technickou revizi vede moderátor.</p>
+<p>Hlavním cílem technické revize je shoda a rozhodnutí. Hlavním cílem inspekce je maximální počet anomálií.</p>
+<p>Při inspekcích nemůže autor vystupovat jako vedoucí revize nebo zapisovatel.</p>
+<p>Při revizi nejsou hodnoceni účastníci, ale revidovaný pracovní produkt.</p>
+<p>Tím končí zkrácená verze třetí kapitoly.</p>
+</article>
+<nav class="naradi" style="margin-top:3.5rem" aria-label="Sousední kapitoly"><a href="../kapitola-2/zkracena.html">← 2. Testování v průběhu životního cyklu</a><a href="../kapitola-4/zkracena.html">4. Testovací analýza a návrh testů →</a></nav>
+</main>
+<aside class="strom" aria-label="Obsah kapitoly"><h2>V této kapitole</h2><ol><li><a href="#zaklady-statickeho-testovani">Základy statického testování</a></li><li><a href="#pracovni-produkty-vhodne-pro-staticke-testovani">Pracovní produkty vhodné pro statické testování</a></li><li><a href="#prinosy-statickeho-testovani">Přínosy statického testování</a></li><li><a href="#rozdily-mezi-statickym-a-dynamickym-testovanim">Rozdíly mezi statickým a dynamickým testováním</a></li><li><a href="#typicke-defekty-odhalitelne-statickym-testovanim">Typické defekty odhalitelné statickým testováním</a></li><li><a href="#vyhody-vcasne-a-caste-zpetne-vazby">Výhody včasné a časté zpětné vazby</a></li><li><a href="#cinnosti-procesu-revize">Činnosti procesu revize</a></li><li><a href="#role-a-odpovednosti-pri-revizich">Role a odpovědnosti při revizích</a></li><li><a href="#typy-revizi">Typy revizí</a></li><li><a href="#faktory-uspechu-pri-revizi">Faktory úspěchu při revizi</a></li><li><a href="#nejdulezitejsi-body-k-zapamatovani">Nejdůležitější body k zapamatování</a></li></ol></aside>
+</div>
+</div>
+<footer class="paticka">
+  <div class="paticka-vnitrek">
+    <p><strong>Neoficiální studijní materiál.</strong> Tento web není produktem ani publikací ISTQB® ani CaSQB.
+    ISTQB® je registrovaná ochranná známka International Software Testing Qualifications Board.
+    Texty jsou vlastním zpracováním autora vytvořeným při přípravě na zkoušku; oficiální sylabus,
+    slovník a vzorové zkoušky si stáhněte přímo u certifikační autority.</p>
+    <p>Ke zkoušce vždy platí znění oficiálního sylabu CTFL v4.0. Doplněné informace na tomto webu
+    slouží k porozumění a k praxi, nikoli jako zdroj správných odpovědí u zkoušky.</p>
+    <ul>
+      <li><a href="https://casqb.org/ke-stazeni" target="_blank" rel="noopener noreferrer">CaSQB — dokumenty ke stažení</a></li>
+      <li><a href="https://casqb.org/certifikace/zkousky" target="_blank" rel="noopener noreferrer">CaSQB — registrace ke zkoušce</a></li>
+      <li><a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/" target="_blank" rel="noopener noreferrer">ISTQB — CTFL v4.0</a></li>
+      <li><a href="https://glossary.istqb.org" target="_blank" rel="noopener noreferrer">Slovník ISTQB</a></li>
+      <li><a href="../zdroje.html">Zdroje a citace</a></li>
+    </ul>
+  </div>
+</footer>
+<script src="../assets/skript.js"></script>
+</body>
+</html>
