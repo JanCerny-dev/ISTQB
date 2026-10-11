@@ -20,6 +20,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import markdown_min
+import vzorove_zkousky
 from model import (
     KAPITOLY,
     KAPITOLY_KRATCE,
@@ -114,7 +115,7 @@ def hlavicka(
         <ul class="podmenu" id="podmenu-kapitoly" aria-label="Seznam kapitol">{polozky_podmenu}</ul>
       </span>
       {odkaz('zdroje.html', 'Zdroje', 'zdroje')}
-      <a href="{korenova_cesta}zkouska.html" class="brzy"{' aria-current="page"' if aktivni == 'zkouska' else ''}>Zkouška <em>brzy</em></a>
+      {odkaz('zkouska.html', 'Zkouška', 'zkouska')}
       <button type="button" class="prepinac-tema" data-prepinac-tema>Tmavý režim</button>
     </nav>
   </div>
@@ -584,8 +585,13 @@ def sestav() -> int:
     (WEB / "kapitoly.html").write_text(stranka_kapitol(dokumenty), encoding="utf-8")
     print("  kapitoly.html")
 
-    (WEB / "zkouska.html").write_text(stranka_zkousky(), encoding="utf-8")
-    print("  zkouska.html")
+    # Simulace zkoušky z oficiálních vzorových testů; bez dat zůstane původní
+    # informační stránka.
+    zkousky = vzorove_zkousky.zapis(KOREN, WEB, stranka)
+    if len(zkousky) == 1:
+        (WEB / "zkouska.html").write_text(stranka_zkousky(), encoding="utf-8")
+    for nazev in zkousky:
+        print(f"  {nazev}")
 
     zdroje_md = KOREN / "ZDROJE.md"
     if zdroje_md.exists():

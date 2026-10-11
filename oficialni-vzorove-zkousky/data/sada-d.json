@@ -1,0 +1,936 @@
+{
+ "sada": "D",
+ "verze_cz": "1.5",
+ "verze_en": "1.5",
+ "otazky": [
+  {
+   "n": 1,
+   "lo": "FL-1.1.1",
+   "k": "K1",
+   "vyber": 1,
+   "q": "<p>Která z následujících možností je typickým cílem testování?</p>",
+   "moznosti": [
+    "Nalezení a oprava defektů v testovaném objektu.",
+    "Udržování efektivní komunikace s vývojáři.",
+    "Validace splnění zákonných požadavků.",
+    "Budování důvěry v kvalitu testovaného objektu."
+   ],
+   "spravne": [
+    "d"
+   ],
+   "vysvetleni": {
+    "a": "Není správně. Nalezení a oprava defektů v testovaném objektu není typickým cílem testování. Identifikace defektů sice je cílem testování, ale oprava defektů už nepatří mezi testovací činnosti.",
+    "b": "Není správně. Udržování efektivní komunikace s vývojáři není typickým cílem testování. Komunikace je užitečná pro dosažení dalších cílů testování (např. poskytování informací zainteresovaným stranám tak, aby mohly přijmout kvalifikovaná rozhodnutí), není to však primární důvod, proč se testuje.",
+    "c": "Není správně. Validace, zda byly splněny zákonné požadavky, není typickým cílem testování. Validace se týká kontroly, že systém splňuje potřeby uživatelů a ostatních zainteresovaných stran v provozním prostředí. Kontrola splnění zákonných požadavků je jednou z forem ověřování.",
+    "d": "Je správně. Budování důvěry v kvalitu testovaného objektu je dosaženo úspěšným provedením testů."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 2,
+   "lo": "FL-1.2.3",
+   "k": "K2",
+   "vyber": 1,
+   "q": "<p>Návrhář (designér) kvůli únavě nevhodně navrhl uživatelské rozhraní. V důsledku toho není rozhraní přizpůsobeno uživatelům se zdravotním postižením. Programátor implementuje uživatelské rozhraní podle návrhu, ale jelikož je pod velkým časovým tlakem, nezačlení do kódu vhodné ošetření výjimek pro výpočty bonusů. Během provozu systému se objeví stížnosti od některých uživatelů se zdravotním postižením ohledně rozhraní, načež je společnost pokutována příslušným regulačním orgánem (úřadem). Nikdo si nevšimne, že výpočty bonusů jsou někdy nesprávné.</p><p>Které z následujících tvrzení je SPRÁVNÉ?</p>",
+   "moznosti": [
+    "Chybný výpočet bonusů je defekt, který se občas vyskytuje.",
+    "Pokuta obdržená za nezohlednění potřeb některých uživatelů se zdravotním postižením je selháním.",
+    "Kořenovou příčinou je programátor pracující pod velkým časovým tlakem.",
+    "Návrh uživatelského rozhraní obsahuje chybu návrháře (designéra)."
+   ],
+   "spravne": [
+    "c"
+   ],
+   "vysvetleni": {
+    "a": "Není správně. Chybný výpočet bonusů je selháním systému, nikoliv defektem.",
+    "b": "Není správně. Systém, který nedostatečně podporuje uživatele se zdravotním postižením, je selháním, které nakonec vede k pokutě. Ale samotná pokuta selháním není (jde jen o důsledek správného fungování regulačního systému).",
+    "c": "Je správně. Chyba je na straně programátora a tato chyba je způsobena tím, že pracuje pod velkým časovým tlakem, což je kořenovou příčinou následného defektu.",
+    "d": "Není správně. Špatný návrh uživatelského rozhraní, který se vhodně nezabývá uživateli se zdravotním postižením, je defekt návrhu způsobený chybou designéra. Návrh uživatelského rozhraní tedy obsahuje defekt v návrhu, nikoli chybu designéra."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 3,
+   "lo": "FL-1.3.1",
+   "k": "K2",
+   "vyber": 1,
+   "q": "<p>Testovací podmínky používají testeři k vytváření testovacích případů a provádění testů. Přestože se testovací podmínky nemění, testovací případy jsou pokaždé jiné. Kterého z následujících principů testování se týká tato obměna (variace) testovacích případů?</p>",
+   "moznosti": [
+    "Testy se opotřebovávají.",
+    "Nepřítomnost defektů je klam.",
+    "Včasné testování šetří čas a peníze.",
+    "Shlukování defektů."
+   ],
+   "spravne": [
+    "a"
+   ],
+   "vysvetleni": {
+    "a": "Je správně. Princip \"testy se opotřebovávají\" se týká myšlenky, že opakování stejných testů na nezměněném kódu pravděpodobně neodhalí nové defekty, a proto je nezbytné testy modifikovat. Díky použití testovacích podmínek je možné pokaždé vygenerovat nové testy (které nebudou identické s původními) a snížit tak riziko jejich opotřebení.",
+    "b": "Není správně. Princip \"nepřítomnost defektů je klam\" se zabývá zajištěním toho, aby byly potřeby uživatelů splněny i v případě, že se provede velké množství testů a nejsou nalezeny žádné defekty (tj. je nutná i validace). Použití testovacích podmínek pro generování testovacích případů a provádění s tímto principem nesouvisí.",
+    "c": "Není správně. Princip \"včasné testování šetří čas a peníze\" se týká včasného odstranění defektů s cílem zabránit vzniku následných defektů v odvozených pracovních produktech, čímž se sníží náklady a pravděpodobnost výskytu selhání. Obvykle je to řešeno co nejčasnějším zahájením testování (statického i dynamického), ale nesouvisí to s použitím testovacích podmínek pro generování testovacích případů a provádění testů.",
+    "d": "Není správně. Princip \"shlukování defektů\" se týká rozložení defektů v systému, které obvykle odpovídá rozdělení dle Paretova pravidla. Použití testovacích podmínek pro generování testovacích případů a provádění testů s tímto principem nesouvisí. Tento princip je obvykle aplikován testováním založeným na rizicích."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 4,
+   "lo": "FL-1.4.1",
+   "k": "K2",
+   "vyber": 1,
+   "q": "<p>Jsou zadány následující testovací úkoly:</p><ol><li>Odvození testovacích případů z testovacích podmínek.</li><li>Identifikace opakovaně použitelného testwaru.</li><li>Uspořádání testovacích případů do testovacích procedur.</li><li>Vyhodnocení testovací báze a testovaného objektu.</li></ol><p>A následující testovací činnosti:</p><ol type=\"A\"><li>Testovací analýza.</li><li>Návrh testů.</li><li>Implementace testování.</li><li>Dokončení testování.</li></ol><p>Která z následujících možností NEJLÉPE přiřazuje úkoly k činnostem?</p>",
+   "moznosti": [
+    "1B, 2A, 3D, 4C",
+    "1B, 2D, 3C, 4A",
+    "1C, 2A, 3B, 4D",
+    "1C, 2D, 3A, 4B"
+   ],
+   "spravne": [
+    "b"
+   ],
+   "vysvetleni": {
+    "a": "Není správně.",
+    "b": "Je správně. Správná kombinace je: 1B, 2D, 3C, 4A",
+    "c": "Není správně.",
+    "d": "Není správně."
+   },
+   "vysvetleni_obecne": "<p>S ohledem na jednotlivé uvedené testovací činnosti a jejich úkoly platí, že:</p><ol type=\"A\"><li>Testovací analýza: za účelem identifikace užitných vlastností (features) vyžadujících testování, se testovací báze analyzuje a jsou definovány testovací podmínky, které jsou následně prioritizovány spolu se souvisejícími riziky. Během testovací analýzy se obvykle odhalí defekty v testovací bázi a může se také posoudit testovatelnost testovaného objektu. (Úkol 4)</li><li>Návrh testů: zahrnuje použití testovacích podmínek k vytvoření testovacích případů a dalšího nezbytného testwaru jako jsou požadavky na testovací data a testovací listiny průzkumného testování. (Úkol 1)</li><li>Implementace testování: zahrnuje generování testovacích procedur jako jsou manuální a automatizované testovací skripty. Ty jsou vytvořeny z testovacích případů a mohou být sestaveny do testovacích sad. Testovací procedury jsou prioritizovány a uspořádány v harmonogramu provádění testů. (Úkol 3)</li><li>Ukončení testování: nastává při dosažení milníku projektu, jako je vydání verze, konec iterace nebo konec určité úrovně testování. Testware je identifikován a archivován, příp. předán příslušným týmům k opětovnému použití, testovací prostředí je uzavřeno a testovací činnosti jsou analyzovány s cílem získat zkušenosti a ponaučení pro budoucí zlepšení procesu. (Úkol 2)</li></ol><p>Pak tedy:</p>"
+  },
+  {
+   "n": 5,
+   "lo": "FL-1.4.3",
+   "k": "K2",
+   "vyber": 1,
+   "q": "<p>Máte k dispozici následující testware:</p><ol type=\"i\"><li>Souhrnný report z testování.</li><li>Data uložená v databázi, používaná pro testovací vstupy a očekávané výsledky.</li><li>Seznam prvků potřebných k vytvoření testovacího prostředí.</li><li>Zdokumentované sekvence (posloupnosti) testovacích případů seřazené v pořadí k provedení.</li><li>Testovací případy.</li></ol><p>Která z následujících možností NEJLÉPE vyjadřuje fakt, že výše uvedený testware je výsledkem implementace testování?</p>",
+   "moznosti": [
+    "ii, iv",
+    "iii, v",
+    "i, ii, v",
+    "i, iii, iv"
+   ],
+   "spravne": [
+    "a"
+   ],
+   "vysvetleni": {
+    "a": "Je správně. Položky ii a iv v seznamu jsou výstupem implementace testování.",
+    "b": "Není správně.",
+    "c": "Není správně.",
+    "d": "Není správně."
+   },
+   "vysvetleni_obecne": "<p>S ohledem na každou z uvedených testovacích činností a jejich výstupním testware platí, že:</p><ol type=\"i\"><li>Výstupem dokončení testování je souhrnný report z testování.</li><li>Výstupem implementace testování jsou testovací data, tedy data uchovávaná v databázi a používaná jako testovací vstupy a očekávané výsledky.</li><li>Výstupem návrhu testů je seznam prvků potřebných k vytvoření testovacího prostředí, což jsou vlastně požadavky na testovací prostředí.</li><li>Testovací procedury jsou zdokumentované sekvence testovacích případů v pořadí jejich provedení. Jedná se o výstup implementace testování.</li><li>Testovací případy jsou výstupem návrhu testů.</li></ol><p>Implementace testování vytváří následující výstupy: testovací procedury (iv), automatizované testovací skripty, testovací sady, testovací data (ii), harmonogram provádění testů a prvky testovacího prostředí (např. stuby, ovladače, simulátory a virtualizace služeb).</p><p>Pak tedy:</p>"
+  },
+  {
+   "n": 6,
+   "lo": "FL-1.4.5",
+   "k": "K2",
+   "vyber": 1,
+   "q": "<p>Která z následujících možností NEJPRAVDĚPODOBNĚJI popisuje úkol vykonávaný někým v roli manažera testování?</p>",
+   "moznosti": [
+    "Vyhodnocení testovací báze a testovaného objektu.",
+    "Definice požadavků na testovací prostředí.",
+    "Posouzení testovatelnosti testovaného objektu.",
+    "Vytvoření souhrnného reportu z testování."
+   ],
+   "spravne": [
+    "d"
+   ],
+   "vysvetleni": {
+    "a": "Není správně. Role testera je primárně zodpovědná za technické a inženýrské aspekty testování jako je testovací analýza, návrh testů, implementace testování a provedení testů. Hodnocení testovací báze (za účelem identifikace defektů) a testovaného objektu (za účelem posouzení jeho testovatelnosti) jsou úkoly prováděné v rámci testovací analýzy, takže je pravděpodobné, že se jedná o úkoly vykonávané v rámci role testera.",
+    "b": "Není správně. Role testera je primárně zodpovědná za technické a inženýrské aspekty testování jako je testovací analýza, návrh testů, implementace testování a provedení testů. Definování požadavků na testovací prostředí je úkol, který je prováděn v rámci návrhu testů, takže se pravděpodobně jedná o úkol vykonávaný v rámci role testera.",
+    "c": "Není správně. Role testera je primárně zodpovědná za technické a inženýrské aspekty testování jako je testovací analýza, návrh testů, implementace testování a provedení testů. Posouzení testovatelnosti testovaného objektu je úkol, který je prováděný v rámci testovací analýzy, takže se pravděpodobně jedná o úkol prováděný v rámci role testera.",
+    "d": "Je správně. Role manažera testování se primárně zaměřuje na činnosti související s plánováním testování, monitoringem testování, řízením testování a dokončením testování. Vytvoření souhrnného reportu z testování, který je hlavním výstupem dokončení testování, bude tedy pravděpodobně úkolem, který bude prováděn někým v roli manažera testování."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 7,
+   "lo": "FL-1.5.2",
+   "k": "K1",
+   "vyber": 1,
+   "q": "<p>Které z následujících tvrzení je výhodou týmového přístupu?</p>",
+   "moznosti": [
+    "Zlepšení komunikace mezi členy týmu.",
+    "Snížení individuální odpovědnosti za kvalitu.",
+    "Rychlejší nasazení dodávek (výstupů) koncovým uživatelům.",
+    "Omezení spolupráce s externími byznysovými uživateli."
+   ],
+   "spravne": [
+    "a"
+   ],
+   "vysvetleni": {
+    "a": "Je správně. Týmový přístup podporuje intenzivní komunikaci a spolupráci mezi členy týmu.",
+    "b": "Není správně. Přestože týmový přístup klade důraz na kolektivní odpovědnost za kvalitu, je za ni zodpovědný i nadále každý člen týmu.",
+    "c": "Není správně. Princip týmového přístupu spočívá ve schopnosti týmu spolupracovat s cílem dosáhnout vyšší kvality výsledků, což ale nemusí nutně vést k rychlejšímu nasazení koncovým uživatelům.",
+    "d": "Není správně. Při použití týmového přístupu spolupracují testeři při tvorbě akceptačních testů se zástupci byznysu. Nic nenasvědčuje tomu, že by tento přístup omezil spolupráci s externími byznysovými uživateli."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 8,
+   "lo": "FL-1.5.3",
+   "k": "K2",
+   "vyber": 1,
+   "q": "<p>Uvažujme následující výhody a nevýhody nezávislosti testování:</p><ol type=\"i\"><li>Testeři pracují jinde (na jiném místě) než vývojáři.</li><li>Testeři zpochybňují předpoklady, které programátoři dělají při psaní kódu.</li><li>Mezi testery a vývojáři vzniká konfrontační (nepřátelský) vztah.</li><li>Vývojáři jsou přesvědčeni o tom, že za kvalitu odpovídají především testeři.</li><li>Testeři mají jiné předsudky než vývojáři.</li></ol><p>Které z nich jsou s NEJVĚTŠÍ pravděpodobností považovány za přínosy?</p>",
+   "moznosti": [
+    "i, iv",
+    "ii, v",
+    "i, iii, iv",
+    "ii, iii, v"
+   ],
+   "spravne": [
+    "b"
+   ],
+   "vysvetleni": {
+    "a": "Není správně.",
+    "b": "Je správně. Výhodami jsou možnosti ii a v.",
+    "c": "Není správně.",
+    "d": "Není správně."
+   },
+   "vysvetleni_obecne": "<p>Uvažujme všechny níže uvedené výhody a nevýhody nezávislosti testování:</p><ol type=\"i\"><li>V ideálním případě je žádoucí úzká spolupráce mezi testery a vývojáři, která se izolací nezvyšuje. Tato možnost je tedy nevýhodou.</li><li>Testeři a vývojáři mají odlišné zázemí, technický náhled a předsudky, což testerům umožňuje užitečně zpochybnit předpoklady učiněné zainteresovanými stranami během specifikace a implementace systému. Tato možnost je tedy výhodou.</li><li>Hlavní nevýhodou nezávislosti testování je, že nezávislí testeři mohou být izolováni od vývojového týmu, což může vést k nedostatečné spolupráci, problémům v komunikaci nebo nepřátelskému vztahu s vývojovým týmem. Testeři mohou být také považování za úzké místo ve vývojovém procesu nebo mohou být obviňování za zpoždění při vydávání produktu. Tato možnost je tedy nevýhodou.</li><li>Jednou z nevýhod nezávislosti v testování je, že se testeři mohou izolovat od vývojového týmu, což vede k tomu, že vývojáři cítí menší odpovědnost za kvalitu. Tato možnost je tedy nevýhodou.</li><li>Hlavní výhodou nezávislosti testování je to, že testeři odhalí různé typy selhání a defektů mnohem pravděpodobněji než vývojáři, kteří mají jiné odborné zázemí, technický pohled a možné předsudky včetně kognitivního zkreslení.</li></ol><p>Pak tedy:</p>"
+  },
+  {
+   "n": 9,
+   "lo": "FL-2.1.2",
+   "k": "K1",
+   "vyber": 1,
+   "q": "<p>Které z následujících tvrzení je příkladem osvědčeného postupu v testování, který platí pro všechny druhy životního cyklu vývoje softwaru?</p>",
+   "moznosti": [
+    "Každá úroveň testování má specifické a odlišné cíle testování.",
+    "Implementace a provedení testů pro danou úroveň testování by měly začít během odpovídající vývojové fáze.",
+    "Testeři by měli začít navrhovat testy, jakmile jsou k dispozici pracovní verze příslušných pracovních produktů.",
+    "Každá činnost dynamického testování má odpovídající činnost statického testování."
+   ],
+   "spravne": [
+    "a"
+   ],
+   "vysvetleni": {
+    "a": "Je správně. Každá úroveň testování má specifické a odlišné cíle testování, protože v každé úrovni testování se testuje jiná forma testovaného objektu (např. jednotlivá komponenta, celý systém) a překrývání cílů testování by vedlo ke zbytečné duplicitě.",
+    "b": "Není správně. Testovací analýza a návrh testů pro danou úroveň by měly začít během odpovídající vývojové fáze SDLC, aby se podpořilo včasné testování (např. testovací analýza a návrh akceptačních testů by měly začít během analýzy požadavků). Implementace testování bude zpravidla zahájena později, zatímco provádění testů bude zahájeno v průběhu dané úrovně testování.",
+    "c": "Není správně. Návrh testů pro danou úroveň by měl začít během odpovídající vývojové fáze, aby se podpořilo včasné testování. Je však důležité, aby návrh testů (např. vytváření testovacích případů ) vycházel z řádně analyzované testovací báze, a nikoli z pouhé rané pracovní verze (draftu), jinak může být promarněno značné množství pracnosti vytvářením testovacích případů pro návrh, který se později změní.",
+    "d": "Není správně. Řízení kvality se vztahuje na všechny vývojové činnosti, což znamená, že ke každé vývojové činnosti existuje odpovídající testovací činnost. Stejná symetrie však neplatí pro dynamické testování a statické testování. Existují některé činnosti statického testování (např. statická analýza), pro které neexistuje žádná zjevná odpovídající činnost dynamického testování."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 10,
+   "lo": "FL-2.1.3",
+   "k": "K1",
+   "vyber": 1,
+   "q": "<p>Která z následujících možností je příkladem přístupu k vývoji iniciovaného testy (test-first)?</p>",
+   "moznosti": [
+    "Vývoj řízený chováním.",
+    "Vývoj řízený úrovní testování.",
+    "Vývoj řízený funkcionalitou.",
+    "Vývoj řízený výkonností."
+   ],
+   "spravne": [
+    "a"
+   ],
+   "vysvetleni": {
+    "a": "Je správně. Vývoj řízený chováním (BDD) je dobře známým příkladem vývoje iniciovaného testy.",
+    "b": "Není správně. Vývoj řízený úrovní testování (Test Level Driven Development) není správným příkladem vývoje iniciovaného testy.",
+    "c": "Není správně. Vývoj řízený funkcemi (Function-Driven Development) není správným příkladem vývoje iniciovaného testy.",
+    "d": "Není správně. Vývoj řízený výkonem (Performance-Driven Development) není správným příkladem vývoje iniciovaného testy."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 11,
+   "lo": "FL-2.1.4",
+   "k": "K2",
+   "vyber": 1,
+   "q": "<p>Která z následujících výzev se při implementaci DevOps vyskytne s NEJVĚTŠÍ pravděpodobností?</p>",
+   "moznosti": [
+    "Zajistit, aby nebyly přehlédnuty nefunkcionální charakteristiky kvality.",
+    "Správa neustále se měnících testovacích prostředí.",
+    "Potřeba více manuálních testerů s vhodnými (odpovídajícími) zkušenostmi.",
+    "Nastavení automatizace testů jako součásti pipeline pro dodávání (delivery pipeline)."
+   ],
+   "spravne": [
+    "d"
+   ],
+   "vysvetleni": {
+    "a": "Není správně. DevOps obecně zvyšuje viditelnost nefunkcionálních charakteristik kvality jako je výkonnost a bezporuchovost (spolehlivost).",
+    "b": "Není správně. Automatizované procesy jako je průběžná integrace/průběžné nasazování (CI/CD) používané v DevOps, umožňují nastavit stabilní testovací prostředí.",
+    "c": "Není správně. Automatizované procesy jako CI/CD používané v DevOps obecně snižují potřebu manuálního testování.",
+    "d": "Je správně. Implementace DevOps může představovat několik rizik a výzev, včetně potřeby definovat a nastavit pipelinu zodpovědnou za dodávání (delivery pipeline), zavést a udržovat nástroje pro CI/CD a zavést a udržovat automatizaci testování."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 12,
+   "lo": "FL-2.1.6",
+   "k": "K2",
+   "vyber": 1,
+   "q": "<p>Která z následujících možností NEJLÉPE popisuje retrospektivu?</p>",
+   "moznosti": [
+    "Retrospektivy umožňují členům týmu identifikovat jiné členy týmu, kteří plně nepřispěli k dosažení kvality, jak je v týmovém přístupu vyžadováno.",
+    "Retrospektiva dává testerům příležitost identifikovat činnosti, které byly úspěšné a zachovat je až budou v budoucnu zaváděna potenciální zlepšení.",
+    "Retrospektivy jsou místem, kde mohou členové agilního týmu vyjádřit své obavy týkající se vedení a zákazníků bez rizika obviňování.",
+    "Retrospektivy poskytují členům agilního týmu fórum, kde diskutují plány a technická rozhodnutí pro následující iteraci."
+   ],
+   "spravne": [
+    "b"
+   ],
+   "vysvetleni": {
+    "a": "Není správně. Mezi přínosy retrospektiv patří stmelování týmu a vzájemné učení (například jako výsledek možnosti hlásit problémy a navrhovat zlepšení) a zlepšování spolupráce mezi vývojem a testováním (například díky pravidelným revizím a optimalizaci vzájemné spolupráce). Poukazování na jednotlivce, o kterých se člen týmu může domnívat, že plně nepřispěli k dosažení kvality (jak vyžaduje týmový přístup) k tomuto stmelování týmu a spolupráci nepřispěje.",
+    "b": "Je správně. Během retrospektivy skupina diskutuje o tom, které aspekty projektu byly úspěšné a měly by být zachovány, stejně jako o oblastech, které by mohly být zlepšeny, a jak toho dosáhnout.",
+    "c": "Není správně. Přínosy retrospektivy jsou založeny na zvýšení efektivity a účinnosti prostřednictvím zlepšování procesů. Není to příležitost k „vypouštění páry“ a kritizování vedení a zákazníků. Výsledky testů jsou zaznamenány (obvykle v souhrnném reportu z testování), takže vše, co na schůzce zaznělo, si mohou přečíst i ostatní zainteresované strany.",
+    "d": "Není správně. Retrospektivy jsou schůzky, které se obvykle konají na konci iterace, a na kterých se členové týmu soustředí na projednání problémů souvisejících s kvalitou, které se vyskytly v aktuální iteraci. Nejsou využívány k vytváření plánů nebo technických rozhodnutí pro další iteraci (to by mělo být prováděno na plánovací schůzce na začátku další iterace)."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 13,
+   "lo": "FL-2.2.2",
+   "k": "K2",
+   "vyber": 1,
+   "q": "<p>Který z následujících testů bude s NEJVĚTŠÍ pravděpodobností proveden jako součást funkcionálního testování?</p>",
+   "moznosti": [
+    "Test, který kontroluje, zda funkcionalita řazení seřadí prvky seznamu nebo pole vzestupně.",
+    "Test, který kontroluje, zda funkcionalita řazení dokončí řazení do jedné sekundy od spuštění.",
+    "Test, který kontroluje, jak snadno lze změnit funkcionalitu řazení z vzestupného na sestupné.",
+    "Test, který kontroluje, zda funkcionalita řazení funguje správně i při přechodu z 32bitové na 64bitovou architekturu."
+   ],
+   "spravne": [
+    "a"
+   ],
+   "vysvetleni": {
+    "a": "Je správně. Kontrola, zda funkcionalita řazení seřadí prvky seznamu nebo pole vzestupně, je vyhodnocením funkcionální správnosti, což je součástí funkcionálního testování.",
+    "b": "Není správně. Posouzení, zda funkcionalita řazení splňuje svůj nefunkcionální požadavek na dokončení operace do jedné sekundy, je součástí testování její výkonnostní efektivity, které je součástí nefunkcionálního testování.",
+    "c": "Není správně. Hodnocení snadnosti, s jakou lze řazení upravit z vzestupného na sestupné, je testování její modifikovatelnosti. Jedná se o formu nefunkcionálního testování udržovatelnosti, které je součástí nefunkcionálního testování.",
+    "d": "Není správně. Posouzení, zda funkcionalita řazení funguje správně i po přechodu z 32bitové na 64bitovou architekturu, je testováním její adaptability, což je forma testování přenositelnosti, která je součástí nefunkcionálního testování."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 14,
+   "lo": "FL-2.3.1",
+   "k": "K2",
+   "vyber": 1,
+   "q": "<p>Která z následujících možností je NEJPRAVDĚPODOBNĚJŠÍM podnětem, který vede k testování údržby systému elektronické směnárny?</p>",
+   "moznosti": [
+    "Vývojáři nahlásili, že úprava systému byla obtížná, a testeři se rozhodli ověřit, zda je to pravda.",
+    "Možnost vrácení peněz byla ze systému odstraněna, protože ne vždy vracela zákazníkům správnou částku.",
+    "Agilní tým začal vyvíjet uživatelský scénář, který do systému přidává novou funkcionalitu věrnostního programu.",
+    "V systému byla použita možnost volby jazyka, která umožnila provádění transakcí v angličtině i v místním jazyce."
+   ],
+   "spravne": [
+    "b"
+   ],
+   "vysvetleni": {
+    "a": "Není správně. Za předpokladu, že by testeři mohli zkontrolovat snadnost úpravy systému, pak by to bylo provedeno spíše v rámci testování udržovatelnosti než testování údržby. Tím pádem se nejedná o podnět ke spuštění testování údržby.",
+    "b": "Je správně. Příkladem podnětu pro spuštění testování údržby je změna systému (například oprava nebo vylepšení). Odstranění možnosti vrácení peněz bylo úpravou, která by vedla k testování údržby.",
+    "c": "Není správně. Pokud agilní tým začal vyvíjet uživatelský scénář, který do systému směnárny přidává novou funkcionalitu věrnostního programu, pak to povede k testování nové funkcionality a poté provedení regresního testování. V této situaci se nevyžaduje žádné testování údržby.",
+    "d": "Není správně. Rekonfigurace systému tak, aby podporoval transakce v místním jazyce i angličtině, není úpravou systému, změnou provozního prostředí ani vyřazením systému, což jsou tři podněty pro zahájení testování údržby."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 15,
+   "lo": "FL-3.1.1",
+   "k": "K1",
+   "vyber": 1,
+   "q": "<p>Který z následujících pracovních produktů NELZE prověřit statickým testováním?</p>",
+   "moznosti": [
+    "Smlouva.",
+    "Plán testování.",
+    "Šifrovaný kód.",
+    "Testovací listina."
+   ],
+   "spravne": [
+    "c"
+   ],
+   "vysvetleni": {
+    "a": "Není správně. Obecně platí, že většinu pracovních produktů lze prozkoumat některou z forem statického testování. Pokud je pracovní produkt (v tomto případě smlouva) interpretovatelný pro člověka, lze na něj aplikovat revizi, což je druh statického testování.",
+    "b": "Není správně. Obecně platí, že většinu pracovních produktů lze prozkoumat některou z forem statického testování. Pokud je pracovní produkt (v tomto případě plán testování) interpretovatelný pro člověka, lze na něj aplikovat revizi, což je druh statického testování.",
+    "c": "Je správně. Obecně platí, že většinu pracovních produktů lze prozkoumat některou z forem statického testování. To ale neplatí pro pracovní produkty, které jsou příliš složité pro člověka z hlediska srozumitelnosti, a na které nelze aplikovat analýzu pomocí nástrojů. Šifrovaný kód je pro člověka příliš složitý a pokud je správně zašifrován, nebude možné jej ani analyzovat většinou nástrojů.",
+    "d": "Není správně. Obecně platí, že většinu pracovních produktů lze prozkoumat některou z forem statického testování. Pokud je pracovní produkt (v tomto případě testovací listina) interpretovatelný pro člověka, lze na něj aplikovat revizi, což je druh statického testování."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 16,
+   "lo": "FL-3.1.2",
+   "k": "K2",
+   "vyber": 1,
+   "q": "<p>Které z následujících tvrzení o hodnotě (významu) statického testování je SPRÁVNÉ?</p>",
+   "moznosti": [
+    "Typy defektů nalezené statickým testováním se liší od typů defektů, které lze zjistit dynamickým testováním.",
+    "Dynamické testování může odhalit typy defektů, které lze nalézt statickým testováním, a navíc některé další typy defektů.",
+    "Dynamické testování může odhalit některé defekty, které lze nalézt statickým testováním, ale ne všechny.",
+    "Statické testování může odhalit typy defektů, které lze nalézt dynamickým testováním, a navíc některé další typy defektů."
+   ],
+   "spravne": [
+    "c"
+   ],
+   "vysvetleni": {
+    "a": "Není správně.",
+    "b": "Není správně.",
+    "c": "Je správně",
+    "d": "Není správně."
+   },
+   "vysvetleni_obecne": "<p>Některé typy defektů lze odhalit pouze statickým testováním, například nedosažitelný kód, chybně implementované návrhové vzory a defekty v nespustitelných pracovních produktech. Některé typy defektů mohou být nalezeny jak statickým, tak dynamickým testováním. Příkladem je defekt v kódu, který může být nalezen jak revidujícím při revizi kódu (tedy statickým testováním), tak zpozorován ve formě následného selhání při dynamickém testování. Konečně některé typy defektů lze odhalit pouze dynamickým testováním, např. problémy s výkonností nebo pamětí, které lze pozorovat pouze při spouštění kódu nebo systému.</p><p>Pak tedy:</p>"
+  },
+  {
+   "n": 17,
+   "lo": "FL-3.2.2",
+   "k": "K2",
+   "vyber": 1,
+   "q": "<p>Předpokládejme následující popis činností revize:</p><ol><li>Zjištěné anomálie jsou analyzovány, prodiskutovány a je rozhodnuto o jejich stavu, vlastnictví a požadovaných opatřeních.</li><li>Defekty jsou zaznamenány a veškeré potřebné opravy jsou provedeny před akceptací pracovního produktu.</li><li>Revidující používají různé techniky pro vytváření doporučení a otázek ohledně pracovního produktu, a k identifikaci anomálií.</li><li>Je stanoven účel a harmonogram revize s cílem zajistit cílenou a efektivní revizi.</li><li>Účastníkům je poskytnut přístup k revidovanému pracovnímu produktu.</li></ol><p>Která z následujících možností je SPRÁVNÉ pořadí činností v procesu revize odpovídající daným popisům?</p>",
+   "moznosti": [
+    "4 – 3 – 5 – 2 – 1",
+    "4 – 5 – 3 – 1 – 2",
+    "5 – 4 – 1 – 3 – 2",
+    "5 – 4 – 3 – 2 – 1"
+   ],
+   "spravne": [
+    "b"
+   ],
+   "vysvetleni": {
+    "a": "Není správně.",
+    "b": "Je správně. Správné pořadí činností je následující: 4 – 5 – 3 – 1 – 2",
+    "c": "Není správně.",
+    "d": "Není správně."
+   },
+   "vysvetleni_obecne": "<p>Uvedené popisy spadají do následujících činností procesu revize:</p><ol><li>Fáze \"komunikace a analýza\".</li><li>Fáze \"opravy a reportování\".</li><li>Fáze \"individuální revize\".</li><li>Fáze \"plánování“.</li><li>Fáze \"zahájení revize\".</li></ol><p>Obecný proces revize podle normy ISO/IEC 20246, který je uveden v učebních osnovách, popisuje činnosti v tomto logickém pořadí:</p><ul><li>Plánování (4).</li><li>Zahájení revize (5).</li><li>Individuální revize (3).</li><li>Komunikace a analýza (1).</li><li>Opravy a reportování (2).</li></ul><p>Pak tedy:</p>"
+  },
+  {
+   "n": 18,
+   "lo": "FL-3.2.3",
+   "k": "K1",
+   "vyber": 1,
+   "q": "<p>Který účastník procesu revize je zodpovědný za zajištění efektivního průběhu revizních schůzek a za to, aby mohl každý jejich účastník vyjádřit svobodně svůj názor?</p>",
+   "moznosti": [
+    "Manažer.",
+    "Moderátor.",
+    "Předseda.",
+    "Vedoucí revize."
+   ],
+   "spravne": [
+    "b"
+   ],
+   "vysvetleni": {
+    "a": "Není správně. Manažer rozhoduje o tom, co má být revidováno a jaké zdroje budou využity (včetně lidí a času).",
+    "b": "Je správně. Moderátor (někdy také facilitátor) je zodpovědný za zajištění efektivního průběhu revizních schůzek včetně dodržení časového rámce, využití mediace a zajištění komfortního prostředí, ve kterém může každý svobodně vyjádřit svůj názor.",
+    "c": "Není správně. Předseda není funkce, která by měla být při revizích využita.",
+    "d": "Není správně. Vedoucí revize je odpovědný za dohled nad procesem revize jako je výběr členů revizního týmu, plánování revizních schůzek a zajištění úspěšného dokončení revize."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 19,
+   "lo": "FL-4.1.1",
+   "k": "K2",
+   "vyber": 1,
+   "q": "<p>Provádíte systémové testování webové aplikace e-shopu a máte k dispozici následující požadavek:</p><blockquote><em>REQ 05-017. Pokud celková cena nákupu přesáhne 100 €, získá zákazník 5% slevu na další nákupy. V opačném případě zákazník slevu neobdrží.</em></blockquote><p>Které techniky testování budou NEJVÍCE užitečné při navrhování testovacích případů na základě tohoto požadavku?</p>",
+   "moznosti": [
+    "Techniky testování bílé skříňky.",
+    "Techniky testování černé skříňky.",
+    "Techniky testování založené na zkušenostech.",
+    "Techniky testování založené na rizicích."
+   ],
+   "spravne": [
+    "b"
+   ],
+   "vysvetleni": {
+    "a": "Není správně. Dokument neodkazuje na vnitřní strukturu testovaného objektu, ale specifikuje požadované chování testovaného objektu. Testovací techniky bílé skříňky proto nebudou při navrhování testovacích případů užitečné.",
+    "b": "Je správně. Text je požadavek, který specifikuje požadované chování testovaného objektu. Proto jsou v tomto případě nejvhodnějšími testovacími technikami techniky černé skříňky (např. analýza hraničních hodnot nebo testování dle rozhodovací tabulky).",
+    "c": "Není správně. Ačkoli lze k návrhu testovacích případů na základě uvedeného textu použít techniky testování založené na zkušenostech, vhodnější bude použití techniky testování černé skříňky. Dokument popisuje přesné byznysové pravidlo a navíc formulace jako \"přesahuje 100 €\" naznačuje existenci důležitých hranic tříd ekvivalence, které by měly být testovány pomocí testovacích technik černé skříňky, např. pomocí analýzy hraničních hodnot.",
+    "d": "Není správně. Testování založené na rizicích není uznávaným typem testovací techniky."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 20,
+   "lo": "FL-4.2.1",
+   "k": "K3",
+   "vyber": 2,
+   "q": "<p>Systém pro prodej vstupenek do kina vypočítá typ slevy na základě roku narození klienta (KR) a aktuálního roku (AR) takto:</p><p>NECHŤ D je rozdíl mezi AR a BY, tj. D = AR - KR</p><ul><li>KDYŽ D &lt; 0 PAK vypíše chybové hlášení \"rok narození nemůže být větší než aktuální rok\".</li><li>KDYŽ 0 ≤ D &lt; 18 PAK je uplatněna studentská sleva.</li><li>KDYŽ 18 ≤ D &lt; 65 PAK není uplatněna žádná sleva.</li><li>KDYŽ D ≥ 65 PAK je uplatněna sleva pro důchodce.</li></ul><p>Vaše sada testů již obsahuje dva testovací případy:</p><ul><li>KR = 1990, AR = 2020, očekávaný výsledek: žádná sleva.</li><li>KR = 2030, AR = 2029, očekávaný výsledek: vypsání chybové zprávy.</li></ul><p>Která z následujících sad testovacích dat by měla být přidána k dosažení plného pokrytí platných tříd ekvivalence pro typ slevy?</p>",
+   "moznosti": [
+    "KR = 2001, AR = 2065",
+    "KR = 1900, AR = 1965",
+    "KR = 1965, AR = 1900",
+    "KR = 2011, AR = 2029",
+    "KR = 2000, AR = 2000"
+   ],
+   "spravne": [
+    "b",
+    "e"
+   ],
+   "vysvetleni": {
+    "a": "Není správně. CY - BY = 64. Tyto vstupy odpovídají již pokryté třídě \"žádná sleva\".",
+    "b": "Je správně. CY - BY = 65. Tyto vstupy odpovídají třídě, která ještě není pokrytá (\"sleva pro důchodce\").",
+    "c": "Není správně. CY - BY = -65. Tyto vstupy odpovídají již pokryté třídě \"chybové hlášení\".",
+    "d": "Není správně. CY - BY = 18. Tyto vstupy odpovídají již pokryté třídě \"žádná sleva\".",
+    "e": "Je správně. CY - BY = 0. Tyto vstupy odpovídají třídě, která ještě není pokrytá (\"studentská sleva\")."
+   },
+   "vysvetleni_obecne": "<p>Existují dvě třídy ekvivalence, které ještě nejsou zahrnuty, a které odpovídají \"slevě pro studenty\" a \"slevě pro důchodce\".</p>"
+  },
+  {
+   "n": 21,
+   "lo": "FL-4.2.2",
+   "k": "K3",
+   "vyber": 1,
+   "q": "<p>Testujete systém řízení teploty pro zahradnické chladírenské zařízení. Systém přijímá jako vstup teplotu (v celých stupních Celsia). Pokud je teplota v rozsahu od 0 do 2 stupňů včetně, systém zobrazí zprávu „teplota OK“. Pro nižší teploty systém zobrazí zprávu „příliš nízká teplota“ a pro vyšší teploty zobrazí zprávu „příliš vysoká teplota“.</p><p>Která z následujících sad testovacích vstupů poskytuje nejvyšší úroveň pokrytí hraničních hodnot při použití 2-hodnotové BVA?</p>",
+   "moznosti": [
+    "–1, 3",
+    "0, 2",
+    "–1, 0, 2, 3",
+    "–2, 0, 2, 4"
+   ],
+   "spravne": [
+    "c"
+   ],
+   "vysvetleni": {
+    "a": "Není správně.",
+    "b": "Není správně.",
+    "c": "Je správně. Správná možnost je: -1, 0, 2, 3",
+    "d": "Není správně."
+   },
+   "vysvetleni_obecne": "<p>Existují tři třídy ekvivalence: {..., - 2,-1}, {0, 1, 2 }, a {3, 4, ...}.<br>U 2-hodnotové BVA musí být pokryty všechny hraniční hodnoty pro všechny třídy ekvivalence.<br>Hraniční hodnoty jsou -1 (pro třídu \"příliš nízká teplota\"), 0, 2 (pro třídu \"teplota OK\") a 3 (pro třídu \"příliš vysoká teplota\").</p><p>Pak tedy:</p>"
+  },
+  {
+   "n": 22,
+   "lo": "FL-4.2.3",
+   "k": "K3",
+   "vyber": 1,
+   "q": "<p>Navrhujete testovací případy na základě následující rozhodovací tabulky:</p><table><thead><tr><th></th><th>R1</th><th>R2</th><th>R3</th><th>R4</th><th>R5</th><th>R6</th><th>R7</th></tr></thead><tbody><tr><th>C1: Věk</th><td>0-18</td><td>19-65</td><td>19-65</td><td>&gt;65</td><td>0-18</td><td>19-65</td><td>&gt;65</td></tr><tr><th>C2: Zkušenosti</th><td>-</td><td>0-4</td><td>&gt;4</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><th>C3: Registrován?</th><td>NE</td><td>NE</td><td>NE</td><td>NE</td><td>ANO</td><td>ANO</td><td>ANO</td></tr><tr><th>Kategorie</th><td>A</td><td>A</td><td>B</td><td>B</td><td>B</td><td>D</td><td>C</td></tr></tbody></table><p>Dosud jste navrhli následující testovací případy:</p><ul><li>Testovací případ 1 (TC1): Muž ve věku 19 let, neregistrovaný a bez zkušeností.<br>Očekávaný výsledek: kategorie A.</li><li>Testovací případ 2 (TC2): Žena ve věku 65 let, neregistrovaná s 5 roky praxe.<br>Očekávaný výsledek: kategorie B.</li><li>Testovací případ 3 (TC3): Muž ve věku 66 let, registrovaný a bez zkušeností.<br>Očekávaný výsledek: kategorie C.</li><li>Testovací případ 4 (TC4): Žena ve věku 65 let, registrovaná se 4 roky praxe.<br>Očekávaný výsledek: kategorie D.</li></ul><p>Který z následujících testovacích případů zvýší pokrytí rozhodovací tabulky v případě, kdy jej přidáte ke stávající sadě testovacích případů?</p>",
+   "moznosti": [
+    "Muž ve věku 66 let bez zkušeností. Očekávaný výsledek: kategorie B.",
+    "Žena ve věku 55 let, neregistrovaná se 2 roky praxe. Očekávaný výsledek: kategorie A.",
+    "Žena ve věku 19 let, registrovaná s 5 roky praxe. Očekávaný výsledek: kategorie D.",
+    "Žádný další testovací případ nemůže zvýšit již dosažené pokrytí rozhodovací tabulky."
+   ],
+   "spravne": [
+    "a"
+   ],
+   "vysvetleni": {
+    "a": "Je správně. Podmínky \"66 let\", \"neregistrovaný\" a \"bez zkušeností\" odpovídají pravidlu R4, které není pokryto stávajícími testovacími případy, takže po přidání tohoto testovacího případu se pokrytí rozhodovací tabulky zvýší.",
+    "b": "Není správně. Podmínky \"55 let\", \"neregistrovaný\" a \"2 roky praxe\" odpovídají pravidlu R2, které je již zahrnuto v TC1. Přidáním tohoto testovacího případu se tedy pokrytí nezvýší.",
+    "c": "Není správně. Podmínky \"19 let\", \"registrovaný\" a \"5 let praxe\" odpovídají pravidlu R6, které je již zahrnuto v TC4. Přidáním tohoto testovacího případu se tedy pokrytí nezvýší.",
+    "d": "Není správně. Stávající testovací případy pokrývají pouze 4 ze 7 sloupců rozhodovací tabulky. Pokrytí lze zvýšit přidáním testovacích případů, které pokrývají dosud nepokryté sloupce, tedy R1, R4 a R5."
+   },
+   "vysvetleni_obecne": "<p>Testovací případy TC1, TC2, TC3 a TC4 pokrývají pravidla R2, R3, R7 a R6 v rozhodovací tabulce.</p>"
+  },
+  {
+   "n": 23,
+   "lo": "FL-4.2.4",
+   "k": "K3",
+   "vyber": 1,
+   "q": "<p>Používáte techniku testování přechodů stavů na systém rezervace hotelových pokojů modelovaný následující stavovou tabulkou se 4 stavy a 5 různými událostmi:</p><table><thead><tr><th></th><th colspan=\"5\">Události</th></tr><tr><th>Stav</th><th>Dostupný</th><th>Nedostupný</th><th>ZměnitPokoj</th><th>Zrušit</th><th>Zaplatit</th></tr></thead><tbody><tr><th>S1: Poptávka</th><td>S2</td><td>S3</td><td></td><td></td><td></td></tr><tr><th>S2: Potvrzen</th><td></td><td></td><td>S1</td><td>S4</td><td>S4</td></tr><tr><th>S3: Ve frontě</th><td>S2</td><td></td><td></td><td>S4</td><td></td></tr><tr><th>S4: Konec</th><td></td><td></td><td></td><td></td><td></td></tr></tbody></table><p>Který z následujících testovacích případů, reprezentovaných jako sekvence událostí, dosahuje nejvyššího pokrytí platných přechodů stavů? Předpokládáme, že všechny testovací případy začínají ve stavu Poptávka.</p>",
+   "moznosti": [
+    "Nedostupný, Dostupný, ZměnitPokoj, Nedostupný, Zrušit",
+    "Dostupný, ZměnitPokoj, Nedostupný, Dostupný, Zaplatit",
+    "Dostupný, ZměnitPokoj, Dostupný, ZměnitPokoj, Nedostupný",
+    "Nedostupný, Zrušit, ZměnitPokoj, Dostupný, Zaplatit"
+   ],
+   "spravne": [
+    "b"
+   ],
+   "vysvetleni": {
+    "a": "Není správně. Tato sekvence pěti událostí zahrnuje 4 různé platné přechody (obě události \"Nedostupný\" odpovídají stejnému přechodu mezi S1 a S3). Tento testovací případ zahrnuje 4 ze 7 platných přechodů.",
+    "b": "Je správně. Tato sekvence pěti událostí pokrývá 5 různých přechodů (první událost \"Dostupný\" odpovídá přechodu mezi S1 a S2 a druhá událost \"Dostupný\" odpovídá přechodu mezi S3 a S2, takže jsou pokryty dva různé přechody). Tento testovací případ pokrývá 5 ze 7 platných přechodů a dosahuje nejvyššího pokrytí platných přechodů.",
+    "c": "Není správně. Tato sekvence pěti událostí zahrnuje 3 různé přechody (obě události \"Dostupný\" odpovídají stejnému přechodu z S1 do S2; obě události \"ZměnitPokoj\" odpovídají stejnému přechodu z S2 do S1). Tento testovací případ zahrnuje 3 ze 7 platných přechodů.",
+    "d": "Není správně. Tato posloupnost pěti událostí nepředstavuje proveditelný testovací případ, protože po \"Zrušit\" systém skončí ve stavu Konec a nelze provést žádné další platné přechody."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 24,
+   "lo": "FL-4.3.1",
+   "k": "K2",
+   "vyber": 1,
+   "q": "<p>Vaše testovací sada S pro program P dosahuje 100% pokrytí příkazů. Skládá se ze tří testovacích případů, z nichž každý dosahuje 50% pokrytí příkazů.</p><p>Které z následujících tvrzení je SPRÁVNÉ?</p>",
+   "moznosti": [
+    "Provedení S způsobí všechna možná selhání v P.",
+    "S dosahuje 100% pokrytí větví pro P.",
+    "Každý spustitelný příkaz v P, který obsahuje defekt, byl spuštěn alespoň jednou během provádění S.",
+    "Po vyjmutí jednoho testovacího případu z S budou zbývající dva testovací případy stále dosahovat 100% pokrytí příkazů."
+   ],
+   "spravne": [
+    "c"
+   ],
+   "vysvetleni": {
+    "a": "Není správně. Příkaz s defektem nemusí při svém provedení způsobit selhání. Například příkaz x := y / z způsobí selhání <em>pouze</em> když z=0.",
+    "b": "Není správně. 100 % pokrytí příkazů nezaručuje 100 % pokrytí větví. Například testovací případ, kdy x=0 pro kód:<pre>1. IF (x=0) THEN\n2.     A;\n3 ENDIF</pre>dosáhne 100 % pokrytí příkazů, ale nepokryje větev z bodu 1 do bodu 3.",
+    "c": "Je správně. 100 % pokrytí příkazů znamená, že každý spustitelný příkaz byl proveden alespoň jednou.",
+    "d": "Není správně. Odstraněný testovací případ mohl poskytovat pokrytí některých příkazů, které nejsou pokryty žádným z ostatních dvou testovacích případů, a v takovém případě zbývající dva testovací případy společně nedosáhnou 100% pokrytí příkazů."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 25,
+   "lo": "FL-4.3.3",
+   "k": "K2",
+   "vyber": 1,
+   "q": "<p>Proč testování bílé skříňky umožňuje odhalování chyb i v případě, že je specifikace softwaru vágní, zastaralá nebo neúplná?</p>",
+   "moznosti": [
+    "Testovací případy jsou navrženy na základě struktury testovaného objektu, nikoliv na základě specifikace.",
+    "Pro každou techniku testování bílé skříňky lze dobře definovat a snadno změřit pokrytí.",
+    "Techniky testování bílé skříňky slouží velmi dobře k odhalení opomenutí v požadavcích.",
+    "Techniky testování bílé skříňky lze použít jak při statickém testování, tak při dynamickém testování."
+   ],
+   "spravne": [
+    "a"
+   ],
+   "vysvetleni": {
+    "a": "Je správně. Základní význam technik bílé skříňky spočívá v tom, že se při testování bere v úvahu celá implementace softwaru, což usnadňuje detekci defektů v případech, kdy je jeho specifikace vágní, zastaralá nebo neúplná. To znamená, že testování bílé skříňky může odhalit defekty, jako je například dodatečná funkce přidaná do kódu (náhodně nebo záměrně), která tam být nemá, což testování černé skříňky odhalit nedokáže.",
+    "b": "Není správně. Skutečnost, že pokrytí lze přesně definovat, není tím správným důvodem. Dosažená úroveň pokrytí má mnohem větší dopad než možnost toto pokrytí měřit.",
+    "c": "Není správně. Pokud software (z důvodu opomenutí) neimplementuje jeden nebo více požadavků, je nepravděpodobné, že by testování bílé skříňky odhalilo defekty související s tímto opomenutím.",
+    "d": "Není správně. Tvrzení je sice pravdivé, ale nejedná se o správnou odpověď. Neexistuje žádná souvislost mezi možností využití při statickém i dynamickém testování a tvrzením, že testování bílé skříňky usnadňuje odhalování defektů v případě nekvalitních specifikací."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 26,
+   "lo": "FL-4.4.1",
+   "k": "K2",
+   "vyber": 1,
+   "q": "<p>Kterou z následujících možností tester NEPŘEDPOKLÁDÁ při použití techniky odhadování chyb?</p>",
+   "moznosti": [
+    "Vývojář špatně pochopil vzorec v uživatelském scénáři pro výpočet úroku.",
+    "Vývojář ve zdrojovém kódu napsal \"FA = A*(1+IR^N)\" místo \"FA = A*(1+IR)^N\".",
+    "Vývojář nestihl seminář o nové legislativě týkající se složeného úročení.",
+    "Přesnost úroku vypočítaného systémem není dostatečná."
+   ],
+   "spravne": [
+    "c"
+   ],
+   "vysvetleni": {
+    "a": "Není správně. Toto je příklad předvídání chyby vývojáře.",
+    "b": "Není správně. Toto je příklad předvídání defektu.",
+    "c": "Je správně. Toto je příklad potenciální kořenové příčiny defektu, která není ani chybou, defektem nebo selháním, a proto je pro testera obtížné ji předvídat.",
+    "d": "Není správně. Jedná se o příklad předvídání selhání, pravděpodobně založené na zkušenosti s předchozími systémy v této aplikační doméně."
+   },
+   "vysvetleni_obecne": "<p>Odhadování chyb spočívá v předvídání chyb, defektů a selhání založených na znalostech testera.</p>"
+  },
+  {
+   "n": 27,
+   "lo": "FL-4.4.2",
+   "k": "K2",
+   "vyber": 1,
+   "q": "<p>Které z následujících tvrzení o průzkumném testování je pravdivé?</p>",
+   "moznosti": [
+    "Testovací případy jsou navrženy před zahájením průzkumného testování.",
+    "Tester může provést test, ale nemůže jej navrhnout.",
+    "Na základě výsledků průzkumného testování lze dobře předvídat počet zbývajících defektů.",
+    "Během průzkumného testování může tester použít techniky testování černé skříňky."
+   ],
+   "spravne": [
+    "d"
+   ],
+   "vysvetleni": {
+    "a": "Není správně. V rámci průzkumného testování se testovací případy obvykle vytvářejí v průběhu testovacích relací spolu s testovací analýzou, implementací testování a prováděním testů.",
+    "b": "Není správně. Při průzkumném testování jsou testy současně navrhovány, prováděny a vyhodnocovány, zatímco tester získává znalosti (učí se) o testovaném objektu.",
+    "c": "Není správně. Výsledky testů při průzkumném testování jsou do značné míry závislé na zkušenostech testera, takže je lze použít k předvídání rizika a na jejich základě vyhodnotit, zda bude v porovnání s předchozím během průzkumného testování méně nebo více defektů, nejsou dobrým příkladem spolehlivých modelů predikce defektů, které by dokázaly předpovědět počet zbývajících defektů.",
+    "d": "Je správně. Během průzkumného testování mohou testeři použít všechny techniky testování, které považují za užitečné."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 28,
+   "lo": "FL-4.5.1",
+   "k": "K2",
+   "vyber": 1,
+   "q": "<p>Která metoda společného psaní uživatelských scénářů umožňuje týmu dosáhnout společného pochopení toho, co je třeba dodat?</p>",
+   "moznosti": [
+    "Plánovací poker, takže tým dosáhne shody ohledně pracnosti potřebné k implementaci uživatelského scénáře.",
+    "Revize, takže tým odhalí nesrovnalosti a rozpory v uživatelském scénáři.",
+    "Plánování iterací, takže je možné stanovit priority pro implementaci uživatelských scénářů s nejvyšší byznysovou hodnotou pro zákazníka.",
+    "Konverzace, takže členové týmu pochopí, jak se bude software používat."
+   ],
+   "spravne": [
+    "d"
+   ],
+   "vysvetleni": {
+    "a": "Není správně. Plánovací poker dokáže odhadnout pracnost již napsaného uživatelského scénáře. Nepomáhá pochopit, co by mělo být dodáno.",
+    "b": "Není správně. Revize nejsou technikou společného psaní uživatelských scénářů.",
+    "c": "Není správně. Plánování iterace je činnost související s projektem, která slouží k plánování práce, nikoli k pochopení toho, co má být dodáno.",
+    "d": "Je správně. Konverzace se používá k vysvětlení toho, jak bude software používán, a často umožňuje týmu definovat smysluplná akceptační kritéria. Tím se získá společná vize toho, co by mělo být dodáno."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 29,
+   "lo": "FL-4.5.3",
+   "k": "K3",
+   "vyber": 1,
+   "q": "<p>Právě jste začali navrhovat testovací případy pro následující uživatelský scénář.</p><blockquote><p>Jako zákazník,<br>chci filtrovat výsledky vyhledávání podle cenového rozpětí, protože tak snadněji najdu produkty v rámci mého rozpočtu.<br>Akceptační kritéria:</p><ol><li>Filtr by měl fungovat pro všechny verze aplikace od verze 3.0 výše.</li><li>Filtr by měl zákazníkovi umožnit nastavit cenový rozsah pomocí minimální a maximální ceny.</li><li>Výsledky vyhledávání by se měly dynamicky aktualizovat podle toho, jak zákazník upravuje filtr cenového rozsahu.</li></ol></blockquote><p>Ve všech testovacích případech je předpoklad následující: k dispozici jsou pouze dva produkty, A a B. Produkt A stojí 100 € a produkt B stojí 110 €.</p><p>Která z následujících možností je NEJLEPŠÍM příkladem testovacího případu pro tento uživatelský scénář?</p>",
+   "moznosti": [
+    "Otevřete webovou stránku a nastavte filtr pro zobrazení cen mezi 90 € a 100 €. Očekávaný výsledek: výsledky zobrazují pouze produkt A. Nastavte maximální cenu na 110 €. Očekávaný výsledek: výsledky nyní zahrnují produkty A i B.",
+    "Otevřete webovou stránku. Očekávaný výsledek: výchozí minimální a maximální ceny jsou 100 € a 110 €. Vložte produkt C s cenou 120 € do košíku. Obnovte stránku. Očekávaný výsledek: výchozí maximální cena se změní na 120 €.",
+    "Otevřete webovou stránku a nastavte filtr pro zobrazení cen na hodnoty mezi 90 € a 115 €. Očekávaný výsledek: budou zobrazeny produkty A i B. Změňte měnu z € na $. Očekávaný výsledek: rozsah filtru se správně změní na hodnoty v $ podle aktuálního směnného kurzu.",
+    "Otevřete webovou stránku pomocí tří různých prohlížečů: Edge, Chrome a Opera. V každém prohlížeči nastavte filtr na hodnoty mezi 90 € a 110 €. Očekávaný výsledek: výsledky zahrnují produkty A i B a zobrazení výsledků je ve všech třech prohlížečích stejné."
+   ],
+   "spravne": [
+    "a"
+   ],
+   "vysvetleni": {
+    "a": "Je správně. Tento testovací případ souvisí s akceptačními kritérii 2 a 3, protože prověřujeme, zda můžeme nastavit cenový rozsah (akceptační kritérium 2) a zda se výsledky dynamicky aktualizují po úpravě filtru cenového rozsahu (akceptační kritérium 3).",
+    "b": "Není správně. Tento testovací případ nesouvisí s žádným akceptačním kritériem. Kontroluje, zda filtr dynamicky nastavuje výchozí minimální a maximální cenový rozsah, nikoliv to, že to může udělat zákazník.",
+    "c": "Není správně. Tento testovací případ nesouvisí s žádným akceptačním kritériem. Kontroluje funkcionalitu přepočtu měn, která není v tomto uživatelském scénáři popsána.",
+    "d": "Není správně. Tento testovací případ nesouvisí s žádným akceptačním kritériem. Kontroluje kompatibilitu aplikace s různými prohlížeči, která není v tomto uživatelském scénáři řešena."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 30,
+   "lo": "FL-5.1.3",
+   "k": "K2",
+   "vyber": 2,
+   "q": "<p>Která z následujících možností je NEJLEPŠÍM příkladem VÝSTUPNÍHO kritéria v testovacím projektu?</p>",
+   "moznosti": [
+    "Rozpočet je schválen.",
+    "Je vyčerpán rozpočet.",
+    "Je k dispozici testovací báze.",
+    "Testovací případy dosáhly alespoň 80% pokrytí příkazů.",
+    "Všichni testovací analytici jsou certifikováni na úrovni ISTQB Foundation."
+   ],
+   "spravne": [
+    "b",
+    "d"
+   ],
+   "vysvetleni": {
+    "a": "Není správně. Schválení rozpočtu je příkladem vstupního kritéria. Nemělo by smysl schvalovat rozpočet na již provedenou činnost.",
+    "b": "Je správně. Vyčerpání rozpočtu lze považovat za platné výstupní kritérium.",
+    "c": "Není správně. Dostupnost zdrojů (testovací báze) je příkladem vstupního kritéria pro testování.",
+    "d": "Správně. Pokrytí je měřítkem důkladnosti, takže je typickým výstupním kritériem.",
+    "e": "Není správně. Toto je příklad vstupního kritéria, které se kontroluje před zahájením projektu."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 31,
+   "lo": "FL-5.1.4",
+   "k": "K3",
+   "vyber": 1,
+   "q": "<p>Tým potřebuje odhadnout čas, který potřebuje jeden tester k provedení čtyř testovacích případů pro softwarovou komponentu. Byly shromážděny následující údaje o pracnosti potřebné k provedení jednoho testovacího případu:</p><ul><li>Optimistický scénář: 1 hodina</li><li>Pesimistický scénář: 8 hodin</li><li>Nejpravděpodobnější scénář: 3 hodiny</li></ul><p>Jaký je konečný odhad času potřebného k provedení všech čtyř testovacích případů při použití techniky tříbodového odhadu?</p>",
+   "moznosti": [
+    "14 hodin",
+    "3,5 hodiny",
+    "16 hodin",
+    "12 hodin"
+   ],
+   "spravne": [
+    "a"
+   ],
+   "vysvetleni": {
+    "a": "Je správně. V tomto případě je odhad pro provedení jednoho testovacího případu následující:<br>E = (1 + 4*3 + 8) / 6 = 3,5<br>Celkový čas, který tester potřebuje k provedení 4 testovacích případů, je tedy:<br>3,5 * 4 = 14 hodin",
+    "b": "Není správně.",
+    "c": "Není správně.",
+    "d": "Není správně."
+   },
+   "vysvetleni_obecne": "<p>Pomocí techniky tříbodového odhadu se konečný odhad (E) vypočítá jako:</p><p>E = (a + 4*m + b) / 6,</p><p>kde <u>a</u> je nejoptimističtější odhad, <u>m</u> je nejpravděpodobnější odhad a <u>b</u> je nejpesimističtější odhad.</p><p>Pak tedy:</p>"
+  },
+  {
+   "n": 32,
+   "lo": "FL-5.1.5",
+   "k": "K3",
+   "vyber": 1,
+   "q": "<p>Tabulka znázorňuje trasovací matici od testovacích případů (TC) k požadavkům (Req). \"X\" znamená, že daný testovací případ pokrývá odpovídající požadavek.</p><table><thead><tr><th></th><th>Req1</th><th>Req2</th><th>Req3</th><th>Req4</th><th>Req5</th><th>Req6</th><th>Req7</th></tr></thead><tbody><tr><th>TC1</th><td>X</td><td></td><td>X</td><td>X</td><td></td><td></td><td>X</td></tr><tr><th>TC2</th><td>X</td><td></td><td></td><td></td><td>X</td><td></td><td>X</td></tr><tr><th>TC3</th><td></td><td></td><td></td><td></td><td>X</td><td>X</td><td></td></tr><tr><th>TC4</th><td></td><td>X</td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table><p>Chcete stanovit priority testovacích případů pomocí techniky prioritizace dodatečného pokrytí.</p><p>Musíte provést všechny čtyři testovací případy.</p><p>Který testovací případ by měl být proveden jako POSLEDNÍ?</p>",
+   "moznosti": [
+    "TC1",
+    "TC2",
+    "TC3",
+    "TC4"
+   ],
+   "spravne": [
+    "b"
+   ],
+   "vysvetleni": {
+    "a": "Není správně.",
+    "b": "Je správně",
+    "c": "Není správně.",
+    "d": "Není správně."
+   },
+   "vysvetleni_obecne": "<p>TC1 dosahuje nejvyššího pokrytí 4/7 (požadavek 1, požadavek 3, požadavek 4 a požadavek 7), proto by měl být proveden jako první. Požadavky 2, 5 a 6 stále nejsou pokryty.</p><p>Dalším testovacím případem, který dosahuje nejvyššího dodatečného pokrytí zbývajících požadavků, je TC3, který pokrývá 2 z těchto 3 požadavků (požadavek 5 a požadavek 6). TC3 by tedy měl být proveden jako druhý.</p><p>Jediný požadavek, který stále není pokryt, je požadavek 2, který je pokryt testovacím případem TC4. Proto by měl být TC4 proveden jako třetí testovací případ.</p><p>Posledním provedeným testovacím případem tedy bude TC2.</p><p>Pak tedy:</p>"
+  },
+  {
+   "n": 33,
+   "lo": "FL-5.1.7",
+   "k": "K2",
+   "vyber": 1,
+   "q": "<p>Jak mohou být testovací kvadranty přínosné pro testování?</p>",
+   "moznosti": [
+    "Pomáhají při plánování testů tím, že rozdělují proces testování do čtyř fází, které odpovídají čtyřem základním úrovním testování: testování komponent, integrační testování, systémové testování a akceptační testování.",
+    "Pomáhají při hodnocení pokrytí na vyšší obecné úrovni (např. pokrytí požadavků) na základě pokrytí na nižší specifické úrovni (např. pokrytí kódu).",
+    "Pomáhají netechnickým zainteresovaným stranám pochopit různé typy testů, a také to, že některé typy testů jsou pro určité úrovně testování relevantnější než jiné.",
+    "Pomáhají agilním týmům vytvořit komunikační strategii založenou na rozdělení lidí do čtyř základních psychologických typů a na modelování vztahů mezi nimi."
+   ],
+   "spravne": [
+    "c"
+   ],
+   "vysvetleni": {
+    "a": "Není správně. Testovací kvadranty nemají nic společného s popisem vztahů mezi jednotlivými úrovněmi testování.",
+    "b": "Není správně. Testovací kvadranty nemohou pomoci při posuzování jakéhokoli typu pokrytí.",
+    "c": "Je správně. Testovací kvadranty umožňují manažerům a dalším zainteresovaným stranám pochopit vztahy mezi typy testů, podpůrnými činnostmi (podpora týmu nebo kritika produktu) a hlediskem, na které se zaměřují (zaměřené na byznys nebo na technologii).",
+    "d": "Není správně. Testovací kvadranty nejsou psychologický model."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 34,
+   "lo": "FL-5.2.1",
+   "k": "K1",
+   "vyber": 1,
+   "q": "<p>Úroveň určitého rizika je odhadnuta na 1 000 € a jeho pravděpodobnost na 50%.</p><p>Jaký je jeho dopad?</p>",
+   "moznosti": [
+    "500",
+    "2,000",
+    "50,000",
+    "200"
+   ],
+   "spravne": [
+    "b"
+   ],
+   "vysvetleni": {
+    "a": "Není správně.",
+    "b": "Je správně",
+    "c": "Není správně.",
+    "d": "Není správně."
+   },
+   "vysvetleni_obecne": "<p>Ohodnocení rizik může využívat kvantitativní nebo kvalitativní přístup (příp. oba). Při kvantitativním přístupu se úroveň rizika vypočítá jako násobek pravděpodobnosti rizika a dopadu rizika. Tedy: úroveň rizika = pravděpodobnost rizika * dopad rizika.<br>Potom: dopad rizika = úroveň rizika / pravděpodobnost rizika.<br>V našem případě je dopad rizika = 1 000 € / 50 % = 1 000 € / 0,5 = 2 000 €.</p><p>Pak tedy:</p>"
+  },
+  {
+   "n": 35,
+   "lo": "FL-5.2.2",
+   "k": "K2",
+   "vyber": 2,
+   "q": "<p>Které z následujících možností jsou produktová rizika?</p>",
+   "moznosti": [
+    "Neřízené rozšiřování rozsahu (scope creep).",
+    "Špatná architektura.",
+    "Snižování nákladů.",
+    "Špatná podpora nástrojů.",
+    "Příliš dlouhá doba odezvy."
+   ],
+   "spravne": [
+    "b",
+    "e"
+   ],
+   "vysvetleni": {
+    "a": "Není správně. Neřízené rozšiřování rozsahu (scope creep) je příkladem projektového rizika souvisejícího s technickými otázkami.",
+    "b": "Je správně. Špatná architektura je příkladem produktového rizika, protože se týká vlastnosti produktu.",
+    "c": "Není správně. Snižování nákladů je příkladem projektového rizika, které souvisí s organizačními otázkami.",
+    "d": "Není správně. Špatná podpora nástrojů je příkladem projektového rizika souvisejícího s technickými otázkami.",
+    "e": "Je správně. Příliš dlouhá doba odezvy je příkladem produktového rizika, protože se týká vlastnosti produktu."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 36,
+   "lo": "FL-5.3.2",
+   "k": "K2",
+   "vyber": 1,
+   "q": "<p>Která z následujících možností NENÍ účelem reportu z testování?</p>",
+   "moznosti": [
+    "Sledování průběhu testování a identifikace oblastí, které vyžadují zvýšený dohled.",
+    "Poskytování informací o provedených testech, jejich výsledcích a všech nalezených defektech.",
+    "Poskytování informací o každém defektu, např. kroky k jeho reprodukci.",
+    "Poskytování informací o testování plánovaném na příští období."
+   ],
+   "spravne": [
+    "c"
+   ],
+   "vysvetleni": {
+    "a": "Není správně. Sledování průběhu testování a identifikace oblastí, které vyžadují zvýšenou pozornost, je příkladem podpory průběžného řízení testování. To je jeden z účelů reportu z testování.",
+    "b": "Není správně. Příkladem shrnutí testovacích činností provedených v dané úrovni testování je poskytnutí informací o provedených testech, výsledcích testů a zjištěných defektech. To je jeden z účelů reportu z testování.",
+    "c": "Je správně. Poskytování informací o defektech je účelem reportu o defektu, nikoli reportu z testování.",
+    "d": "Není správně. Jedním z účelů reportu z testování je poskytnutí informací o testech plánovaných na další období."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 37,
+   "lo": "FL-5.4.1",
+   "k": "K2",
+   "vyber": 1,
+   "q": "<p>Uživatel nahlásil selhání softwaru. Technik z týmu podpory požádal uživatele o číslo verze softwaru, ve které bylo selhání pozorováno. Na základě čísla verze tým znovu sestavil všechny soubory, ze kterých byla verze vytvořena. To později umožnilo vývojáři provést analýzu, najít defekt a opravit jej.</p><p>Která z následujících činností umožnila týmu provést výše uvedenou aktivitu?</p>",
+   "moznosti": [
+    "Management rizik.",
+    "Monitoring a řízení testování.",
+    "Týmový přístup.",
+    "Konfigurační management."
+   ],
+   "spravne": [
+    "d"
+   ],
+   "vysvetleni": {
+    "a": "Není správně. Management rizik se skládá z analýzy a řízení rizik. Žádná z těchto činností nepodporuje opětovné sestavení souborů, z nichž se skládá vydání (release), protože tyto činnosti se týkají rizik, nikoli konfiguračních položek.",
+    "b": "Není správně. Monitoring testování se zabývá shromažďováním informací o testování. Tyto informace se využívají k posouzení průběhu testování a k měření toho, zda jsou naplněna výstupní kritéria nebo dokončeny testovací úkoly spojené s výstupními kritérii (jako např. splnění cílů pro pokrytí produktových rizik, požadavků nebo akceptačních kritérií). Řízení testování využívá informace z monitoringu testování k tomu, aby byly (ve formě nařízení nebo směrnic) poskytnuty pokyny a nezbytná nápravná opatření k dosažení co nejúčinnějšího a nejefektivnějšího testování. Žádná z těchto činností se nezabývá managementem konfiguračních položek.",
+    "c": "Není správně. Týmový přístup staví na schopnosti testera efektivně pracovat v týmu a pozitivně přispívat k plnění týmových cílů. Zaměřuje se tedy na otázky týkající se týmu, nikoli na konfigurační položky.",
+    "d": "Je správně. Konfigurační management je systém, který slouží k identifikaci, řízení a sledování pracovních produktů. Při vytváření nového výchozího stavu (baseline) je úkolem konfiguračního managementu uchovávat záznamy o všech změněných konfiguračních položkách. Pomocí konfiguračního managementu je možné vrátit se k předchozímu výchozímu stavu, aby bylo možné reprodukovat předchozí výsledky testů."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 38,
+   "lo": "FL-5.5.1",
+   "k": "K3",
+   "vyber": 1,
+   "q": "<p>Předpokládejme existenci následujícího report o defektu pro systém pro půjčování knih:</p><blockquote><p><strong>ID defektu:</strong> 001</p><p><strong>Název:</strong> Nelze vrátit knihu<br><strong>Závažnost:</strong> Vysoká</p><p><strong>Priorita:</strong> [nedefinována]<br><strong>Konfigurace systému:</strong> Windows 10, Google Chrome</p><p><strong>Popis:</strong> Při pokusu o vrácení knihy pomocí funkce Vrácení knihy systém nezaregistruje vrácení a kniha zůstává vypůjčená uživatelem.</p><p><strong>Kroky k reprodukci:</strong><br>Přihlaste se do systému půjčování knih jako uživatel, který má vypůjčenou knihu.<br>Klikněte na tlačítko \"Vrátit knihu\" u knihy, která byla vypůjčena.<br>Systém nezaregistruje vrácení a kniha zůstává vypůjčená.</p><p><strong>Očekávaný výsledek:</strong> Kniha by měla být vrácena a již by se neměla zobrazovat jako vypůjčená uživatelem.<br><strong>Skutečný výsledek:</strong> Kniha zůstává vypůjčená uživatelem a není v systému evidována jako vrácená.</p><p><strong>Přílohy:</strong> [prázdný seznam]</p></blockquote><p>Která z následujících možností pomůže NEJPRAVDĚPODOBNĚJI vývojáři rychle znovu reprodukovat toto selhání?</p>",
+   "moznosti": [
+    "Přidání informací o tom, kterých uživatelů a kterých knih se selhání týká (do sekce Popis).",
+    "Vyplnění chybějící hodnoty pro pole Priorita.",
+    "Přidání výpisů paměti a snímků databáze pořízených po každém kroku popsaném v sekci Kroky k reprodukci do sekce Přílohy.",
+    "Opakování stejného testovacího případu pro různá prostředí a sepsání samostatných hlášení defektů pro každé z nich."
+   ],
+   "spravne": [
+    "a"
+   ],
+   "vysvetleni": {
+    "a": "Je správně. Přidání těchto informací umožní vývojáři použít stejná vstupní data, takže je pravděpodobnější, že bude schopen rychle reprodukovat selhání, a tak rychleji identifikovat defekt.",
+    "b": "Není správně. Doplnění priority při reprodukci samotného defektu nepomůže.",
+    "c": "Není správně. I když některé z těchto informací mohou být cenné, přidávání výpisů paměti a snímků databáze po každém kroku by bylo nadbytečné, protože většina těchto pracovních produktů by pro vývojáře obsahovala neužitečné informace a snižovala by čitelnost reportu o defektu. Vývojář také bude muset strávit mnoho času analýzou těchto informací, což prodlouží proces opravy.",
+    "d": "Není správně. Otázka se týkala toho, jak pomoci vývojáři reprodukovat selhání v rámci konkrétní konfigurace prostředí."
+   },
+   "vysvetleni_obecne": ""
+  },
+  {
+   "n": 39,
+   "lo": "FL-6.1.1",
+   "k": "K2",
+   "vyber": 1,
+   "q": "<p>Jsou dány následující kategorie testovacích nástrojů:</p><ol type=\"i\"><li>Nástroje pro spolupráci.</li><li>Nástroje DevOps.</li><li>Nástroje pro management.</li><li>Nástroje pro nefunkcionální testování.</li><li>Nástroje pro návrh a implementaci testů.</li></ol><p>Nástroje z kterých kategorií NEJPRAVDĚPODOBNĚJI usnadní provádění testů?</p>",
+   "moznosti": [
+    "i, v",
+    "ii, iv",
+    "i, iii, v",
+    "ii, iii, iv"
+   ],
+   "spravne": [
+    "b"
+   ],
+   "vysvetleni": {
+    "a": "Není správně.",
+    "b": "Je správně. Nástroje DevOps (ii) a nástroje pro nefunkcionální testování (iv) usnadňují provádění testů.",
+    "c": "Není správně.",
+    "d": "Není správně."
+   },
+   "vysvetleni_obecne": "<p>Platí, že:</p><ol type=\"i\"><li>Nástroje pro spolupráci – usnadňují komunikaci. Komunikace neusnadňuje samotné provádění testů.</li><li>Nástroje DevOps – podporují pipeline v DevOps, sledování pracovních toků, procesy automatizovaného sestavování a CI/CD. Jak delivery pipeline, tak CI/CD usnadňují provádění testů, například testováním komponent v rámci CI.</li><li>Nástroje pro management zvyšují efektivitu procesu testování tím, že usnadňují správu SDLC, požadavků, testů, defektů a konfigurací. Management těchto položek neusnadňuje provádění testů.</li><li>Nástroje pro nefunkcionální testování umožňují provádět nefunkcionální testování, které jde provést manuálně buď s velkými obtížemi nebo vůbec. Nefunkcionální testování může zahrnovat statické i dynamické testování, včetně provádění testů.</li><li>Nástroje pro návrh a implementaci testů usnadňují vytváření testovacích případů, testovacích dat a testovacích procedur. Vytvoření tohoto testwaru neusnadňuje provádění testů.</li></ol><p>Pak tedy:</p>"
+  },
+  {
+   "n": 40,
+   "lo": "FL-6.2.1",
+   "k": "K1",
+   "vyber": 1,
+   "q": "<p>Která z následujících možností je NEJPRAVDĚPODOBNĚJI rizikem automatizace testování?</p>",
+   "moznosti": [
+    "Odhalení dodatečných defektů s vysokou závažností.",
+    "Poskytování metrik, které jsou příliš složité na to, aby je bylo možno ručně vypočítat.",
+    "Nekompatibilita s platformou vývoje.",
+    "Podstatně zkrácené doby provádění testů."
+   ],
+   "spravne": [
+    "c"
+   ],
+   "vysvetleni": {
+    "a": "Není správně. Odhalení dalších vysoce závažných defektů by bylo spíše přínosem automatizace testování než jejím rizikem.",
+    "b": "Není správně. Provádění opatření, která jsou pro člověka příliš komplikovaná, je obvykle považováno za výhodu automatizace testů.",
+    "c": "Je správně. Pokud je automatizace testování nekompatibilní s vývojovou platformou, nebude možné provést integraci a například předávat testovanému objektu testovací vstupy a přijímat z něj výsledky testů.",
+    "d": "Není správně. Za výhodu, kterou obvykle přináší automatizace testování, považujeme zejména podstatné zkrácení doby provádění testů."
+   },
+   "vysvetleni_obecne": ""
+  }
+ ]
+}

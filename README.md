@@ -5,6 +5,8 @@ Statický web se studijními materiály k certifikaci ISTQB Certified Tester Fou
 sada, která ověřuje, že se při převodu nic neztratilo.**
 
 Šest kapitol, každá ve třech podobách: plný výklad, zkrácená verze, otázky s odpověďmi.
+Sekce **Zkouška** k tomu přidává simulaci zkoušky ze čtyř oficiálních vzorových testů
+(sady A–D) — 40 otázek, 60 minut, vyhodnocení s oficiálním zdůvodněním a odkazem do výkladu.
 Dohromady přes **87 000 slov**. Texty jsou psané tak, aby se daly poslouchat — v Microsoft
 Edge je přečte nahlas `Ctrl+Shift+U`, čtecí režim se zapíná klávesou `F9`.
 
@@ -47,6 +49,9 @@ tools/
   check_site.py     kontrolní sada, 6 invariantů, návratový kód 0/1
   markdown_min.py   minimální převod značkování
   model.py          datový model dokumentu
+  vzorove_zkousky.py  stránky simulace zkoušky ze vzorových testů
+oficialni-vzorove-zkousky/data/
+  sada-{a,b,c,d}.json vzorové zkoušky jako data (české znění CaSQB)
 web/                vygenerovaný web — to, co jede na GitHub Pages
 .github/workflows/
   pages.yml         nasazení web/ na Pages při každém pushi do main
@@ -64,7 +69,8 @@ obsah neproháněl Jekyllem.
 
 ## Co v repozitáři není a proč
 
-**Zdrojové `.docx`, PDF sylabu, slovníku a vzorových zkoušek tady nejsou.** Jsou chráněné
+**Zdrojové `.docx`, PDF sylabu, slovníku a vzorových zkoušek tady nejsou** (vzorové
+zkoušky jsou v repozitáři jen jako zpracovaná data pro simulaci). Jsou chráněné
 autorským právem a nesmí se přeposílat. `.gitignore` proto blokuje `*.docx`, `*.pdf`
 a `*.pptx` — aby se sem nedostaly ani při `git add -A`.
 
@@ -73,13 +79,36 @@ jen lokálně, kde zdrojové dokumenty leží v korenu projektu. **CI proto web 
 nepřegenerovává ho.** Aby šly v CI ověřit i zbylé invarianty (3–6, které zdroje
 nepotřebují), chybí `check_site.py` přepínač pro běh bez zdrojů — to je další krok.
 
+## Simulace zkoušky
+
+`tools/vzorove_zkousky.py` (volá ho `build_site.py`) postaví z `oficialni-vzorove-zkousky/data/`
+rozcestník `web/zkouska.html`, stránky `web/zkouska-{a,b,c,d}.html` a datové soubory
+`web/assets/vzorove/sada-*.js`. Průběh testu řídí `web/assets/zkouska.js`:
+
+1. test — 40 otázek, 60 minut (75 pro zkoušku v jiném než rodném jazyce), označení k revizi,
+2. výsledek — jen počet správných odpovědí a hranice 26/40,
+3. při nesplnění volba: rovnou na vyhodnocení, nebo 10 minut na opravu bez nápovědy,
+4. vyhodnocení — oficiální zdůvodnění u každé možnosti, úspěšnost po kapitolách,
+   odkaz na příslušný oddíl plného výkladu.
+
+Odkazy do výkladu se skládají ze studijního cíle otázky (FL-4.2.1 → oddíl 4.2.1, případně 4.2).
+
 ---
 
 ## Autorská práva
 
 Tento web je **neoficiální studijní materiál**. Není produktem ani publikací ISTQB®
 ani CaSQB. ISTQB® je registrovaná ochranná známka International Software Testing
-Qualifications Board. Oficiální sylabus, slovník a vzorové zkoušky jsou zdarma ke stažení
-na [casqb.org/ke-stazeni](https://casqb.org/ke-stazeni).
+Qualifications Board. Web je nekomerční.
+
+Simulace zkoušky používá otázky a zdůvodnění z oficiálních vzorových zkoušek CTFL v4.0
+(© ISTQB®, český překlad CaSQB), zpracované do interaktivní podoby pro procvičování.
+U každého testu je uveden zdroj, verze dokumentu a odkaz na oficiální stažení. Kde se
+oficiální český text liší od anglického originálu, je to vyznačeno jako „Poznámka webu“ —
+samotné otázky a zdůvodnění se nemění.
+
+Oficiální sylabus, slovník a vzorové zkoušky jsou zdarma ke stažení na
+[casqb.org/ke-stazeni](https://casqb.org/ke-stazeni) (česky) a
+[istqb.org](https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/) (anglicky).
 
 Kód ve `tools/` je pod licencí MIT. Na textový obsah ve `web/` se MIT nevztahuje.
