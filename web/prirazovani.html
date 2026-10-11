@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="cs" data-tema="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Přiřazovací cvičení | ISTQB CTFL v4.0</title>
+<meta name="description" content="Přiřazovací cvičení k ISTQB CTFL v4.0 podle kapitol: ke každé položce vyberte správnou kategorii (činnost, úroveň, roli, nástroj, riziko…). Položky ze vzorových zkoušek jsou zvýrazněné.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="assets/styl.css">
+<script>
+/* Nastaví uložený režim ještě před vykreslením, aby stránka neproblikla. */
+(function(){try{var t=localStorage.getItem('istqb-tema');if(t){document.documentElement.setAttribute('data-tema',t);}}catch(e){}})();
+</script>
+</head>
+<body>
+<a class="preskocit" href="#text">Přeskočit na text</a>
+<div class="postup" aria-hidden="true"></div>
+<header class="hlavicka">
+  <div class="hlavicka-vnitrek">
+    <a class="znacka" href="index.html">ISTQB CTFL v4.0 <span>česká studijní příručka</span></a>
+    <nav class="navigace" aria-label="Hlavní navigace">
+      <a href="index.html">Úvod</a>
+      <span class="skupina" data-skupina>
+        <a href="kapitoly.html" class="zvyraznit">Kapitoly</a>
+        <ul class="podmenu" id="podmenu-kapitoly" aria-label="Seznam kapitol"><li><a href="kapitola-1/vyklad.html"><b>1</b> Základy testování</a></li><li><a href="kapitola-2/vyklad.html"><b>2</b> Testování v průběhu životního cyklu</a></li><li><a href="kapitola-3/vyklad.html"><b>3</b> Statické testování</a></li><li><a href="kapitola-4/vyklad.html"><b>4</b> Testovací analýza a návrh testů</a></li><li><a href="kapitola-5/vyklad.html"><b>5</b> Management testování</a></li><li><a href="kapitola-6/vyklad.html"><b>6</b> Testovací nástroje</a></li></ul>
+      </span>
+      <a href="prirazovani.html" aria-current="page">Přiřazování</a>
+      <a href="zdroje.html">Zdroje</a>
+      <a href="zkouska.html">Zkouška</a>
+      <button type="button" class="prepinac-tema" data-prepinac-tema>Tmavý režim</button>
+    </nav>
+  </div>
+</header>
+<div class="stranka uvod">
+<main id="text">
+
+<section id="prehled">
+  <div class="uvod-hlava">
+    <p class="drobky">Procvičování</p>
+    <h1>Přiřazovací cvičení</h1>
+    <p class="perex">Ve zkoušce se často objevují otázky typu „přiřaďte 1–4 k A–D“. Tady dostanete
+    vždy jednu položku a zařadíte ji do správné kategorie. Hned uvidíte, jestli jste trefili,
+    a proč. Na volby jde klikat, nebo mačkat čísla <kbd>1</kbd>–<kbd>9</kbd>; <kbd>Enter</kbd> posune dál.</p>
+    <p class="pr-souhrn">55 sad · 639 položek · <span class="pr-vzor-znacka">vzorový test</span>
+    207 položek vychází přímo z otázek oficiálních vzorových zkoušek A–D a jsou zvýrazněné.
+    Ostatní jsou rozšíření podle textu sylabu.</p>
+    <div class="pr-akce">
+      <button type="button" class="pr-tl pr-tl--hlavni" id="tl-vzor">Jen položky ze vzorových testů</button>
+      <button type="button" class="pr-tl" id="tl-slabe" hidden>Procvičit položky, ve kterých chybuju</button>
+      <button type="button" class="pr-tl" id="tl-reset">Smazat uložené výsledky</button>
+    </div>
+    <p class="pr-napoveda">Výsledky se ukládají jen ve vašem prohlížeči.</p>
+  </div>
+  <div id="kapitoly-prirazovani"></div>
+</section>
+
+<section id="cviceni" class="pr-cviceni" hidden>
+  <div class="pr-horni">
+    <h1 id="c-nazev"></h1>
+    <span class="pr-pocitadlo" id="c-pocitadlo"></span>
+    <button type="button" class="pr-tl" id="c-zpet">← Přehled</button>
+  </div>
+  <div class="pr-lista"><span id="c-lista"></span></div>
+  <div id="c-krok">
+    <p class="pr-stitky"><span class="pr-stitek" id="c-stitek" hidden></span><span class="pr-vzor-znacka" id="c-vzor" hidden></span></p>
+    <p class="pr-otazka" id="c-otazka"></p>
+    <div class="pr-polozka" id="c-polozka"></div>
+    <div class="pr-volby" id="c-volby"></div>
+    <div id="c-zpetna" hidden></div>
+    <div class="pr-dalsi" id="c-dalsi" hidden>
+      <button type="button" class="pr-tl pr-tl--hlavni" id="c-tl-dalsi">Další →</button>
+      <span class="pr-napoveda">nebo Enter</span>
+    </div>
+  </div>
+  <div id="c-vysledek" hidden></div>
+  <details class="pr-tahak">
+    <summary>Tahák: co která kategorie znamená</summary>
+    <dl id="c-tahak-obsah"></dl>
+  </details>
+</section>
+
+<noscript><p class="poznamka">Cvičení potřebuje zapnutý JavaScript.</p></noscript>
+
+</main>
+</div>
+<script src="assets/prirazovani-data.js"></script>
+<script src="assets/prirazovani.js"></script>
+<footer class="paticka">
+  <div class="paticka-vnitrek">
+    <p><strong>Neoficiální studijní materiál.</strong> Tento web není produktem ani publikací ISTQB® ani CaSQB.
+    ISTQB® je registrovaná ochranná známka International Software Testing Qualifications Board.
+    Texty jsou vlastním zpracováním autora vytvořeným při přípravě na zkoušku; oficiální sylabus,
+    slovník a vzorové zkoušky si stáhněte přímo u certifikační autority.</p>
+    <p>Ke zkoušce vždy platí znění oficiálního sylabu CTFL v4.0. Doplněné informace na tomto webu
+    slouží k porozumění a k praxi, nikoli jako zdroj správných odpovědí u zkoušky.</p>
+    <ul>
+      <li><a href="https://casqb.org/ke-stazeni" target="_blank" rel="noopener noreferrer">CaSQB — dokumenty ke stažení</a></li>
+      <li><a href="https://casqb.org/certifikace/zkousky" target="_blank" rel="noopener noreferrer">CaSQB — registrace ke zkoušce</a></li>
+      <li><a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/" target="_blank" rel="noopener noreferrer">ISTQB — CTFL v4.0</a></li>
+      <li><a href="https://glossary.istqb.org" target="_blank" rel="noopener noreferrer">Slovník ISTQB</a></li>
+      <li><a href="zdroje.html">Zdroje a citace</a></li>
+    </ul>
+  </div>
+</footer>
+<script src="assets/skript.js"></script>
+</body>
+</html>

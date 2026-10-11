@@ -20,6 +20,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import markdown_min
+import prirazovani
 import vzorove_zkousky
 from model import (
     KAPITOLY,
@@ -114,6 +115,7 @@ def hlavicka(
         {odkaz('kapitoly.html', 'Kapitoly', 'kapitoly', 'zvyraznit')}
         <ul class="podmenu" id="podmenu-kapitoly" aria-label="Seznam kapitol">{polozky_podmenu}</ul>
       </span>
+      {odkaz('prirazovani.html', 'Přiřazování', 'prirazovani')}
       {odkaz('zdroje.html', 'Zdroje', 'zdroje')}
       {odkaz('zkouska.html', 'Zkouška', 'zkouska')}
       <button type="button" class="prepinac-tema" data-prepinac-tema>Tmavý režim</button>
@@ -591,6 +593,10 @@ def sestav() -> int:
     if len(zkousky) == 1:
         (WEB / "zkouska.html").write_text(stranka_zkousky(), encoding="utf-8")
     for nazev in zkousky:
+        print(f"  {nazev}")
+
+    # Přiřazovací cvičení podle kapitol (data v tools/prirazovani/sady.json).
+    for nazev in prirazovani.zapis(WEB, stranka, KAPITOLY):
         print(f"  {nazev}")
 
     zdroje_md = KOREN / "ZDROJE.md"

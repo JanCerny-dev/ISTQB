@@ -7,6 +7,8 @@ sada, která ověřuje, že se při převodu nic neztratilo.**
 Šest kapitol, každá ve třech podobách: plný výklad, zkrácená verze, otázky s odpověďmi.
 Sekce **Zkouška** k tomu přidává simulaci zkoušky ze čtyř oficiálních vzorových testů
 (sady A–D) — 40 otázek, 60 minut, vyhodnocení s oficiálním zdůvodněním a odkazem do výkladu.
+Sekce **Přiřazování** nabízí 55 přiřazovacích cvičení podle kapitol (639 položek „zařaď do
+kategorie“); položky převzaté z otázek vzorových testů jsou zvýrazněné.
 Dohromady přes **87 000 slov**. Texty jsou psané tak, aby se daly poslouchat — v Microsoft
 Edge je přečte nahlas `Ctrl+Shift+U`, čtecí režim se zapíná klávesou `F9`.
 
@@ -50,6 +52,8 @@ tools/
   markdown_min.py   minimální převod značkování
   model.py          datový model dokumentu
   vzorove_zkousky.py  stránky simulace zkoušky ze vzorových testů
+  prirazovani.py    stránka přiřazovacích cvičení (kontroluje i data)
+  prirazovani/sady.json  přiřazovací cvičení jako data (ručně psaná)
 oficialni-vzorove-zkousky/data/
   sada-{a,b,c,d}.json vzorové zkoušky jako data (české znění CaSQB)
 web/                vygenerovaný web — to, co jede na GitHub Pages
@@ -92,6 +96,17 @@ rozcestník `web/zkouska.html`, stránky `web/zkouska-{a,b,c,d}.html` a datové 
    odkaz na příslušný oddíl plného výkladu.
 
 Odkazy do výkladu se skládají ze studijního cíle otázky (FL-4.2.1 → oddíl 4.2.1, případně 4.2).
+
+## Přiřazovací cvičení
+
+`tools/prirazovani.py` (volá ho `build_site.py`) načte `tools/prirazovani/sady.json`, zkontroluje ho
+(jedinečná id, každá položka má platnou kategorii, nejvýš 9 kategorií, platný kód vzorové otázky)
+a zapíše `web/prirazovani.html` a `web/assets/prirazovani-data.js`. Cvičení řídí
+`web/assets/prirazovani.js`, výsledky se ukládají jen do `localStorage` prohlížeče.
+
+Položka sady je `[text, klíč kategorie, zdůvodnění, kód]`. Nepovinný kód (např. `"D4"`) označuje
+položku odvozenou z otázky vzorového testu; na stránce je zvýrazněná. Texty položek jsou
+vlastní formulace podle sylabu CTFL v4.0.1 (CZ 4.0.1.1), ne doslovné znění vzorových otázek.
 
 ---
 

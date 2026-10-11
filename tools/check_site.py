@@ -179,7 +179,7 @@ def zkontroluj() -> int:
     print("-" * 72)
 
     # samostatné stránky
-    for nazev in ("index.html", "kapitoly.html", "zkouska.html", "zdroje.html"):
+    for nazev in ("index.html", "kapitoly.html", "zkouska.html", "prirazovani.html", "zdroje.html"):
         cesta = WEB / nazev
         if not cesta.exists():
             chyby.append(f"{nazev}: stránka chybí")
