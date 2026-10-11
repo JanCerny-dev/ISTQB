@@ -9,7 +9,7 @@ Sekce **Zkouška** k tomu přidává simulaci zkoušky ze čtyř oficiálních v
 (sady A–D) — 40 otázek, 60 minut, vyhodnocení s oficiálním zdůvodněním a odkazem do výkladu.
 Sekce **Přiřazování** nabízí 55 přiřazovacích cvičení podle kapitol (639 položek „zařaď do
 kategorie“); položky převzaté z otázek vzorových testů jsou zvýrazněné.
-Dohromady přes **87 000 slov**. Texty jsou psané tak, aby se daly poslouchat — v Microsoft
+Dohromady přes **84 000 slov**. Texty jsou psané tak, aby se daly poslouchat — v Microsoft
 Edge je přečte nahlas `Ctrl+Shift+U`, čtecí režim se zapíná klávesou `F9`.
 
 🔗 **[Otevřít web](https://jancerny-dev.github.io/ISTQB/)**
@@ -19,7 +19,7 @@ Edge je přečte nahlas `Ctrl+Shift+U`, čtecí režim se zapíná klávesou `F9
 ## Proč je tady generátor a kontrolní sada
 
 Obsah vzniká ve Wordu, protože se v něm dobře píše a reviduje. Web z něj musí vzniknout
-převodem — a u 87 000 slov **pohledem nepoznáte, že se jeden oddíl nepřenesl nebo že
+převodem — a u 84 000 slov **pohledem nepoznáte, že se jeden oddíl nepřenesl nebo že
 se rozpadl vnitřní odkaz.** Tak jsem si na to napsal kontrolu.
 
 ```bash
