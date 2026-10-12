@@ -215,8 +215,41 @@
     });
   }
 
+  /* --- výsledky zkoušek na rozcestníku ----------------------------------- */
+
+  /* Souhrn zapisuje assets/zkouska.js po odevzdání testu. */
+  function nastavVysledky() {
+    var karty = document.querySelectorAll("[data-vysledek]");
+    if (!karty.length) return;
+    var vse;
+    try { vse = JSON.parse(nacti("istqb-zkousky-vysledky")) || {}; } catch (e) { vse = {}; }
+
+    function body(b, z) {
+      return b + " / " + z.celkem + " (" + Math.round(b / z.celkem * 100) + " %)";
+    }
+
+    [].forEach.call(karty, function (karta) {
+      var z = vse[karta.getAttribute("data-vysledek")];
+      if (!z || !z.celkem) return;
+      var splneno = z.nejlepe >= z.hranice;
+      karta.classList.add(splneno ? "karta--splneno" : "karta--nesplneno");
+
+      var blok = document.createElement("div");
+      blok.className = "karta-vysledek";
+      var stitek = document.createElement("span");
+      stitek.className = "karta-vysledek-stitek " + (splneno ? "uspech" : "neuspech");
+      stitek.textContent = splneno ? "✓ Splněno" : "Zatím nesplněno";
+      var radek = document.createElement("span");
+      radek.textContent = "Naposledy " + body(z.posledni, z) + " · nejlépe " + body(z.nejlepe, z) +
+        " · pokusů " + z.pokusu;
+      blok.append(stitek, radek);
+      karta.insertBefore(blok, karta.querySelector("ul"));
+    });
+  }
+
   function start() {
     nastavTema();
+    nastavVysledky();
     nastavPodmenu();
     nastavPostup();
     nastavStrom();

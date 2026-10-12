@@ -132,7 +132,7 @@ def stranka_testu(sada: str, data: dict, stranka) -> str:
 
 def stranka_rozcestniku(sady: dict[str, dict], stranka, dalsi: str = "") -> str:
     karty = "".join(
-        f"""<li class="karta" id="sada-{s}">
+        f"""<li class="karta" id="sada-{s}" data-vysledek="{s}">
   <p class="karta-cislo">Sada {s.upper()}</p>
   <h3>Vzorová zkouška {s.upper()}</h3>
   <p class="karta-meta">{len(d["otazky"])} otázek · 60 minut · verze {e(d["verze"])}</p>

@@ -292,7 +292,7 @@ def stranka_navic(pocty: Counter, stranka) -> str:
 def karty_rozcestniku(pocet_sad: int, pocet_navic: int, pocet_vse: int) -> str:
     """Oddíly pro rozcestník zkouska.html (vkládá je vzorove_zkousky.stranka_rozcestniku)."""
     karty = "".join(
-        f"""<li class="karta" id="cvicna-{i}">
+        f"""<li class="karta" id="cvicna-{i}" data-vysledek="cvicna-{i}">
   <p class="karta-cislo">Cvičná {i}</p>
   <h3>Cvičná zkouška {i}</h3>
   <p class="karta-meta">40 otázek · 60 minut · rozpis jako ostrá zkouška</p>
@@ -311,7 +311,7 @@ def karty_rozcestniku(pocet_sad: int, pocet_navic: int, pocet_vse: int) -> str:
 <section class="sekce" id="nahodna">
   <h2>Náhodná zkouška a otázky navíc — AI vygenerované otázky</h2>
   <ul class="mrizka">
-<li class="karta">
+<li class="karta" data-vysledek="nahodna">
   <p class="karta-cislo">Pokaždé jiná</p>
   <h3>Náhodná zkouška</h3>
   <p class="karta-meta">40 otázek losovaných z {pocet_vse} (AI vygenerované + oficiální) podle rozpisu ostré zkoušky</p>

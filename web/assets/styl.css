@@ -797,6 +797,17 @@ h2:hover .kotva, .kotva:focus-visible { opacity: 1; }
 }
 .karta:hover .karta-meta { color: var(--text-tlumeny); }
 
+/* Výsledek zkoušky na rozcestníku (vyplňuje skript.js z localStorage). */
+.karta--splneno { border-top-color: var(--zelena); }
+.karta-vysledek {
+  display: flex; flex-direction: column; gap: .3rem;
+  font-family: var(--pismo-ui); font-size: .82rem; color: var(--text-tlumeny);
+  margin: -.5rem 0 1.1rem;
+}
+.karta-vysledek-stitek { font-weight: 700; }
+.karta-vysledek-stitek.uspech { color: var(--zelena); }
+.karta-vysledek-stitek.neuspech { color: var(--cervena); }
+
 /* Nulová mezera záměrně: každý pixel mezi odkazy by patřil roztaženému
    odkazu na plný výklad a při přejíždění myší by problikával. Odstup mezi
    řádky proto dělá odsazení uvnitř odkazů, ne gap. */

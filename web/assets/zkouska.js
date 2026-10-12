@@ -20,6 +20,7 @@
   var MINUT_PRODLOUZENO = 75;
   var MINUT_OPRAVA = 10;
   var KLIC = "istqb-vzorova-" + D.sada.toLowerCase();
+  var KLIC_VYSLEDKY = "istqb-zkousky-vysledky";   // souhrn pro rozcestník zkouska.html
   var PISMENA = "abcde";
 
   var S = null;          // stav, ukládá se do localStorage
@@ -34,6 +35,21 @@
   }
   function smaz() {
     try { localStorage.removeItem(KLIC); } catch (e) { /* nevadí */ }
+  }
+  // Výsledek pokusu do souhrnu. Oprava přepíše výsledek téhož pokusu, nepočítá se jako nový.
+  function zapisVysledek(b) {
+    try {
+      var vse = JSON.parse(localStorage.getItem(KLIC_VYSLEDKY)) || {};
+      var sada = D.sada.toLowerCase();
+      var z = vse[sada] || { pokusu: 0, nejlepe: 0 };
+      if (z.pokus !== S.pokus) { z.pokusu++; z.pokus = S.pokus; }
+      z.posledni = b;
+      z.nejlepe = Math.max(z.nejlepe, b);
+      z.celkem = POCET;
+      z.hranice = HRANICE;
+      vse[sada] = z;
+      localStorage.setItem(KLIC_VYSLEDKY, JSON.stringify(vse));
+    } catch (e) { /* nevadí */ }
   }
 
   /* --- pomocné funkce --- */
@@ -178,6 +194,7 @@
       }
       S = {
         ids: ids,
+        pokus: Date.now(),
         faze: "test", i: 0,
         odp: OTAZKY.map(function () { return []; }),
         oznacene: [],
@@ -310,6 +327,7 @@
     S.odpPrvni = S.odp.map(function (o) { return o.slice(); });
     S.faze = "vysledek";
     uloz();
+    zapisVysledek(S.prvni);
     vysledek();
   }
 
@@ -317,6 +335,7 @@
     zastavCasovac();
     S.faze = "vyhodnoceni";
     uloz();
+    zapisVysledek(skore(S.odp));
     vyhodnoceni();
   }
 
