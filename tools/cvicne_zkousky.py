@@ -21,6 +21,8 @@ Výstup:
   web/otazky-navic.html              procvičování otázek mimo zkoušky
   web/assets/cvicne/zkouska-N.js     data testu (window.VZOROVA_ZKOUSKA)
   web/assets/cvicne/vse.js           všechny otázky pro náhodnou zkoušku a procvičování
+  web/zkouska-ze-zkusenosti.html     zkouška z témat, která kolegové viděli na ostré zkoušce
+  web/assets/cvicne/zkusenosti.js    její data (cvicne-otazky/data/zkusenosti.json)
 """
 
 from __future__ import annotations
@@ -377,7 +379,87 @@ def zapis(koren: Path, web: Path, stranka) -> tuple[list[str], str]:
     zapsano += ["nahodna-zkouska.html", "otazky-navic.html", "assets/cvicne/vse.js"]
 
     pocet_vse = sum(1 for q in vse if q["k3"] and not q["varianta"]) + len(oficialni)
-    return zapsano, karty_rozcestniku(len(sady), len(navic), pocet_vse)
+    oddily = karty_rozcestniku(len(sady), len(navic), pocet_vse)
+
+    zkusenosti = zapis_zkusenosti(koren, web, mapa, stranka)
+    if zkusenosti:
+        zapsano += ["zkouska-ze-zkusenosti.html", "assets/cvicne/zkusenosti.js"]
+        oddily += karta_zkusenosti(zkusenosti)
+    return zapsano, oddily
+
+
+# --- zkouška ze zkušeností -------------------------------------------------
+# Samostatná sada mimo rozpis: témata a typy otázek, které podle kolegů přišly
+# na ostré zkoušce. Do náhodné zkoušky ani otázek navíc se nemíchá.
+
+def zapis_zkusenosti(koren: Path, web: Path, mapa: dict, stranka) -> int:
+    cesta = koren / "cvicne-otazky" / "data" / "zkusenosti.json"
+    if not cesta.exists():
+        return 0
+    otazky = json.loads(cesta.read_text(encoding="utf-8"))["otazky"]
+    start = random.Random(f"{SEMINKO}-zkusenosti").randrange(4)
+    polozky = []
+    for i, q in enumerate(otazky):
+        n = len(q["moznosti"])
+        assert q["spravne"] and all(p in PISMENA[:n] for p in q["spravne"]), q["id"]
+        q = dict(q, stav="ok", k3_fit=True)
+        polozky.append(pro_web(zamichej(q, start + i), mapa, web, i + 1))
+    pis_js(web / "assets" / "cvicne" / "zkusenosti.js", "VZOROVA_ZKOUSKA",
+           {"sada": "zkusenosti", "oficialni": False, "otazky": polozky})
+    (web / "zkouska-ze-zkusenosti.html").write_text(stranka_zkusenosti(len(otazky), stranka), encoding="utf-8")
+    return len(otazky)
+
+
+def stranka_zkusenosti(pocet: int, stranka) -> str:
+    telo = f"""<div class="stranka uvod">
+<main id="text">
+
+<div class="uvod-hlava">
+  <p class="drobky"><a href="zkouska.html">Zkouška</a> · zkouška ze zkušeností</p>
+  <h1>Zkouška ze zkušeností</h1>
+  <p class="perex">{pocet} otázek na témata, která kolegové potkali na ostré zkoušce: hodně příkladů na třídy
+  ekvivalence a hraniční hodnoty, rozpor v rozhodovací tabulce, pokrytí příkazů a větví bez diagramu,
+  tříbodový odhad, prioritizace, kvadranty, report o defektu a přiřazovačky na úrovně, typy testů,
+  testovací proces a revize.</p>
+</div>
+
+<div id="zkouska" data-sada="zkusenosti">
+  <noscript><p>Simulace zkoušky potřebuje zapnutý JavaScript.</p></noscript>
+</div>
+
+<p class="zk-zdroj"><strong>AI vygenerované otázky podle zkušeností zkoušených.</strong> Nejde o otázky z ostré zkoušky
+ani z oficiálních vzorových zkoušek ISTQB®, jen o nové otázky na stejná témata a ve stejném stylu. Rozpis neodpovídá
+ostré zkoušce. Ke zkoušce vždy platí znění oficiálního sylabu.</p>
+
+</main>
+</div>
+<script src="assets/cvicne/zkusenosti.js"></script>
+<script src="assets/zkouska.js"></script>"""
+    return stranka(
+        titulek="Zkouška ze zkušeností | ISTQB CTFL v4.0",
+        popis=f"Cvičná zkouška ISTQB CTFL v4.0 česky: {pocet} otázek na témata, která se objevila na ostré zkoušce — "
+        "EP, BVA, rozhodovací tabulky, pokrytí, tříbodový odhad, přiřazovačky.",
+        telo=telo,
+        korenova_cesta="",
+        aktivni="zkouska",
+    )
+
+
+def karta_zkusenosti(pocet: int) -> str:
+    return f"""
+<section class="sekce" id="zkusenosti">
+  <h2>Zkouška ze zkušeností — témata z ostré zkoušky</h2>
+  <p>Otázky napsané podle toho, co kolegové potkali na ostré zkoušce: typy úloh a chytáky, ne doslovné otázky.</p>
+  <ul class="mrizka">
+<li class="karta" data-vysledek="zkusenosti">
+  <p class="karta-cislo">Ze zkušeností</p>
+  <h3>Zkouška ze zkušeností</h3>
+  <p class="karta-meta">{pocet} otázek · 60 minut · EP, BVA, pokrytí, odhady, přiřazovačky</p>
+  <ul><li><a href="zkouska-ze-zkusenosti.html" class="hlavni">Spustit test<span>{pocet} otázek</span></a></li></ul>
+</li>
+  </ul>
+</section>
+"""
 
 
 KAPITOLY = {

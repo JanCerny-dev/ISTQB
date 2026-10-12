@@ -1,0 +1,595 @@
+{
+  "popis": "Zkouška ze zkušeností: témata a typy otázek, které podle kolegů přišly na ostré zkoušce CTFL v4.0 (říjen 2026). Otázky jsou nové, napsané podle jejich popisu, ne kopie ostrých otázek.",
+  "otazky": [
+    {
+      "id": "ZK-01", "lo": "FL-2.2.1", "k": "K2",
+      "q": "<p>Testujete autopilota letadla. Ověřujete komunikaci mezi externím rádiovým softwarem (samostatný systém jiného dodavatele) a interním modulem gyroskopu, který je součástí autopilota.</p><p>O kterou úroveň testování jde NEJSPÍŠE?</p>",
+      "moznosti": ["Testování komponent", "Integrační testování komponent", "Systémové integrační testování", "Akceptační testování"],
+      "spravne": ["c"],
+      "vysvetleni": {
+        "a": "Není správně. Testování komponent ověřuje jednu komponentu izolovaně, ne komunikaci s jiným systémem.",
+        "b": "Není správně. Integrační testování komponent ověřuje rozhraní mezi komponentami téhož systému. Rádiový software je ale externí systém.",
+        "c": "Je správně. Testuje se rozhraní mezi testovaným systémem (autopilot s gyroskopem) a jiným, externím systémem — to je systémové integrační testování.",
+        "d": "Není správně. Akceptační testování ověřuje připravenost k nasazení a splnění potřeb uživatele, ne konkrétní rozhraní mezi systémy."
+      },
+      "vysvetleni_obecne": "Sylabus 2.2.1: Systémové integrační testování se zaměřuje na rozhraní testovaného systému s jinými systémy a externími službami. Klíč k otázce: slovo „externí“. Když jde o rozhraní uvnitř jednoho systému, je to integrační testování komponent."
+    },
+    {
+      "id": "ZK-02", "lo": "FL-2.2.1", "k": "K2", "keep_order": true,
+      "q": "<p>Přiřaďte úrovně testování k popisům.</p><table><tr><th>Úroveň</th><th>Popis</th></tr><tr><td>1. Testování komponent</td><td>A. Rozhraní mezi testovaným systémem a jinými systémy nebo externími službami</td></tr><tr><td>2. Systémové testování</td><td>B. Celkové chování a schopnosti celého systému, funkcionální i nefunkcionální, často end-to-end</td></tr><tr><td>3. Systémové integrační testování</td><td>C. Komponenty testované izolovaně, obvykle vývojáři, často s testovacími rámci</td></tr><tr><td>4. Akceptační testování</td><td>D. Validace a prokázání připravenosti k nasazení, splnění obchodních potřeb uživatele</td></tr></table><p>Které přiřazení je SPRÁVNÉ?</p>",
+      "moznosti": ["1C, 2B, 3A, 4D", "1C, 2A, 3B, 4D", "1A, 2B, 3C, 4D", "1C, 2D, 3A, 4B"],
+      "spravne": ["a"],
+      "vysvetleni": {
+        "a": "Je správně. Komponenty izolovaně (C), celý systém end-to-end (B), rozhraní na jiné systémy (A), validace a připravenost k nasazení (D).",
+        "b": "Není správně. Rozhraní na jiné systémy (A) je systémové integrační testování, ne systémové testování.",
+        "c": "Není správně. Testování komponent neověřuje rozhraní na externí systémy, ověřuje komponenty izolovaně.",
+        "d": "Není správně. Validaci připravenosti k nasazení (D) má akceptační testování, ne systémové."
+      },
+      "vysvetleni_obecne": "Sylabus 2.2.1 popisuje pět úrovní: testování komponent, integrační testování komponent, systémové testování, systémové integrační testování a akceptační testování. U přiřazovaček nejdřív najděte jednoznačné dvojice (zde 1C a 3A) a vyškrtejte možnosti, které je nemají."
+    },
+    {
+      "id": "ZK-03", "lo": "FL-2.2.2", "k": "K2", "keep_order": true,
+      "q": "<p>Přiřaďte typy testů k příkladům.</p><table><tr><th>Typ testu</th><th>Příklad</th></tr><tr><td>1. Funkcionální testování</td><td>A. Ověření, že opravený defekt už nezpůsobuje selhání</td></tr><tr><td>2. Nefunkcionální testování</td><td>B. Testy navržené tak, aby se provedly všechny větve kódu výpočtu</td></tr><tr><td>3. Testování bílé skříňky</td><td>C. Ověření, že e-shop správně spočítá DPH u objednávky</td></tr><tr><td>4. Konfirmační testování</td><td>D. Ověření, že doba odezvy je pod 2 s při 500 souběžných uživatelích</td></tr></table><p>Které přiřazení je SPRÁVNÉ?</p>",
+      "moznosti": ["1C, 2D, 3A, 4B", "1C, 2D, 3B, 4A", "1D, 2C, 3B, 4A", "1B, 2D, 3C, 4A"],
+      "spravne": ["b"],
+      "vysvetleni": {
+        "a": "Není správně. Pokrytí větví (B) je cíl testování bílé skříňky a ověření opravy (A) je konfirmační testování, ne naopak.",
+        "b": "Je správně. Co systém dělá — výpočet DPH (C); jak dobře — doba odezvy (D); struktura kódu (B); ověření opravy (A).",
+        "c": "Není správně. Výpočet DPH je funkcionalita (co systém dělá), doba odezvy je výkonnostní efektivita, tedy nefunkcionální charakteristika.",
+        "d": "Není správně. Funkcionální testování se neodvozuje ze struktury kódu; výpočet DPH (C) je příklad funkcionálního testu."
+      },
+      "vysvetleni_obecne": "Sylabus 2.2.2 a 2.2.3: funkcionální testování ověřuje, CO systém dělá; nefunkcionální, JAK DOBŘE to dělá (výkonnostní efektivita, použitelnost, bezpečnost…); testy bílé skříňky se odvozují z vnitřní struktury; konfirmační testování ověřuje opravu defektu."
+    },
+    {
+      "id": "ZK-04", "lo": "FL-2.2.3", "k": "K2",
+      "q": "Vývojář opravil defekt ve výpočtu slevy, který leží ve sdílené knihovně používané i košíkem a fakturací. Který postup testování je NEJVHODNĚJŠÍ?",
+      "moznosti": [
+        "Konfirmační testování opravy a regresní testování košíku, fakturace a dalších částí, které knihovnu používají",
+        "Pouze konfirmační testování opravy; regresní testování se dělá jen před vydáním hlavní verze",
+        "Pouze regresní testování, protože to zahrnuje i ověření, že je defekt opravený",
+        "Pouze testování komponent knihovny vývojářem, protože oprava je jen v ní"
+      ],
+      "spravne": ["a"],
+      "vysvetleni": {
+        "a": "Je správně. Konfirmační testování ověří opravu, regresní testování ověří, že změna nezpůsobila nepříznivé důsledky jinde — sdílená knihovna má dopad na košík i fakturaci.",
+        "b": "Není správně. Regresní testování se dělá po změně, ne až před vydáním hlavní verze. Změna sdílené knihovny je typický důvod pro regresi.",
+        "c": "Není správně. Regresní testování hledá nepříznivé důsledky změny jinde; ověření samotné opravy je konfirmační testování.",
+        "d": "Není správně. Testy komponent nezachytí dopady na další části systému, které knihovnu používají."
+      },
+      "vysvetleni_obecne": "Sylabus 2.2.3: Konfirmační testování potvrzuje, že původní defekt byl úspěšně opraven. Regresní testování potvrzuje, že změna (včetně opravy) nezpůsobila nepříznivé důsledky. Rozsah regrese se určí analýzou dopadu."
+    },
+    {
+      "id": "ZK-05", "lo": "FL-2.1.5", "k": "K2",
+      "q": "Které z následujících tvrzení NEJLÉPE popisuje přístup shift left?",
+      "moznosti": [
+        "Testování se přesouvá do provozu, kde se sleduje skutečné chování uživatelů",
+        "Testování začíná dříve v životním cyklu, například revizemi specifikací, psaním testů před kódem, kontinuální integrací a statickou analýzou",
+        "Testování nefunkcionálních charakteristik se přesouvá až za systémové testování",
+        "Odpovědnost za testování přechází z testerů výhradně na vývojáře a nezávislé testování se ruší"
+      ],
+      "spravne": ["b"],
+      "vysvetleni": {
+        "a": "Není správně. Testování v provozu je opačný směr (někdy označovaný jako shift right).",
+        "b": "Je správně. Shift left znamená provádět testování dříve v životním cyklu vývoje softwaru; sylabus uvádí právě revize specifikací, psaní testů před kódem, CI/CD se statickou analýzou a nefunkcionální testy už od úrovně komponent.",
+        "c": "Není správně. Shift left naopak doporučuje začít s nefunkcionálním testováním co nejdříve, pokud je to možné už u komponent.",
+        "d": "Není správně. Shift left neznamená zrušení nezávislého testování, jen dřívější zapojení testování."
+      },
+      "vysvetleni_obecne": "Sylabus 2.1.5: Shift left = testování dříve v SDLC. Může vyžadovat dodatečné školení, úsilí a náklady v raných fázích, ale ušetří úsilí a náklady později."
+    },
+    {
+      "id": "ZK-06", "lo": "FL-1.4.1", "k": "K2", "keep_order": true,
+      "q": "<p>Přiřaďte činnosti testovacího procesu k úlohám.</p><table><tr><th>Činnost</th><th>Úloha</th></tr><tr><td>1. Analýza testů</td><td>A. Archivace testwaru pro budoucí použití a vyhodnocení ponaučení</td></tr><tr><td>2. Návrh testů</td><td>B. Odvození testovacích případů a položek pokrytí z testovacích podmínek</td></tr><tr><td>3. Provádění testů</td><td>C. Identifikace a prioritizace testovacích podmínek, ohodnocení testovací báze</td></tr><tr><td>4. Dokončení testování</td><td>D. Porovnání skutečných a očekávaných výsledků a zaznamenání anomálií</td></tr></table><p>Které přiřazení je SPRÁVNÉ?</p>",
+      "moznosti": ["1B, 2C, 3D, 4A", "1C, 2B, 3A, 4D", "1C, 2B, 3D, 4A", "1C, 2D, 3B, 4A"],
+      "spravne": ["c"],
+      "vysvetleni": {
+        "a": "Není správně. Testovací podmínky se identifikují v analýze („co testovat“), testovací případy se odvozují v návrhu („jak testovat“).",
+        "b": "Není správně. Archivace testwaru a ponaučení patří do dokončení testování, porovnání výsledků do provádění testů.",
+        "c": "Je správně. Analýza = co testovat (testovací podmínky), návrh = jak testovat (testovací případy), provádění = spuštění a porovnání výsledků, dokončení = archivace a ponaučení.",
+        "d": "Není správně. Porovnání skutečných a očekávaných výsledků se dělá při provádění testů, ne při návrhu."
+      },
+      "vysvetleni_obecne": "Sylabus 1.4.1: Analýza testů odpovídá na otázku „co testovat“, návrh testů na otázku „jak testovat“. Provádění testů zahrnuje spuštění, porovnání výsledků a zaznamenání anomálií. Dokončení testování probíhá typicky při dosažení milníků — archivace testwaru, report o dokončení, ponaučení."
+    },
+    {
+      "id": "ZK-07", "lo": "FL-1.4.1", "k": "K2", "keep_order": true,
+      "q": "<p>Přiřaďte činnosti testovacího procesu k úlohám.</p><table><tr><th>Činnost</th><th>Úloha</th></tr><tr><td>1. Návrh testů</td><td>A. Sestavení testovacích sad a harmonogramu provedení testů, vybudování testovacího prostředí</td></tr><tr><td>2. Implementace testů</td><td>B. Definice požadavků na testovací data a návrh testovacího prostředí</td></tr><tr><td>3. Monitoring testování</td><td>C. Průběžná kontrola testovacích činností a porovnání skutečného postupu s plánem</td></tr><tr><td>4. Plánování testování</td><td>D. Definice cílů testování a výběr přístupu k jejich dosažení</td></tr></table><p>Které přiřazení je SPRÁVNÉ?</p>",
+      "moznosti": ["1A, 2B, 3C, 4D", "1B, 2A, 3C, 4D", "1B, 2A, 3D, 4C", "1B, 2C, 3A, 4D"],
+      "spravne": ["b"],
+      "vysvetleni": {
+        "a": "Není správně. Toto je nejčastější chyták: návrh testovacího prostředí patří do návrhu testů, jeho vybudování (sestavení) do implementace testů.",
+        "b": "Je správně. Návrh = požadavky na data a návrh prostředí; implementace = testovací sady, harmonogram a vybudování prostředí; monitoring = porovnání s plánem; plánování = cíle a přístup.",
+        "c": "Není správně. Monitoring porovnává skutečný postup s plánem; cíle a přístup se definují při plánování.",
+        "d": "Není správně. Implementace testů nekontroluje postup oproti plánu, to je monitoring testování."
+      },
+      "vysvetleni_obecne": "Sylabus 1.4.1: Rozlišujte NÁVRH (testovací případy, požadavky na data, návrh prostředí, identifikace nástrojů) a IMPLEMENTACI (tvorba testovacích procedur, testovacích sad, harmonogramu provedení testů, vybudování prostředí a testovacích dat)."
+    },
+    {
+      "id": "ZK-08", "lo": "FL-1.1.2", "k": "K2",
+      "q": "Které tvrzení NEJLÉPE popisuje vztah mezi testováním a laděním?",
+      "moznosti": [
+        "Testování a ladění jsou totéž, jen ladění provádějí vývojáři a testování testeři",
+        "Ladění je součást dynamického testování, při které tester hledá defekty přímo v kódu",
+        "Testování může vyvolat selhání způsobená defekty; ladění hledá příčiny selhání (defekty), analyzuje je a odstraňuje",
+        "Ladění se provádí až po konfirmačním testování, aby se ověřilo, že oprava funguje"
+      ],
+      "spravne": ["c"],
+      "vysvetleni": {
+        "a": "Není správně. Jde o dvě odlišné činnosti s odlišným cílem, nejen o odlišné provádějící.",
+        "b": "Není správně. Ladění není součástí testování, je to samostatná činnost.",
+        "c": "Je správně. Testování selhání vyvolává (dynamické) nebo defekty nachází přímo (statické); ladění se zabývá hledáním, analýzou a odstraněním příčin.",
+        "d": "Není správně. Pořadí je opačné: nejdřív ladění (oprava), potom konfirmační testování ověří, že oprava zabrala."
+      },
+      "vysvetleni_obecne": "Sylabus 1.1.2: Typický postup ladění po selhání z dynamického testu: reprodukce selhání, diagnostika (nalezení příčiny), oprava příčiny. Pak následuje konfirmační a případně regresní testování."
+    },
+    {
+      "id": "ZK-09", "lo": "FL-3.2.4", "k": "K2", "keep_order": true,
+      "q": "<p>Přiřaďte typy revizí k jejich charakteristikám.</p><table><tr><th>Typ revize</th><th>Charakteristika</th></tr><tr><td>1. Neformální revize</td><td>A. Vede ji autor; cílem může být i vzdělávání revidujících a dosažení konsenzu</td></tr><tr><td>2. Předvedení</td><td>B. Nejformálnější typ, sbírají se metriky, autor nesmí být vedoucím revize ani zapisovatelem</td></tr><tr><td>3. Technická revize</td><td>C. Neřídí se definovaným procesem, nevyžaduje formální dokumentovaný výstup</td></tr><tr><td>4. Inspekce</td><td>D. Technicky kvalifikovaní revidující, vede ji moderátor, cílem je konsenzus a rozhodnutí o technickém problému</td></tr></table><p>Které přiřazení je SPRÁVNÉ?</p>",
+      "moznosti": ["1C, 2D, 3A, 4B", "1A, 2C, 3D, 4B", "1C, 2A, 3B, 4D", "1C, 2A, 3D, 4B"],
+      "spravne": ["d"],
+      "vysvetleni": {
+        "a": "Není správně. Předvedení vede autor (A); technickou revizi vede moderátor (D).",
+        "b": "Není správně. Neformální revize nemá definovaný proces (C), autor vede předvedení (A).",
+        "c": "Není správně. Nejformálnější typ s metrikami (B) je inspekce, ne technická revize.",
+        "d": "Je správně. Neformální = bez procesu (C), předvedení = vede autor (A), technická revize = technicky kvalifikovaní revidující a moderátor (D), inspekce = nejformálnější (B)."
+      },
+      "vysvetleni_obecne": "Sylabus 3.2.4 seřazuje typy revizí od nejméně po nejvíce formální: neformální revize → předvedení → technická revize → inspekce. Poznávací znaky: předvedení = autor vede; technická revize = moderátor a technické rozhodnutí; inspekce = metriky, autor nesmí být vedoucím ani zapisovatelem."
+    },
+    {
+      "id": "ZK-10", "lo": "FL-3.2.3", "k": "K1", "keep_order": true,
+      "q": "<p>Přiřaďte role při revizi k odpovědnostem.</p><table><tr><th>Role</th><th>Odpovědnost</th></tr><tr><td>1. Manažer</td><td>A. Shromažďuje anomálie od revidujících a zaznamenává rozhodnutí a nové anomálie ze schůzky</td></tr><tr><td>2. Moderátor</td><td>B. Přebírá celkovou odpovědnost za revizi, rozhoduje, kdo bude zapojen, a organizuje, kdy a kde proběhne</td></tr><tr><td>3. Zapisovatel</td><td>C. Rozhoduje, co se bude revidovat, a poskytuje zdroje, například pracovníky a čas</td></tr><tr><td>4. Vedoucí revize</td><td>D. Zajišťuje efektivní průběh revizních schůzek včetně mediace a dodržení časového rámce</td></tr></table><p>Které přiřazení je SPRÁVNÉ?</p>",
+      "moznosti": ["1B, 2D, 3A, 4C", "1C, 2D, 3A, 4B", "1C, 2A, 3D, 4B", "1B, 2A, 3D, 4C"],
+      "spravne": ["b"],
+      "vysvetleni": {
+        "a": "Není správně. Toto je chyták: o tom, CO se reviduje, a o zdrojích rozhoduje manažer; vedoucí revize organizuje KDO, KDY a KDE.",
+        "b": "Je správně. Manažer = co a zdroje (C), moderátor = průběh schůzek (D), zapisovatel = záznam anomálií (A), vedoucí revize = celková odpovědnost a organizace (B).",
+        "c": "Není správně. Moderátor řídí průběh schůzek, nezapisuje anomálie; to dělá zapisovatel.",
+        "d": "Není správně. Zaměňuje manažera s vedoucím revize i moderátora se zapisovatelem."
+      },
+      "vysvetleni_obecne": "Sylabus 3.2.3 — role: manažer (co a zdroje), autor (vytváří a opravuje pracovní produkt), moderátor/facilitátor (průběh schůzek), zapisovatel (anomálie a rozhodnutí), revidující (provádí revizi), vedoucí revize (celková odpovědnost, kdo, kdy, kde)."
+    },
+    {
+      "id": "ZK-11", "lo": "FL-3.2.4", "k": "K2",
+      "q": "Ve kterém typu revize platí, že autor NESMÍ vystupovat jako vedoucí revize ani jako zapisovatel?",
+      "moznosti": ["Neformální revize", "Předvedení", "Technická revize", "Inspekce"],
+      "spravne": ["d"],
+      "vysvetleni": {
+        "a": "Není správně. Neformální revize nemá definované role ani proces.",
+        "b": "Není správně. Předvedení naopak autor sám vede.",
+        "c": "Není správně. Technickou revizi vede moderátor, sylabus u ní takové omezení pro autora neuvádí.",
+        "d": "Je správně. Sylabus u inspekce výslovně uvádí, že autor nemůže být vedoucím revize ani zapisovatelem."
+      },
+      "vysvetleni_obecne": "Sylabus 3.2.4: Inspekce je nejformálnější typ revize, řídí se kompletním obecným procesem, hlavním cílem je nalézt maximum anomálií, sbírají se metriky ke zlepšování procesu a autor nemůže být vedoucím revize ani zapisovatelem."
+    },
+    {
+      "id": "ZK-12", "lo": "FL-3.1.2", "k": "K2",
+      "q": "Které tvrzení NEJLÉPE popisuje přínos statického testování?",
+      "moznosti": [
+        "Dokáže nahradit dynamické testování, protože odhalí všechny typy defektů",
+        "Odhaluje defekty v raných fázích, kdy je jejich oprava levnější, a najde i defekty, které dynamické testování neodhalí, například nedosažitelný kód",
+        "Hledá selhání, ke kterým dochází při běhu softwaru",
+        "Lze ho použít jen na zdrojový kód, ne na požadavky nebo uživatelské scénáře"
+      ],
+      "spravne": ["b"],
+      "vysvetleni": {
+        "a": "Není správně. Statické a dynamické testování se doplňují; některé defekty najde jen jedno z nich.",
+        "b": "Je správně. Statické testování lze použít dřív, než je k dispozici spustitelný kód, a najde i defekty, které dynamicky odhalit nelze (nedosažitelný kód, nedodržení standardů, defekty v požadavcích).",
+        "c": "Není správně. Statické testování nevyžaduje běh softwaru, hledá přímo defekty, ne selhání.",
+        "d": "Není správně. Revidovat lze téměř jakýkoli pracovní produkt — požadavky, uživatelské scénáře, testware, smlouvy, plány."
+      },
+      "vysvetleni_obecne": "Sylabus 3.1.2: Statické testování umožňuje časné odhalení defektů, a tím levnější opravu. Nachází defekty přímo (dynamické testování nachází selhání, jejichž příčinu je třeba dohledat)."
+    },
+    {
+      "id": "ZK-13", "lo": "FL-4.2.3", "k": "K3",
+      "q": "<p>E-shop prodává malířská plátna. Cenu určuje rozhodovací tabulka podle šířky a výšky plátna v cm (celá čísla 1–200):</p><table><tr><th>Pravidlo</th><th>R1</th><th>R2</th><th>R3</th><th>R4</th><th>R5</th></tr><tr><td>Šířka (cm)</td><td>1–50</td><td>1–50</td><td>51–120</td><td>100–200</td><td>121–200</td></tr><tr><td>Výška (cm)</td><td>1–50</td><td>51–200</td><td>1–100</td><td>80–200</td><td>1–79</td></tr><tr><td><strong>Cena (Kč)</strong></td><td>100</td><td>150</td><td>200</td><td>300</td><td>250</td></tr></table><p>Tabulka obsahuje protiřečící si pravidla. Který rozměr plátna (šířka × výška) tento rozpor odhalí?</p>",
+      "moznosti": ["50 × 51", "110 × 90", "125 × 79", "201 × 201"],
+      "spravne": ["b"],
+      "vysvetleni": {
+        "a": "Není správně. Šířka 50 a výška 51 odpovídá jen pravidlu R2 (cena 150). Je to hraniční kombinace, ale bez rozporu.",
+        "b": "Je správně. Šířka 110 leží v R3 (51–120) i v R4 (100–200), výška 90 leží v R3 (1–100) i v R4 (80–200). Platí tedy dvě pravidla s různou cenou: 200 Kč a 300 Kč — to je rozpor.",
+        "c": "Není správně. Šířka 125 už nepatří do R3 a výška 79 nepatří do R4. Platí jen R5 (250 Kč).",
+        "d": "Není správně. Toto je chyták: 201 × 201 leží mimo definovaný rozsah, nesplňuje žádné pravidlo. To odhaluje neúplnost (nebo neplatný vstup), ne rozpor dvou pravidel."
+      },
+      "vysvetleni_obecne": "Sylabus 4.2.3: Rozhodovací tabulky pomáhají odhalit problémy v požadavcích, např. neúplnost a rozpory. Rozpor = jedna kombinace podmínek splňuje dvě pravidla s různými akcemi. Postup: hledejte pravidla, jejichž rozsahy se překrývají v OBOU podmínkách (R3 a R4 se překrývají ve šířce 100–120 a ve výšce 80–100), a vyberte rozměr z průniku."
+    },
+    {
+      "id": "ZK-14", "lo": "FL-4.2.3", "k": "K3",
+      "q": "Rozhodovací tabulka má tři podmínky s hodnotami ano/ne a jednu podmínku se třemi možnými hodnotami. Kolik sloupců (pravidel) bude mít úplná rozhodovací tabulka před případným sloučením nebo odstraněním neproveditelných kombinací?",
+      "moznosti": ["9", "12", "24", "48"],
+      "spravne": ["c"],
+      "vysvetleni": {
+        "a": "Není správně. Čísla se nesčítají (2 + 2 + 2 + 3), ale násobí.",
+        "b": "Není správně. 12 = 2 × 2 × 3 — chybí jedna booleovská podmínka.",
+        "c": "Je správně. Počet kombinací je součin počtu hodnot všech podmínek: 2 × 2 × 2 × 3 = 24.",
+        "d": "Není správně. 48 = 2 × 2 × 2 × 2 × 3 — započtena jedna podmínka navíc."
+      },
+      "vysvetleni_obecne": "Sylabus 4.2.3: Úplná rozhodovací tabulka obsahuje všechny kombinace podmínek. Počet sloupců = součin počtů hodnot jednotlivých podmínek (pro n booleovských podmínek 2^n). Tabulku lze zjednodušit odstraněním neproveditelných kombinací nebo sloučením sloupců."
+    },
+    {
+      "id": "ZK-15", "lo": "FL-4.2.1", "k": "K3",
+      "q": "<p>Přepravní služba přijímá balíky s hmotností v celých kilogramech. Pro hmotnost je definováno pět tříd ekvivalence:</p><ul><li>T1: méně než 1 kg (neplatná)</li><li>T2: 1–5 kg</li><li>T3: 6–20 kg</li><li>T4: 21–30 kg</li><li>T5: více než 30 kg (neplatná)</li></ul><p>Která sada testovacích hodnot dosahuje NEJVYŠŠÍHO pokrytí tříd ekvivalence?</p>",
+      "moznosti": ["0, 3, 5, 31", "1, 6, 21, 30", "−2, 4, 15, 25", "5, 10, 20, 40"],
+      "spravne": ["c"],
+      "vysvetleni": {
+        "a": "Není správně. 0 → T1, 3 a 5 → T2, 31 → T5. Pokryty 3 z 5 tříd = 60 %.",
+        "b": "Není správně. 1 → T2, 6 → T3, 21 a 30 → T4. Pokryty 3 z 5 tříd = 60 %. Hraniční hodnoty samy o sobě nezvyšují pokrytí tříd.",
+        "c": "Je správně. −2 → T1, 4 → T2, 15 → T3, 25 → T4. Pokryty 4 z 5 tříd = 80 %, nejvíce ze všech sad.",
+        "d": "Není správně. 5 → T2, 10 a 20 → T3, 40 → T5. Pokryty 3 z 5 tříd = 60 %."
+      },
+      "vysvetleni_obecne": "Sylabus 4.2.1: Pokrytí tříd ekvivalence = počet tříd otestovaných alespoň jednou hodnotou / celkový počet tříd. Postup: každou hodnotu zařaďte do třídy, škrtněte duplicity a spočítejte různé třídy."
+    },
+    {
+      "id": "ZK-16", "lo": "FL-4.2.1", "k": "K3",
+      "q": "Formulář má dvě pole. Pole „Typ účtu“ má 3 platné třídy ekvivalence, pole „Region“ má 4 platné třídy ekvivalence. Jaký je minimální počet testovacích případů pro 100% pokrytí každé volby?",
+      "moznosti": ["3", "4", "7", "12"],
+      "spravne": ["b"],
+      "vysvetleni": {
+        "a": "Není správně. Třemi testy pokryjete všechny třídy pole „Typ účtu“, ale jen tři ze čtyř tříd pole „Region“.",
+        "b": "Je správně. Každý test pokryje jednu třídu z každého pole najednou. Minimum je tedy počet tříd pole s nejvíce třídami: max(3, 4) = 4.",
+        "c": "Není správně. 3 + 4 = 7 by platilo, kdyby každý test pokrýval jen jednu třídu jednoho pole.",
+        "d": "Není správně. 3 × 4 = 12 jsou všechny kombinace; pokrytí každé volby kombinace neřeší."
+      },
+      "vysvetleni_obecne": "Sylabus 4.2.1: Při více sadách tříd ekvivalence je nejjednodušším kritériem pokrytí každé volby — každá třída z každé sady musí být otestována alespoň jednou. Minimum = největší počet tříd v jedné sadě."
+    },
+    {
+      "id": "ZK-17", "lo": "FL-4.2.2", "k": "K3",
+      "q": "<p>Heslo musí mít <strong>přesně 16 znaků</strong>. Délky 0–15 i 17 a více jsou neplatné. Tým původně plánoval dvouhodnotovou analýzu hraničních hodnot, ale pro jistotu se rozhodl pro <strong>tříhodnotovou</strong>.</p><p>Uvažujte jen hranice v okolí délky 16 (dolní hranice prázdného hesla se netestuje). Které délky hesla zajistí 100% pokrytí tříhodnotovou analýzou hraničních hodnot?</p>",
+      "moznosti": ["16 a 17", "15, 16, 17, 18", "14, 15, 16, 17, 18", "14, 16, 18"],
+      "spravne": ["c"],
+      "vysvetleni": {
+        "a": "Není správně. Chybí hraniční hodnota 15 i sousedé.",
+        "b": "Není správně. Chybí 14 — soused hraniční hodnoty 15.",
+        "c": "Je správně. Hraniční hodnoty jsou 15 (max. třídy 0–15), 16 (min. i max. platné třídy) a 17 (min. třídy 17+). Tříhodnotová BVA testuje každou hranici a oba její sousedy: {14, 15, 16} ∪ {15, 16, 17} ∪ {16, 17, 18} = 14, 15, 16, 17, 18.",
+        "d": "Není správně. Chybí hraniční hodnoty 15 a 17."
+      },
+      "vysvetleni_obecne": "Sylabus 4.2.2: Hraniční hodnoty jsou minimum a maximum KAŽDÉ třídy. Dvouhodnotová BVA: hranice + nejbližší soused ze sousední třídy (zde 15, 16, 17). Tříhodnotová BVA: hranice + oba sousedé, proto přibudou 14 a 18. Postup: vypište všechny hraniční hodnoty, ke každé připište −1 a +1 a sjednoťte."
+    },
+    {
+      "id": "ZK-18", "lo": "FL-4.2.2", "k": "K3",
+      "q": "Pojišťovna přijímá žadatele ve věku 18–65 let (celá čísla). Uvažujte jen hranice platné třídy a jejich sousedy v neplatných třídách. Testovací případy používají věk 17, 18, 40 a 64. Jakého pokrytí dvouhodnotové analýzy hraničních hodnot dosahují?",
+      "moznosti": ["25 %", "50 %", "75 %", "100 %"],
+      "spravne": ["b"],
+      "vysvetleni": {
+        "a": "Není správně. Pokryty jsou dvě položky (17 i 18), ne jedna.",
+        "b": "Je správně. Položky pokrytí jsou 17, 18, 65, 66. Testy pokrývají 17 a 18 → 2/4 = 50 %. Hodnoty 40 a 64 nejsou položkami pokrytí dvouhodnotové BVA.",
+        "c": "Není správně. Hodnota 64 je soused hranice 65 uvnitř platné třídy — ten se počítá jen u tříhodnotové BVA.",
+        "d": "Není správně. Chybí 65 a 66."
+      },
+      "vysvetleni_obecne": "Sylabus 4.2.2: Pokrytí BVA = počet otestovaných položek pokrytí / celkový počet položek pokrytí. U dvouhodnotové BVA je položkou hraniční hodnota a její nejbližší soused ze sousední třídy."
+    },
+    {
+      "id": "ZK-19", "lo": "FL-4.2.2", "k": "K3",
+      "q": "Termostat přijímá nastavenou teplotu 15–28 °C (celá čísla). Hodnoty mimo rozsah jsou neplatné. Uvažujte jen hranice platné třídy a jejich sousedy v neplatných třídách. Která sada testovacích hodnot dosahuje 100% pokrytí dvouhodnotovou analýzou hraničních hodnot?",
+      "moznosti": ["15, 16, 27, 28", "14, 15, 28, 29", "15, 28", "14, 16, 28, 30"],
+      "spravne": ["b"],
+      "vysvetleni": {
+        "a": "Není správně. Hodnoty 16 a 27 jsou sousedé uvnitř platné třídy; chybí 14 a 29 z neplatných tříd.",
+        "b": "Je správně. Hranice 15 a 28 a jejich nejbližší sousedé ze sousedních tříd 14 a 29.",
+        "c": "Není správně. Chybí sousedé 14 a 29 — pokrytí je jen 50 %.",
+        "d": "Není správně. 16 a 30 nejsou položkami pokrytí; chybí 15 a 29."
+      },
+      "vysvetleni_obecne": "Sylabus 4.2.2: Dvouhodnotová BVA = pro každou hranici ona sama a její nejbližší soused ze SOUSEDNÍ třídy. Pro rozsah min–max tedy min−1, min, max, max+1."
+    },
+    {
+      "id": "ZK-20", "lo": "FL-4.3.1", "k": "K2",
+      "q": "Testovaný kód obsahuje 40 spustitelných a 10 nespustitelných příkazů (komentáře, deklarace). Testy provedly 20 spustitelných příkazů. Jakého pokrytí příkazů bylo dosaženo?",
+      "moznosti": ["40 %", "50 %", "66,7 %", "80 %"],
+      "spravne": ["b"],
+      "vysvetleni": {
+        "a": "Není správně. 20/50 započítává i nespustitelné příkazy, ty se do pokrytí nepočítají.",
+        "b": "Je správně. Pokrytí příkazů = provedené spustitelné příkazy / všechny spustitelné příkazy = 20/40 = 50 %.",
+        "c": "Není správně. 20/30 vznikne chybným odečtením nespustitelných příkazů od spustitelných (40 − 10).",
+        "d": "Není správně. 40/50 je podíl spustitelných příkazů v kódu, ne pokrytí."
+      },
+      "vysvetleni_obecne": "Sylabus 4.3.1: Pokrytí příkazů se měří jako počet příkazů provedených testy děleno celkovým počtem SPUSTITELNÝCH příkazů. Nespustitelné příkazy (komentáře, deklarace) se ignorují — jsou v zadání jen jako chyták."
+    },
+    {
+      "id": "ZK-21", "lo": "FL-4.3.2", "k": "K2",
+      "q": "Kód neobsahuje žádné rozhodnutí. Jeho graf toku řízení má pouze tři nepodmíněné větve. Kolik testovacích případů je minimálně potřeba pro 100% pokrytí větví?",
+      "moznosti": ["1", "2", "3", "6"],
+      "spravne": ["a"],
+      "vysvetleni": {
+        "a": "Je správně. Bez rozhodnutí existuje jen jedna cesta kódem. Nepodmíněné větve leží za sebou na této jediné cestě, takže je jeden test projde všechny.",
+        "b": "Není správně. Dva testy by byly potřeba až při jednom rozhodnutí (pravda/nepravda).",
+        "c": "Není správně. Nepodmíněné větve nepotřebují každá vlastní test — jsou na stejné cestě.",
+        "d": "Není správně. Šest nemá oporu v žádném výpočtu; nepodmíněné větve nemají dva výsledky."
+      },
+      "vysvetleni_obecne": "Sylabus 4.3.2: Větev je přenos řízení mezi dvěma uzly grafu toku řízení. Nepodmíněná větev = lineární kód (bez rozhodnutí), podmíněná = výsledek rozhodnutí. Do pokrytí se počítají obě. Pravidlo pro odhad bez diagramu: minimální počet testů určují ROZHODNUTÍ, ne nepodmíněné větve. Žádné rozhodnutí → 1 test. Jedno IF (s ELSE i bez něj) → 2 testy. Několik nezávislých IF za sebou → stále 2 testy (vše pravda / vše nepravda). Vnořená IF → počet „listů“, tedy rozhodnutí + 1."
+    },
+    {
+      "id": "ZK-22", "lo": "FL-4.3.2", "k": "K2",
+      "q": "<p>Mějme následující kód:</p><pre><code>def tisk(a, b):\n    print(\"start\")\n    if a &gt; 0:\n        print(\"A\")\n    if b &gt; 0:\n        print(\"B\")\n    print(\"konec\")</code></pre><p>Jaký je minimální počet testovacích případů pro 100% pokrytí příkazů a jaký pro 100% pokrytí větví?</p>",
+      "moznosti": ["Příkazy 1, větve 2", "Příkazy 2, větve 2", "Příkazy 1, větve 4", "Příkazy 2, větve 4"],
+      "spravne": ["a"],
+      "vysvetleni": {
+        "a": "Je správně. Příkazy: test a = 1, b = 1 provede všechny příkazy. Větve: test a = 1, b = 1 pokryje obě větve „pravda“, test a = 0, b = 0 obě větve „nepravda“ (přeskočení print). Stačí 2 testy.",
+        "b": "Není správně. Pro pokrytí příkazů stačí jeden test, kde jsou obě podmínky pravdivé.",
+        "c": "Není správně. 4 = všechny kombinace podmínek (2 × 2). Pokrytí větví ale nevyžaduje kombinace, jen každý výsledek každého rozhodnutí alespoň jednou.",
+        "d": "Není správně. Pro příkazy stačí 1 test a pro větve 2 testy."
+      },
+      "vysvetleni_obecne": "Sylabus 4.3.2: IF bez ELSE má také dvě větve — „pravda“ (vstoupí do bloku) a „nepravda“ (blok přeskočí). Pro pokrytí příkazů stačí jít jen „pravda“ cestami, pro pokrytí větví musí každé rozhodnutí dát i „nepravda“. Nezávislá IF za sebou lze pokrýt dvěma testy."
+    },
+    {
+      "id": "ZK-23", "lo": "FL-4.3.2", "k": "K2",
+      "q": "Které z následujících tvrzení je PRAVDIVÉ?",
+      "moznosti": [
+        "100% pokrytí příkazů zaručuje 100% pokrytí větví",
+        "100% pokrytí větví zaručuje 100% pokrytí příkazů",
+        "100% pokrytí větví zaručuje odhalení všech defektů v kódu",
+        "Do pokrytí větví se započítávají jen podmíněné větve"
+      ],
+      "spravne": ["b"],
+      "vysvetleni": {
+        "a": "Není správně. Opak: u IF bez ELSE lze provést všechny příkazy a větev „nepravda“ přitom vynechat.",
+        "b": "Je správně. Pokrytí větví zahrnuje pokrytí příkazů — každý příkaz leží na nějaké větvi.",
+        "c": "Není správně. Ani 100% pokrytí větví nezaručí nalezení všech defektů, např. defektů, které vyžadují konkrétní cestu kódem.",
+        "d": "Není správně. Sylabus počítá podmíněné i nepodmíněné větve."
+      },
+      "vysvetleni_obecne": "Sylabus 4.3.2: Dosažení 100% pokrytí větví znamená i 100% pokrytí příkazů, ale ne naopak."
+    },
+    {
+      "id": "ZK-24", "lo": "FL-4.4.2", "k": "K2",
+      "q": "Specifikace nové funkce je neúplná, termín vydání se blíží a tým má zkušené testery, kteří dobře znají doménu. Který přístup je v této situaci NEJVHODNĚJŠÍ?",
+      "moznosti": [
+        "Testování bílé skříňky s cílem 100% pokrytí větví",
+        "Analýza hraničních hodnot všech vstupů podle specifikace",
+        "Průzkumné testování v časově omezených seancích",
+        "Testování na základě rozhodovacích tabulek odvozených z požadavků"
+      ],
+      "spravne": ["c"],
+      "vysvetleni": {
+        "a": "Není správně. Pokrytí větví neověří, zda funkce dělá to, co uživatel potřebuje, a při nedostatku času je náročné.",
+        "b": "Není správně. Techniky černé skříňky potřebují kvalitní specifikaci, ta je ale neúplná.",
+        "c": "Je správně. Sylabus uvádí, že průzkumné testování je užitečné, když je specifikace nedostatečná nebo chybí a testování je pod časovým tlakem; vyžaduje zkušené testery se znalostí domény.",
+        "d": "Není správně. Rozhodovací tabulky z požadavků vyžadují úplné požadavky na business pravidla."
+      },
+      "vysvetleni_obecne": "Sylabus 4.4.2: Průzkumné testování — testy se navrhují, provádějí a vyhodnocují současně s učením se o testovaném objektu. Často v seancích (session-based) s chartou testování. Nejlepší při nedostatečné specifikaci a časovém tlaku."
+    },
+    {
+      "id": "ZK-25", "lo": "FL-4.4.1", "k": "K2",
+      "q": "Které tvrzení NEJLÉPE popisuje techniku odhadování chyb?",
+      "moznosti": [
+        "Tester na základě znalostí o tom, jak aplikace dříve fungovala, jaké chyby vývojáři typicky dělají a jaká selhání nastala u podobných aplikací, předvídá chyby, defekty a selhání",
+        "Tester systematicky odvozuje testy z položek kontrolního seznamu vytvořeného z požadavků",
+        "Tester zadává náhodné vstupy, dokud aplikace nespadne",
+        "Manažer testování odhaduje počet zbývajících defektů podle statistiky z předchozích projektů"
+      ],
+      "spravne": ["a"],
+      "vysvetleni": {
+        "a": "Je správně. Odhadování chyb vychází ze znalostí testera; metodickým přístupem je útok na chyby (seznam možných chyb, defektů a selhání).",
+        "b": "Není správně. To popisuje testování založené na kontrolním seznamu.",
+        "c": "Není správně. Odhadování chyb není náhodné zadávání vstupů, je cílené podle zkušeností.",
+        "d": "Není správně. To není technika testování, ale odhad pro řízení (a v sylabu takto popsaný není)."
+      },
+      "vysvetleni_obecne": "Sylabus 4.4.1: Odhadování chyb je technika založená na zkušenostech. Znalosti: jak aplikace fungovala dříve, typy chyb vývojářů a výsledné defekty, selhání u podobných aplikací. Útoky na chyby jsou jejím metodickým provedením."
+    },
+    {
+      "id": "ZK-26", "lo": "FL-5.1.4", "k": "K3",
+      "q": "Tým odhaduje pracnost testování tříbodovým odhadem: nejoptimističtější odhad a = 6 člověkodnů, nejpravděpodobnější m = 9 člověkodnů, nejpesimističtější b = 24 člověkodnů. Jaký je výsledný odhad včetně směrodatné odchylky?",
+      "moznosti": ["9 ± 3 člověkodnů", "11 ± 3 člověkodnů", "11 ± 18 člověkodnů", "13 ± 3 člověkodnů"],
+      "spravne": ["b"],
+      "vysvetleni": {
+        "a": "Není správně. 9 je jen nejpravděpodobnější odhad m, ne vážený výsledek E.",
+        "b": "Je správně. E = (a + 4m + b) / 6 = (6 + 36 + 24) / 6 = 66 / 6 = 11. SD = (b − a) / 6 = 18 / 6 = 3. Výsledek 11 ± 3, tedy 8 až 14 člověkodnů.",
+        "c": "Není správně. 18 je b − a; směrodatná odchylka se ještě dělí šesti.",
+        "d": "Není správně. 13 = (6 + 9 + 24) / 3 je prostý průměr; tříbodový odhad váží m čtyřmi."
+      },
+      "vysvetleni_obecne": "Sylabus 5.1.4 — tříbodový odhad: E = (a + 4·m + b) / 6, SD = (b − a) / 6. Pomůcka: „1-4-1 děleno 6“ — optimistický a pesimistický mají váhu 1, nejpravděpodobnější váhu 4, součet vah je 6."
+    },
+    {
+      "id": "ZK-27", "lo": "FL-5.1.4", "k": "K3",
+      "q": "<p>Pracnost testování tří modulů se odhaduje tříbodovým odhadem (v člověkodnech):</p><table><tr><th>Modul</th><th>a (optimistický)</th><th>m (nejpravděpodobnější)</th><th>b (pesimistický)</th></tr><tr><td>M1</td><td>3</td><td>5</td><td>19</td></tr><tr><td>M2</td><td>5</td><td>6</td><td>7</td></tr><tr><td>M3</td><td>4</td><td>8</td><td>12</td></tr></table><p>Které pořadí modulů podle výsledného odhadu E je SPRÁVNÉ?</p>",
+      "moznosti": ["M3 > M2 > M1", "M1 > M3 > M2", "M3 > M1 > M2", "M1 > M2 > M3"],
+      "spravne": ["c"],
+      "vysvetleni": {
+        "a": "Není správně. Toto je pořadí podle samotného m (8 > 6 > 5). Vysoký pesimistický odhad M1 ale výsledek zvedá.",
+        "b": "Není správně. Toto je pořadí podle prostého průměru (9 > 8 > 6) nebo podle b. Tříbodový odhad váží m čtyřmi.",
+        "c": "Je správně. M1: (3 + 20 + 19) / 6 = 42 / 6 = 7. M2: (5 + 24 + 7) / 6 = 36 / 6 = 6. M3: (4 + 32 + 12) / 6 = 48 / 6 = 8. Tedy M3 (8) > M1 (7) > M2 (6).",
+        "d": "Není správně. M3 má nejvyšší E (8), ne nejnižší."
+      },
+      "vysvetleni_obecne": "Sylabus 5.1.4: U porovnání více modulů spočítejte E = (a + 4m + b) / 6 pro každý zvlášť. Rychlá kontrola: stačí porovnat čitatele a + 4m + b (42, 36, 48), dělení šesti pořadí nemění."
+    },
+    {
+      "id": "ZK-28", "lo": "FL-5.1.4", "k": "K3",
+      "q": "V předchozím podobném projektu trval vývoj 600 člověkodnů a testování 200 člověkodnů. V novém projektu se odhaduje pracnost vývoje na 450 člověkodnů. Jaký je odhad pracnosti testování technikou odhadu na základě poměrů?",
+      "moznosti": ["150 člověkodnů", "200 člověkodnů", "225 člověkodnů", "300 člověkodnů"],
+      "spravne": ["a"],
+      "vysvetleni": {
+        "a": "Je správně. Poměr vývoj : testování = 600 : 200 = 3 : 1. 450 / 3 = 150 člověkodnů.",
+        "b": "Není správně. 200 je pracnost z minulého projektu, nezohledňuje menší rozsah nového projektu.",
+        "c": "Není správně. 225 = polovina vývoje, poměr ale je 3 : 1, ne 2 : 1.",
+        "d": "Není správně. 300 by odpovídalo poměru 3 : 2."
+      },
+      "vysvetleni_obecne": "Sylabus 5.1.4: Odhad na základě poměrů je technika založená na metrikách — z historických dat organizace se odvodí poměr (např. vývoj : testování) a použije se na nový projekt."
+    },
+    {
+      "id": "ZK-29", "lo": "FL-5.1.5", "k": "K3",
+      "q": "<p>Testovací případy mají prioritu (1 = nejvyšší) a závislosti:</p><table><tr><th>Test</th><th>Priorita</th><th>Závisí na</th></tr><tr><td>TC1</td><td>3</td><td>—</td></tr><tr><td>TC2</td><td>1</td><td>TC4</td></tr><tr><td>TC3</td><td>2</td><td>—</td></tr><tr><td>TC4</td><td>5</td><td>—</td></tr><tr><td>TC5</td><td>4</td><td>TC1</td></tr><tr><td>TC6</td><td>2</td><td>TC3</td></tr></table><p>Testy se provádějí podle priority s respektováním závislostí. Který test bude proveden jako TŘETÍ?</p>",
+      "moznosti": ["TC1", "TC2", "TC3", "TC6"],
+      "spravne": ["c"],
+      "vysvetleni": {
+        "a": "Není správně. TC1 (priorita 3) přijde na řadu až po testech s prioritou 2 — jako pátý.",
+        "b": "Není správně. TC2 je druhý: má nejvyšší prioritu, ale nejdřív musí proběhnout TC4, na kterém závisí.",
+        "c": "Je správně. Pořadí: TC4 (kvůli závislosti TC2), TC2 (priorita 1), TC3 (priorita 2), TC6 (priorita 2, závisí na TC3), TC1 (3), TC5 (4, závisí na TC1).",
+        "d": "Není správně. TC6 má stejnou prioritu jako TC3, ale závisí na něm, proto je čtvrtý."
+      },
+      "vysvetleni_obecne": "Sylabus 5.1.5: Prioritizace podle rizik, pokrytí nebo požadavků se upravuje podle závislostí. Pokud test s vysokou prioritou závisí na testu s nižší prioritou, provede se nejdřív ten s nižší prioritou. Postup: vezměte nejvyšší prioritu, a pokud má závislost, napište před něj jeho předpoklad; pokračujte další nejvyšší prioritou."
+    },
+    {
+      "id": "ZK-30", "lo": "FL-5.1.7", "k": "K2",
+      "q": "Který typ testů NEJSPÍŠE probíhá v kvadrantu Q3 testovacích kvadrantů?",
+      "moznosti": ["Testy výkonnosti", "Průzkumné testování", "Funkcionální testy", "Testy komponent"],
+      "spravne": ["b"],
+      "vysvetleni": {
+        "a": "Není správně. Testy výkonnosti jsou nefunkcionální testy zaměřené na technologii a kritiku produktu — kvadrant Q4.",
+        "b": "Je správně. Q3 = zaměření na byznys a kritiku produktu: průzkumné testování, testování použitelnosti, uživatelské akceptační testování.",
+        "c": "Není správně. Funkcionální testy jsou zaměřené na byznys a podporu týmu — kvadrant Q2.",
+        "d": "Není správně. Testy komponent jsou zaměřené na technologii a podporu týmu — kvadrant Q1."
+      },
+      "vysvetleni_obecne": "Sylabus 5.1.7: Q1 technologie + podpora týmu (testy komponent, integrační testy komponent, automatizované); Q2 byznys + podpora týmu (funkcionální testy, příklady, testy uživatelských scénářů, prototypy UX, API, simulace); Q3 byznys + kritika produktu (průzkumné, použitelnost, UAT, často manuální); Q4 technologie + kritika produktu (smoke testy, nefunkcionální testy kromě použitelnosti, často automatizované)."
+    },
+    {
+      "id": "ZK-31", "lo": "FL-5.1.7", "k": "K2", "keep_order": true,
+      "q": "<p>Přiřaďte kvadranty k typům testů.</p><table><tr><th>Kvadrant</th><th>Testy</th></tr><tr><td>1. Q1</td><td>A. Testování použitelnosti</td></tr><tr><td>2. Q2</td><td>B. Testy komponent</td></tr><tr><td>3. Q3</td><td>C. Testy uživatelských scénářů</td></tr><tr><td>4. Q4</td><td>D. Smoke testy a testy výkonnosti</td></tr></table><p>Které přiřazení je SPRÁVNÉ?</p>",
+      "moznosti": ["1B, 2C, 3D, 4A", "1B, 2C, 3A, 4D", "1C, 2B, 3A, 4D", "1B, 2A, 3C, 4D"],
+      "spravne": ["b"],
+      "vysvetleni": {
+        "a": "Není správně. Toto je chyták: použitelnost je nefunkcionální, ale sylabus ji řadí do Q3, ne do Q4.",
+        "b": "Je správně. Q1 testy komponent, Q2 testy uživatelských scénářů, Q3 použitelnost, Q4 smoke testy a nefunkcionální testy (kromě použitelnosti).",
+        "c": "Není správně. Testy komponent jsou technologické (Q1), testy uživatelských scénářů byznysové (Q2).",
+        "d": "Není správně. Použitelnost patří do Q3, testy uživatelských scénářů do Q2."
+      },
+      "vysvetleni_obecne": "Sylabus 5.1.7: Osa 1 — zaměření na byznys / na technologii. Osa 2 — podpora týmu / kritika produktu. Výjimka k zapamatování: testování použitelnosti je v Q3, ostatní nefunkcionální testy v Q4."
+    },
+    {
+      "id": "ZK-32", "lo": "FL-5.1.6", "k": "K1",
+      "q": "Které tvrzení NEJLÉPE popisuje testovací pyramidu?",
+      "moznosti": [
+        "Nižší vrstvy obsahují velký počet malých, izolovaných a rychlých testů; vyšší vrstvy menší počet složitých end-to-end testů",
+        "Nejvíce testů má být na úrovni uživatelského rozhraní, protože nejlépe odpovídají chování uživatele",
+        "Určuje povinné pořadí, v jakém se úrovně testování musí provést",
+        "Rozděluje defekty podle závažnosti od kritických po kosmetické"
+      ],
+      "spravne": ["a"],
+      "vysvetleni": {
+        "a": "Je správně. Pyramida ukazuje, že testy mají různou granularitu a počet testů směrem nahoru klesá.",
+        "b": "Není správně. To je obrácená pyramida („zmrzlinový kornout“), které se model snaží vyhnout.",
+        "c": "Není správně. Pyramida nedefinuje pořadí provedení úrovní.",
+        "d": "Není správně. Pyramida se netýká závažnosti defektů."
+      },
+      "vysvetleni_obecne": "Sylabus 5.1.6: Testovací pyramida podporuje automatizaci testů a alokaci úsilí. Vrstvy (např. jednotkové testy, testy služeb, testy UI) se liší granularitou, izolací a rychlostí."
+    },
+    {
+      "id": "ZK-33", "lo": "FL-5.2.1", "k": "K1",
+      "q": "<p>Úroveň rizika se počítá jako pravděpodobnost × dopad (obojí na stupnici 1–5):</p><table><tr><th>Riziko</th><th>Pravděpodobnost</th><th>Dopad</th></tr><tr><td>R1</td><td>4</td><td>2</td></tr><tr><td>R2</td><td>2</td><td>5</td></tr><tr><td>R3</td><td>3</td><td>3</td></tr><tr><td>R4</td><td>5</td><td>1</td></tr></table><p>Které riziko má NEJVYŠŠÍ úroveň rizika?</p>",
+      "moznosti": ["R1", "R2", "R3", "R4"],
+      "spravne": ["b"],
+      "vysvetleni": {
+        "a": "Není správně. R1 = 4 × 2 = 8.",
+        "b": "Je správně. R2 = 2 × 5 = 10, nejvíce ze všech (R1 = 8, R3 = 9, R4 = 5).",
+        "c": "Není správně. R3 = 3 × 3 = 9.",
+        "d": "Není správně. R4 = 5 × 1 = 5 — nejvyšší pravděpodobnost sama o sobě nerozhoduje."
+      },
+      "vysvetleni_obecne": "Sylabus 5.2.1: Úroveň rizika je určena pravděpodobností a dopadem. Kvantitativně jako jejich součin, kvalitativně pomocí matice rizik."
+    },
+    {
+      "id": "ZK-34", "lo": "FL-5.5.1", "k": "K3",
+      "q": "<p>Zadáváte report o defektu. Obsahuje tyto údaje:</p><ul><li>ID: DEF-412, název: „Slevový kód se neuplatní u košíku nad 10 000 Kč“</li><li>Datum, autor, testovaný objekt (e-shop v2.3.1), testovací prostředí (TEST2, Chrome 129)</li><li>Kroky k reprodukci: 1. přidat zboží za 12 000 Kč, 2. zadat kód SLEVA10, 3. potvrdit</li><li>Skutečný výsledek: cena zůstává 12 000 Kč, žádné hlášení</li><li>Závažnost: vysoká, priorita: vysoká, stav: nový</li></ul><p>Který údaj by report NEJLÉPE doplnil?</p>",
+      "moznosti": [
+        "Očekávaný výsledek, např. „cena se sníží o 10 % na 10 800 Kč“",
+        "Příčina defektu ve zdrojovém kódu",
+        "Seznam všech ostatních testů, které v běhu prošly",
+        "Jméno vývojáře, který defekt způsobil"
+      ],
+      "spravne": ["a"],
+      "vysvetleni": {
+        "a": "Je správně. Report obsahuje skutečný výsledek, ale chybí očekávaný. Bez něj nelze posoudit, v čem přesně je odchylka.",
+        "b": "Není správně. Hledání příčiny je ladění, dělá ho vývojář; tester ji obvykle nezná.",
+        "c": "Není správně. Ostatní úspěšné testy patří do reportu o postupu prací, ne do reportu o defektu.",
+        "d": "Není správně. Report o defektu nemá hledat viníka; tento údaj nepatří mezi typické položky."
+      },
+      "vysvetleni_obecne": "Sylabus 5.5: Report o defektu typicky obsahuje: jedinečný identifikátor, název se stručným shrnutím, datum, organizaci a autora, identifikaci testovaného objektu a testovacího prostředí, kontext defektu, popis selhání s kroky k reprodukci (logy, snímky obrazovky), OČEKÁVANÉ A SKUTEČNÉ výsledky, závažnost, prioritu, stav a reference. U otázek „co chybí“ si odškrtejte položky v zadání a hledejte, která z tohoto seznamu chybí."
+    },
+    {
+      "id": "ZK-35", "lo": "FL-5.5.1", "k": "K3",
+      "q": "<p>Kolega zadal report o defektu:</p><ul><li>ID: DEF-519, název: „Tlačítko Odeslat nereaguje“</li><li>Datum, autor, kroky k reprodukci, očekávaný a skutečný výsledek</li><li>Závažnost: vysoká, priorita: střední, stav: nový</li></ul><p>Vývojář defekt nedokáže reprodukovat. Během testování se ukázalo, že selhání nastává jen v jedné verzi aplikace a jen v prohlížeči Safari. Co by report NEJLÉPE doplnilo?</p>",
+      "moznosti": [
+        "Návrh, jak defekt v kódu opravit",
+        "Identifikace testovaného objektu (verze aplikace) a testovacího prostředí (prohlížeč, OS)",
+        "Odhad pracnosti opravy",
+        "Snížení závažnosti, protože defekt se projevuje jen v jednom prohlížeči"
+      ],
+      "spravne": ["b"],
+      "vysvetleni": {
+        "a": "Není správně. Návrh opravy není typickou položkou reportu o defektu a reprodukci nepomůže.",
+        "b": "Je správně. Bez verze a prostředí nelze selhání reprodukovat; identifikace testovaného objektu a testovacího prostředí je typická položka reportu.",
+        "c": "Není správně. Odhad pracnosti opravy dělá vývoj, není součástí reportu o defektu.",
+        "d": "Není správně. Závažnost vyjadřuje dopad selhání; omezení na jeden prohlížeč nijak neřeší, proč defekt nejde reprodukovat."
+      },
+      "vysvetleni_obecne": "Sylabus 5.5: Cílem reportu o defektu je poskytnout dost informací k vyřešení problému — zejména k reprodukci. Proto obsahuje identifikaci testovaného objektu a testovacího prostředí."
+    },
+    {
+      "id": "ZK-36", "lo": "FL-5.1.3", "k": "K2",
+      "q": "<p>Mějme tato kritéria:</p><ol><li>Testovací prostředí a testovací data jsou k dispozici</li><li>Bylo dosaženo 80% pokrytí požadavků</li><li>Všechny smoke testy prošly</li><li>Žádný kritický defekt nezůstal nevyřešený</li></ol><p>Které rozdělení na vstupní a výstupní kritéria je SPRÁVNÉ?</p>",
+      "moznosti": [
+        "Vstupní: 1, 3; výstupní: 2, 4",
+        "Vstupní: 1; výstupní: 2, 3, 4",
+        "Vstupní: 1, 2; výstupní: 3, 4",
+        "Vstupní: 3; výstupní: 1, 2, 4"
+      ],
+      "spravne": ["a"],
+      "vysvetleni": {
+        "a": "Je správně. Dostupnost zdrojů (1) a počáteční úroveň kvality testovaného objektu (3 — smoke testy) jsou vstupní kritéria; dosažené pokrytí (2) a počet nevyřešených defektů (4) jsou výstupní kritéria (míry důkladnosti).",
+        "b": "Není správně. Úspěšné smoke testy vyjadřují počáteční úroveň kvality testovaného objektu — to je vstupní kritérium.",
+        "c": "Není správně. Dosažené pokrytí je míra důkladnosti — výstupní kritérium.",
+        "d": "Není správně. Dostupnost prostředí a dat je dostupnost zdrojů — vstupní kritérium."
+      },
+      "vysvetleni_obecne": "Sylabus 5.1.3: Vstupní kritéria = předpoklady pro zahájení: dostupnost zdrojů (lidé, nástroje, prostředí, data, rozpočet, čas), dostupnost testwaru (testovací báze, testovací případy), počáteční úroveň kvality (smoke testy). Výstupní kritéria = kdy skončit: míry důkladnosti (pokrytí, nevyřešené defekty, hustota defektů, neúspěšné testy) a binární kritéria dokončení (testy provedeny, defekty nahlášeny, regrese automatizována). V agilním vývoji: definice připravenosti = vstupní, definice hotového = výstupní."
+    },
+    {
+      "id": "ZK-37", "lo": "FL-5.3.1", "k": "K1",
+      "q": "Která z následujících metrik je metrikou o postupu testování?",
+      "moznosti": [
+        "Střední doba mezi poruchami (MTTF)",
+        "Hustota defektů",
+        "Počet spuštěných a nespuštěných testovacích případů a počet úspěšných a neúspěšných",
+        "Náklady na testování"
+      ],
+      "spravne": ["c"],
+      "vysvetleni": {
+        "a": "Není správně. MTTF je metrika kvality produktu.",
+        "b": "Není správně. Hustota defektů je metrika defektů.",
+        "c": "Je správně. Sylabus mezi metriky o postupu testování řadí postup implementace testovacích případů, přípravy prostředí, počet spuštěných/nespuštěných a úspěšných/neúspěšných testů a dobu provádění testů.",
+        "d": "Není správně. Náklady na testování jsou metrika nákladů."
+      },
+      "vysvetleni_obecne": "Sylabus 5.3.1 — skupiny metrik: o postupu projektu (dokončení úkolů, využití zdrojů, pracnost), o postupu testování, o kvalitě produktu (dostupnost, doba odezvy, MTTF), o defektech (počet a priority, hustota, procento zjištěných defektů), o riziku (zbytkové riziko), o pokrytí (požadavky, kód), o nákladech."
+    },
+    {
+      "id": "ZK-38", "lo": "FL-5.3.2", "k": "K2",
+      "q": "Co je typickým obsahem souhrnného reportu z testování, ale NENÍ obsahem reportu o postupu prací při testování?",
+      "moznosti": [
+        "Testovací metriky",
+        "Překážky při testování a jejich řešení",
+        "Ponaučení relevantní pro testování",
+        "Testování plánované na další období"
+      ],
+      "spravne": ["c"],
+      "vysvetleni": {
+        "a": "Není správně. Testovací metriky jsou v obou reportech.",
+        "b": "Není správně. Překážky a jejich řešení jsou v obou reportech.",
+        "c": "Je správně. Ponaučení (a také neošetřená rizika a nevyřešené defekty) patří jen do souhrnného reportu — v průběhu testování ještě není co uzavírat.",
+        "d": "Není správně. Plán na další období je naopak jen v reportu o postupu prací."
+      },
+      "vysvetleni_obecne": "Sylabus 5.3.2: Report o postupu prací — období, postup testování, překážky, metriky, nová a změněná rizika, plán na další období. Souhrnný report — shrnutí, vyhodnocení kvality vůči plánu, odchylky od plánu, překážky, metriky, neošetřená rizika, neopravené defekty, ponaučení."
+    },
+    {
+      "id": "ZK-39", "lo": "FL-6.2.1", "k": "K1",
+      "q": "Které z následujících je RIZIKEM automatizace testování?",
+      "moznosti": [
+        "Snížení opakované manuální práce",
+        "Vyšší konzistence a opakovatelnost testů",
+        "Nerealistická očekávání od nástroje a přílišné spoléhání na nástroj",
+        "Objektivnější hodnocení, například pokrytí"
+      ],
+      "spravne": ["c"],
+      "vysvetleni": {
+        "a": "Není správně. To je přínos automatizace.",
+        "b": "Není správně. To je přínos automatizace.",
+        "c": "Je správně. Sylabus mezi riziky uvádí nerealistická očekávání, nepřesné odhady času a nákladů, použití nástroje tam, kde je vhodnější manuální testování, a přílišné spoléhání na nástroj (ignorování kritického myšlení).",
+        "d": "Není správně. To je přínos automatizace."
+      },
+      "vysvetleni_obecne": "Sylabus 6.2: Další rizika: závislost na dodavateli nástroje, ukončení podpory open source projektu, nekompatibilita s vývojovou platformou, nesoulad s regulatorními nebo bezpečnostními požadavky."
+    },
+    {
+      "id": "ZK-40", "lo": "FL-1.3.1", "k": "K2",
+      "q": "Tým už půl roku spouští stále stejnou sadu regresních testů. Testy nenacházejí žádné nové defekty, přestože uživatelé v provozu hlásí nová selhání. Který princip testování situaci NEJLÉPE popisuje?",
+      "moznosti": ["Kompletní testování není možné", "Shlukování defektů", "Testy se opotřebovávají", "Nepřítomnost defektů je klam"],
+      "spravne": ["c"],
+      "vysvetleni": {
+        "a": "Není správně. Tento princip říká, že nelze otestovat vše, a proto je třeba prioritizovat; nevysvětluje, proč stejné testy přestaly nacházet defekty.",
+        "b": "Není správně. Shlukování defektů říká, že většina defektů je v malém počtu komponent.",
+        "c": "Je správně. Stále opakované stejné testy přestávají odhalovat nové defekty; je třeba je upravovat a doplňovat nové testy a testovací data.",
+        "d": "Není správně. Tento princip říká, že systém bez defektů nemusí splňovat potřeby uživatelů — o opakování testů nemluví."
+      },
+      "vysvetleni_obecne": "Sylabus 1.3.1, princip 5: Testy se opotřebovávají (dříve „paradox pesticidů“). Výjimka: u automatizovaného regresního testování může být opakování stejných testů záměrně přínosné."
+    }
+  ]
+}
