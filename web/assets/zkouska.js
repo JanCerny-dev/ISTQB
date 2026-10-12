@@ -1,16 +1,20 @@
-/* Simulace zkoušky z oficiálních vzorových testů ISTQB CTFL v4.0.
-   Data dodává soubor assets/vzorove/sada-*.js (window.VZOROVA_ZKOUSKA).
+/* Simulace zkoušky ISTQB CTFL v4.0.
+   Data dodává assets/vzorove/sada-*.js nebo assets/cvicne/zkouska-*.js (window.VZOROVA_ZKOUSKA),
+   náhodnou zkoušku assets/cvicne/vse.js (window.CVICNE_OTAZKY) — otázky se losují při spuštění
+   podle rozpisu ostré zkoušky a jejich id se ukládají do stavu, aby obnova stránky vrátila stejný test.
    Průběh: úvod → test → výsledek → (oprava 10 min) → vyhodnocení.
    Nic se nenačítá přes fetch, stránka funguje i otevřená z disku. */
 (function () {
   "use strict";
 
-  var D = window.VZOROVA_ZKOUSKA;
+  var C = window.CVICNE_OTAZKY;
+  var D = window.VZOROVA_ZKOUSKA || (C && { sada: "nahodna", oficialni: false, nahodna: true, otazky: [] });
   var koren = document.getElementById("zkouska");
   if (!D || !koren) return;
 
   var OTAZKY = D.otazky;
-  var POCET = OTAZKY.length;
+  var POCET = D.nahodna ? C.rozpis.length : OTAZKY.length;
+  var OFICIALNI = D.oficialni !== false;
   var HRANICE = Math.ceil(POCET * 0.65);
   var MINUT_TEST = 60;
   var MINUT_PRODLOUZENO = 75;
@@ -61,6 +65,54 @@
   }
   function nahoru() { window.scrollTo(0, koren.offsetTop - 80); }
 
+  /* --- náhodná zkouška: losování podle rozpisu --- */
+  function zamichane(pole) {
+    var a = pole.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+  // Každá pozice rozpisu připouští určité studijní cíle; v jedné zkoušce se cíl neopakuje.
+  // Pozice s nejmenší zásobou se obsazují první. Vrací seznam id seřazený podle rozpisu.
+  function losuj(sOficialnimi) {
+    var zasoba = {};
+    C.otazky.forEach(function (q) {
+      if (!q.k3 || q.varianta || (q.oficialni && !sOficialnimi)) return;
+      (zasoba[q.lo] = zasoba[q.lo] || []).push(q);
+    });
+    function velikost(poz) { return poz.reduce(function (s, lo) { return s + (zasoba[lo] || []).length; }, 0); }
+    for (var pokus = 0; pokus < 50; pokus++) {
+      var poradi = C.rozpis.map(function (_, i) { return i; })
+        .sort(function (a, b) { return velikost(C.rozpis[a]) - velikost(C.rozpis[b]); });
+      var pouzite = {}, vyber = [], ok = true;
+      poradi.forEach(function (i) {
+        if (!ok) return;
+        var kandidati = [];
+        C.rozpis[i].forEach(function (lo) {
+          if (pouzite[lo]) return;
+          (zasoba[lo] || []).forEach(function (q) { kandidati.push(q); });
+        });
+        if (!kandidati.length) { ok = false; return; }
+        var q = kandidati[Math.floor(Math.random() * kandidati.length)];
+        pouzite[q.lo] = true;
+        vyber.push({ i: i, id: q.id });
+      });
+      if (ok) return vyber.sort(function (a, b) { return a.i - b.i; }).map(function (x) { return x.id; });
+    }
+    return null;
+  }
+  function otazkyPodleId(ids) {
+    var mapa = {};
+    C.otazky.forEach(function (q) { mapa[q.id] = q; });
+    return ids.map(function (id) { return mapa[id]; }).filter(Boolean);
+  }
+  function pripravStav(stav) {
+    if (D.nahodna && stav && stav.ids) OTAZKY = otazkyPodleId(stav.ids);
+    return stav;
+  }
+
   /* --- časovač --- */
   function spustCasovac() {
     zastavCasovac();
@@ -100,8 +152,12 @@
           '<li>K úspěchu je potřeba <strong>' + HRANICE + ' správných odpovědí</strong> (65 %).</li>' +
           '<li>Po odevzdání uvidíte jen počet správných odpovědí. Pokud test nesplníte, můžete ještě ' +
             '<strong>' + MINUT_OPRAVA + ' minut opravovat</strong> — které odpovědi jsou špatně, se ale nedozvíte.</li>' +
-          '<li>Rozbor všech otázek s oficiálním zdůvodněním přijde až ve vyhodnocení.</li>' +
+          '<li>Rozbor všech otázek se ' + (OFICIALNI ? 'oficiálním ' : '') + 'zdůvodněním přijde až ve vyhodnocení.</li>' +
+          (D.nahodna ? '<li>Otázky se losují při každém spuštění: 8/6/4/11/9/2 z kapitol 1–6, K1/K2/K3 v poměru 8/24/8, ' +
+            'každý studijní cíl nejvýš jednou.</li>' : '') +
         '</ul>' +
+        (D.nahodna ? '<label class="zk-volba"><input type="checkbox" data-oficialni checked> ' +
+          'Losovat i z otázek oficiálních vzorových zkoušek A–D</label>' : '') +
         '<label class="zk-volba"><input type="checkbox" data-prodlouzeni> ' +
           'Skládám zkoušku v jiném než rodném jazyce (+25 % času, tedy ' + MINUT_PRODLOUZENO + ' minut)</label>' +
         '<div class="zk-tlacitka">' +
@@ -114,7 +170,14 @@
     ));
     koren.querySelector("[data-start]").onclick = function () {
       var minut = koren.querySelector("[data-prodlouzeni]").checked ? MINUT_PRODLOUZENO : MINUT_TEST;
+      var ids = null;
+      if (D.nahodna) {
+        ids = losuj(koren.querySelector("[data-oficialni]").checked);
+        if (!ids) { alert("Z dostupných otázek se nepodařilo sestavit úplnou zkoušku."); return; }
+        OTAZKY = otazkyPodleId(ids);
+      }
       S = {
+        ids: ids,
         faze: "test", i: 0,
         odp: OTAZKY.map(function () { return []; }),
         oznacene: [],
@@ -125,7 +188,7 @@
       vykresliTest();
     };
     var pokr = koren.querySelector("[data-pokracovat]");
-    if (pokr) pokr.onclick = function () { S = ulozeny; obnov(); };
+    if (pokr) pokr.onclick = function () { S = pripravStav(ulozeny); obnov(); };
   }
 
   function obnov() {
@@ -361,6 +424,7 @@
         '<span class="zk-stitek ' + (ok ? "uspech" : "neuspech") + '">' + (ok ? "Správně" : (odp.length ? "Špatně" : "Nezodpovězeno")) + '</span>' +
         '<strong>Otázka ' + (i + 1) + '</strong>' +
         '<span class="zk-meta">' + esc(q.lo) + ' · ' + esc(q.k) + '</span>' +
+        (q.zdroj && !OFICIALNI ? '<span class="zk-meta">' + esc(q.zdroj) + '</span>' : '') +
         (zmena ? '<span class="zk-meta">změněno při opravě</span>' : '') +
       '</header>' +
       '<div class="zk-zadani">' + q.q + '</div>' +
@@ -386,7 +450,7 @@
   }
 
   /* --- start --- */
-  var ulozeny = nacti();
+  var ulozeny = pripravStav(nacti());
   if (ulozeny && ulozeny.faze === "vyhodnoceni") { S = ulozeny; vyhodnoceni(); }
   else if (ulozeny && ulozeny.faze === "vysledek") { S = ulozeny; vysledek(); }
   else uvod();

@@ -1028,6 +1028,7 @@ h2:hover .kotva, .kotva:focus-visible { opacity: 1; }
 .zk-zadani table, .zk-obecne table { border-collapse: collapse; margin: .75rem 0; font-family: var(--pismo-ui); font-size: .9rem; display: block; overflow-x: auto; max-width: 100%; }
 .zk-zadani th, .zk-zadani td, .zk-obecne th, .zk-obecne td { border: 1px solid var(--linka-silna); padding: .35rem .6rem; text-align: left; vertical-align: top; }
 .zk-zadani th, .zk-obecne th { background: var(--plocha-tlumena); }
+.zk-zadani svg { display: block; width: 100%; max-width: 640px; height: auto; margin: .75rem 0; color: var(--text); }
 .zk-zadani pre, .zk-obecne pre { background: var(--plocha-tlumena); padding: .75rem 1rem; border-radius: 8px; overflow-x: auto; font-size: .88rem; }
 .zk-pokyn { font-size: .88rem; color: var(--text-jemny); margin: .25rem 0 .75rem; }
 

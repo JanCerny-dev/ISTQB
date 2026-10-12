@@ -130,7 +130,7 @@ def stranka_testu(sada: str, data: dict, stranka) -> str:
     )
 
 
-def stranka_rozcestniku(sady: dict[str, dict], stranka) -> str:
+def stranka_rozcestniku(sady: dict[str, dict], stranka, dalsi: str = "") -> str:
     karty = "".join(
         f"""<li class="karta" id="sada-{s}">
   <p class="karta-cislo">Sada {s.upper()}</p>
@@ -145,16 +145,18 @@ def stranka_rozcestniku(sady: dict[str, dict], stranka) -> str:
 
 <div class="uvod-hlava">
   <p class="drobky">Simulace zkoušky</p>
-  <h1>Oficiální vzorové zkoušky</h1>
-  <p class="perex">Čtyři vzorové zkoušky ISTQB CTFL v4.0 v českém překladu CaSQB, beze změn.
-  Jsou nejbližší dostupnou náhradou skutečné zkoušky — formátem, obtížností i stylem otázek.</p>
+  <h1>Simulace zkoušky</h1>
+  <p class="perex">Čtyři oficiální vzorové zkoušky ISTQB CTFL v4.0 v českém překladu CaSQB, beze změn.
+  Jsou nejbližší dostupnou náhradou skutečné zkoušky — formátem, obtížností i stylem otázek.
+  K nim cvičné zkoušky se stejným rozpisem, náhodná zkouška a otázky navíc.</p>
 </div>
 
 <section class="sekce">
-  <h2>Vyberte test</h2>
+  <h2>Oficiální vzorové zkoušky</h2>
   <ul class="mrizka">{karty}</ul>
 </section>
 
+{dalsi}
 <section class="sekce">
   <h2>Jak to probíhá</h2>
   <ul>
@@ -185,7 +187,7 @@ def stranka_rozcestniku(sady: dict[str, dict], stranka) -> str:
     )
 
 
-def zapis(koren: Path, web: Path, stranka) -> list[str]:
+def zapis(koren: Path, web: Path, stranka, dalsi: str = "") -> list[str]:
     """Vygeneruje rozcestník, stránky testů a datové soubory. Vrací zapsané cesty."""
     zdroj = koren / "oficialni-vzorove-zkousky" / "data"
     mapa = mapa_oddilu(web)
@@ -203,6 +205,6 @@ def zapis(koren: Path, web: Path, stranka) -> list[str]:
             f"window.VZOROVA_ZKOUSKA = {js};\n", encoding="utf-8")
         (web / f"zkouska-{s}.html").write_text(stranka_testu(s, data, stranka), encoding="utf-8")
         zapsano.append(f"zkouska-{s}.html")
-    (web / "zkouska.html").write_text(stranka_rozcestniku(sady, stranka), encoding="utf-8")
+    (web / "zkouska.html").write_text(stranka_rozcestniku(sady, stranka, dalsi), encoding="utf-8")
     zapsano.insert(0, "zkouska.html")
     return zapsano

@@ -21,6 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import markdown_min
 import prirazovani
+import cvicne_zkousky
 import vzorove_zkousky
 from model import (
     KAPITOLY,
@@ -589,7 +590,11 @@ def sestav() -> int:
 
     # Simulace zkoušky z oficiálních vzorových testů; bez dat zůstane původní
     # informační stránka.
-    zkousky = vzorove_zkousky.zapis(KOREN, WEB, stranka)
+    # Cvičné zkoušky z neoficiálních otázek (data v cvicne-otazky/data/otazky.json);
+    # jejich oddíly se vkládají do rozcestníku vzorových zkoušek.
+    cvicne, oddily_cvicnych = cvicne_zkousky.zapis(KOREN, WEB, stranka)
+    zkousky = vzorove_zkousky.zapis(KOREN, WEB, stranka, oddily_cvicnych)
+    zkousky += cvicne
     if len(zkousky) == 1:
         (WEB / "zkouska.html").write_text(stranka_zkousky(), encoding="utf-8")
     for nazev in zkousky:

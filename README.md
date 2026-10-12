@@ -6,7 +6,9 @@ sada, která ověřuje, že se při převodu nic neztratilo.**
 
 Šest kapitol, každá ve třech podobách: plný výklad, zkrácená verze, otázky s odpověďmi.
 Sekce **Zkouška** k tomu přidává simulaci zkoušky ze čtyř oficiálních vzorových testů
-(sady A–D) — 40 otázek, 60 minut, vyhodnocení s oficiálním zdůvodněním a odkazem do výkladu.
+(sady A–D) — 40 otázek, 60 minut, vyhodnocení s oficiálním zdůvodněním a odkazem do výkladu —,
+čtyři **cvičné zkoušky** z AI vygenerovaných otázek se stejným rozpisem jako ostrá zkouška,
+**náhodnou zkoušku** losovanou ze všech otázek a **otázky navíc** k procvičování po kapitolách.
 Sekce **Přiřazování** nabízí 55 přiřazovacích cvičení podle kapitol (639 položek „zařaď do
 kategorie“); položky převzaté z otázek vzorových testů jsou zvýrazněné.
 Dohromady přes **84 000 slov**. Texty jsou psané tak, aby se daly poslouchat — v Microsoft
@@ -52,10 +54,13 @@ tools/
   markdown_min.py   minimální převod značkování
   model.py          datový model dokumentu
   vzorove_zkousky.py  stránky simulace zkoušky ze vzorových testů
+  cvicne_zkousky.py   cvičné zkoušky podle rozpisu, náhodná zkouška, otázky navíc
   prirazovani.py    stránka přiřazovacích cvičení (kontroluje i data)
   prirazovani/sady.json  přiřazovací cvičení jako data (ručně psaná)
 oficialni-vzorove-zkousky/data/
   sada-{a,b,c,d}.json vzorové zkoušky jako data (české znění CaSQB)
+cvicne-otazky/data/
+  otazky.json         AI vygenerované cvičné otázky (česky, s LO a K-úrovní)
 web/                vygenerovaný web — to, co jede na GitHub Pages
 .github/workflows/
   pages.yml         nasazení web/ na Pages při každém pushi do main
@@ -96,6 +101,28 @@ rozcestník `web/zkouska.html`, stránky `web/zkouska-{a,b,c,d}.html` a datové 
    odkaz na příslušný oddíl plného výkladu.
 
 Odkazy do výkladu se skládají ze studijního cíle otázky (FL-4.2.1 → oddíl 4.2.1, případně 4.2).
+
+## Cvičné zkoušky
+
+`tools/cvicne_zkousky.py` (volá ho `build_site.py`) načte `cvicne-otazky/data/otazky.json` a postaví:
+
+- `web/cvicna-zkouska-N.html` — tolik úplných zkoušek, kolik dovolí zásoba otázek. Skládají se podle
+  **rozpisu odvozeného ze vzorových zkoušek A–D**: 40 pozic, každá připouští jen určité studijní
+  cíle (např. pozice „4.2.2“ jen analýzu hraničních hodnot, pozice „4.3.x“ kterýkoli z 4.3.1–4.3.3),
+  v jedné zkoušce se žádný cíl neopakuje. Proto sedí kapitoly (8/6/4/11/9/2) i K-úrovně
+  (K1 8, K2 24, K3 8) přesně jako u ostré zkoušky. Pořadí možností se míchá tak, aby správné
+  odpovědi byly rovnoměrně rozložené mezi a–d (kromě otázek, kde na pořadí záleží).
+- `web/nahodna-zkouska.html` — 40 otázek losovaných v prohlížeči podle stejného rozpisu,
+  volitelně i z oficiálních vzorových zkoušek. Vylosovaná id se ukládají do stavu testu.
+- `web/otazky-navic.html` — otázky, které se do žádné úplné zkoušky nevešly, k procvičování
+  po kapitolách s okamžitým vyhodnocením (`web/assets/procvicovani.js`).
+
+Otázky jsou na webu označené jako **AI vygenerované otázky** (zdroj se u nich neuvádí). Každá prošla
+revizí: vyřazení kopií a variant oficiálních vzorových otázek (porovnáno i s 26 doplňkovými otázkami
+sady A), duplicit a otázek podle sylabu v3.1; přiřazení studijního cíle; oprava klíče a vysvětlení podle
+sylabu v4.0.1; terminologie podle CZ sylabu 4.0.1.1; vlastní tabulky a diagramy místo obrázků; vyrovnání
+délky možností tam, kde správnou odpověď prozrazovala. Otázky odvozené z oficiálních (`stav: "varianta"`)
+jsou jen mezi otázkami navíc. K3 otázka (`k3_fit: false`, když jen ověřuje znalost) se do zkoušky nelosuje.
 
 ## Přiřazovací cvičení
 
